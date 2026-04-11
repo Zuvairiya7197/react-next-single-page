@@ -62,7 +62,7 @@ export function Hero() {
             <div className="absolute inset-x-10 top-0 h-28 rounded-full bg-[rgba(216,179,106,0.25)] blur-3xl" />
             <div className="relative overflow-hidden rounded-[1.6rem] border border-white/10 bg-[rgba(255,255,255,0.03)]">
               <Image
-                src="/images/hero-residence.svg"
+                src="/images/property-one.svg"
                 alt="Stylized exterior illustration of a premium modern residence"
                 width={900}
                 height={760}

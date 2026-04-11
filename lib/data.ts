@@ -129,7 +129,7 @@ const properties: Property[] = [
     baths: '4.5',
     area: '4,380 sq ft',
     status: 'For Sale',
-    image: '/images/property-oceanview.svg',
+    image: '/images/property-one.svg',
     imageAlt:
       'Modern oceanview residence with layered terraces and landscaping',
   },
@@ -144,7 +144,7 @@ const properties: Property[] = [
     baths: '3',
     area: '2,180 sq ft',
     status: 'New Listing',
-    image: '/images/property-harbor.svg',
+    image: '/images/second.svg',
     imageAlt: 'Sophisticated loft development near an urban waterfront skyline',
   },
   {
