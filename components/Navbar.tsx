@@ -16,39 +16,51 @@ export function Navbar() {
   );
 
   useEffect(() => {
-    const observedSections = sectionIds
+    const sections = sectionIds
       .map((id) => document.getElementById(id))
       .filter(Boolean) as HTMLElement[];
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visibleEntry = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+    const updateActiveSection = () => {
+      if (sections.length === 0) {
+        return;
+      }
 
-        if (visibleEntry?.target.id) {
-          setActiveSection(visibleEntry.target.id);
-        }
-      },
-      {
-        rootMargin: '-30% 0px -45% 0px',
-        threshold: [0.2, 0.35, 0.5, 0.7],
-      },
-    );
+      const headerOffset = 110;
+      const marker = window.scrollY + headerOffset + window.innerHeight * 0.22;
+      const pageBottom = window.scrollY + window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
 
-    observedSections.forEach((section) => observer.observe(section));
-
-    const handleScroll = () => {
       if (window.scrollY < 120) {
         setActiveSection('home');
+        return;
+      }
+
+      if (pageBottom >= documentHeight - 24) {
+        setActiveSection(sections.at(-1)?.id ?? 'contact');
+        return;
+      }
+
+      for (let index = 0; index < sections.length; index += 1) {
+        const currentSection = sections[index];
+        const nextSection = sections[index + 1];
+        const currentTop = currentSection.offsetTop;
+        const nextTop = nextSection?.offsetTop ?? Number.POSITIVE_INFINITY;
+
+        if (marker >= currentTop && marker < nextTop) {
+          setActiveSection(currentSection.id);
+          return;
+        }
       }
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    updateActiveSection();
+
+    window.addEventListener('scroll', updateActiveSection, { passive: true });
+    window.addEventListener('resize', updateActiveSection);
 
     return () => {
-      observer.disconnect();
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', updateActiveSection);
+      window.removeEventListener('resize', updateActiveSection);
     };
   }, [sectionIds]);
 
