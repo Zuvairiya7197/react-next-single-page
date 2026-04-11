@@ -129,7 +129,7 @@ const properties: Property[] = [
     baths: '4.5',
     area: '4,380 sq ft',
     status: 'For Sale',
-    image: '/images/property-one.svg',
+    image: '/images/1st.jpeg',
     imageAlt:
       'Modern oceanview residence with layered terraces and landscaping',
   },
@@ -144,7 +144,7 @@ const properties: Property[] = [
     baths: '3',
     area: '2,180 sq ft',
     status: 'New Listing',
-    image: '/images/second.svg',
+    image: '/images/2nd.jpeg',
     imageAlt: 'Sophisticated loft development near an urban waterfront skyline',
   },
   {
@@ -158,7 +158,7 @@ const properties: Property[] = [
     baths: '5.5',
     area: '5,120 sq ft',
     status: 'Private Tour',
-    image: '/images/property-stonegate.svg',
+    image: '/images/4th.jpeg',
     imageAlt: 'Estate property with landscaped grounds and warm stone facade',
   },
   {
@@ -172,7 +172,7 @@ const properties: Property[] = [
     baths: 'Multi',
     area: '18,400 sq ft',
     status: 'Investment',
-    image: '/images/property-summit.svg',
+    image: '/images/5th.jpeg',
     imageAlt:
       'Modern mixed-use commercial property with landscaped pedestrian plaza',
   },
