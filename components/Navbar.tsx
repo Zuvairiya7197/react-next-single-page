@@ -99,7 +99,7 @@ export function Navbar() {
                 aria-current={isActive ? 'page' : undefined}
                 className={`rounded-full px-4 py-2 text-sm font-semibold transition-all duration-300 ${
                   isActive
-                    ? 'bg-[var(--color-slate-900)] text-white shadow-[0_12px_30px_rgba(16,33,58,0.18)]'
+                    ? 'bg-[var(--color-slate-500)] text-white shadow-[0_12px_30px_rgba(16,33,58,0.18)]'
                     : 'text-[var(--color-slate-700)] hover:bg-white/80 hover:text-[var(--color-slate-900)]'
                 }`}
               >

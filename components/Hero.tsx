@@ -28,7 +28,7 @@ export function Hero() {
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
             <a
               href="#projects"
-              className="inline-flex items-center justify-center rounded-full bg-[var(--color-slate-900)] px-7 py-4 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[var(--color-slate-700)]"
+              className="inline-flex items-center justify-center rounded-full bg-[var(--color-slate-500)] px-7 py-4 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[var(--color-slate-700)]"
             >
               Explore Properties
             </a>
