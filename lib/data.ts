@@ -213,8 +213,8 @@ export const contactDetails = {
   },
   email: {
     label: 'Email',
-    value: 'hello@horizoncrestestates.com',
-    href: 'mailto:hello@horizoncrestestates.com',
+    value: 'hello@ibrahimtisekarestates.com',
+    href: 'mailto:hello@ibrahimtisekarestates.com',
   },
   phone: {
     label: 'Phone',

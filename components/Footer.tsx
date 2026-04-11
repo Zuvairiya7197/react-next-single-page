@@ -30,11 +30,11 @@ export function Footer() {
           </p>
           <div className="mt-6 flex flex-wrap gap-4 text-sm">
             <a
-              href="mailto:hello@horizoncrestestates.com"
+              href="mailto:hello@ibrahimtisekarestates.com"
               className="inline-flex items-center gap-2"
             >
               <Mail size={16} aria-hidden="true" />
-              hello@horizoncrestestates.com
+              hello@ibrahimtisekarestates.com
             </a>
             <a
               href="tel:+14155550182"
