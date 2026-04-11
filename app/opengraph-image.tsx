@@ -60,7 +60,7 @@ export default function OpenGraphImage() {
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
           <div style={{ fontSize: '72px', lineHeight: 1.05, fontWeight: 700 }}>
-            Premium Real Estate Experiences
+            Ibrahim Tisekar Estates | Premium Real Estate Experiences 
           </div>
           <div
             style={{
