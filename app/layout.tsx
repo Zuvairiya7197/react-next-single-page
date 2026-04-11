@@ -7,7 +7,7 @@ import '@/app/globals.css';
 import '@/styles/animations.css';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.horizoncrestestates.com'),
+  metadataBase: new URL('https://react-next-single-page.vercel.app'),
   title: 'Horizon Crest Estates | Premium Real Estate Experiences',
   description:
     'Horizon Crest Estates helps buyers, sellers, and investors discover high-value residential and commercial properties with confidence.',
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: 'Horizon Crest Estates | Premium Real Estate Experiences',
     description:
       'Discover curated properties, market guidance, and end-to-end real estate support from Horizon Crest Estates.',
-    url: 'https://www.horizoncrestestates.com',
+    url: 'https://react-next-single-page.vercel.app',
     siteName: 'Horizon Crest Estates',
     type: 'website',
     locale: 'en_US',
