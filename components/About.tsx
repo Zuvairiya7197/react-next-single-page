@@ -9,7 +9,7 @@ export function About() {
         <SectionReveal>
           <div className="rounded-[2rem] border border-white/60 bg-[var(--color-surface)] p-8 shadow-[0_24px_70px_rgba(16,33,58,0.08)] sm:p-10">
             <p className="text-sm uppercase tracking-[0.32em] text-[var(--color-slate-500)]">
-              About Horizon Crest
+              About Ibrahim Tisekar
             </p>
             <p className="mt-6 font-display text-3xl leading-tight text-[var(--color-slate-900)] sm:text-4xl">
               Trusted advisors crafting memorable buying and selling journeys.

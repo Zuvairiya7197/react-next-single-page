@@ -56,7 +56,7 @@ export default function OpenGraphImage() {
           >
             H
           </div>
-          Horizon Crest Estates
+          Ibrahim Tisekar Estates
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
           <div style={{ fontSize: '72px', lineHeight: 1.05, fontWeight: 700 }}>

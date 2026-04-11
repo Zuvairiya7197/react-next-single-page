@@ -22,7 +22,7 @@ export function Footer() {
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_auto_auto]">
         <div className="max-w-md">
           <p className="font-display text-3xl text-white">
-            Horizon Crest Estates
+            Ibrahim Tisekar Estates
           </p>
           <p className="mt-4 text-sm leading-7 text-[rgba(248,243,235,0.7)]">
             Real estate guidance with a boutique mindset, a sharp marketing eye,
@@ -89,7 +89,7 @@ export function Footer() {
       </div>
 
       <div className="mx-auto mt-10 flex max-w-7xl flex-col gap-3 border-t border-white/10 pt-6 text-sm text-[rgba(248,243,235,0.58)] sm:flex-row sm:items-center sm:justify-between">
-        <p>© 2026 Horizon Crest Estates. All rights reserved.</p>
+        <p>© 2026 Ibrahim Tisekar Estates. All rights reserved.</p>
         <p>
           Designed for modern real estate brands that value trust and
           presentation.

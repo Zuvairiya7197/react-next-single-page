@@ -201,7 +201,7 @@ const testimonials: Testimonial[] = [
     name: 'Priya Mehta',
     role: 'Relocating Buyer',
     quote:
-      'From virtual tours to neighborhood guidance, Horizon Crest made a long-distance move feel organized and genuinely personal.',
+      'From virtual tours to neighborhood guidance, Ibrahim Tisekar made a long-distance move feel organized and genuinely personal.',
   },
 ];
 
