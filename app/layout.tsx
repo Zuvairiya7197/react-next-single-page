@@ -1,0 +1,66 @@
+import type { Metadata } from 'next';
+
+import '@fontsource/manrope/index.css';
+import '@fontsource/playfair-display/600.css';
+import '@fontsource/playfair-display/700.css';
+import '@/app/globals.css';
+import '@/styles/animations.css';
+
+export const metadata: Metadata = {
+  metadataBase: new URL('https://www.horizoncrestestates.com'),
+  title: 'Horizon Crest Estates | Premium Real Estate Experiences',
+  description:
+    'Horizon Crest Estates helps buyers, sellers, and investors discover high-value residential and commercial properties with confidence.',
+  keywords: [
+    'real estate agency',
+    'luxury homes',
+    'property investment',
+    'commercial real estate',
+    'residential properties',
+    'real estate website',
+  ],
+  openGraph: {
+    title: 'Horizon Crest Estates | Premium Real Estate Experiences',
+    description:
+      'Discover curated properties, market guidance, and end-to-end real estate support from Horizon Crest Estates.',
+    url: 'https://www.horizoncrestestates.com',
+    siteName: 'Horizon Crest Estates',
+    type: 'website',
+    locale: 'en_US',
+    images: [
+      {
+        url: '/opengraph-image',
+        width: 1200,
+        height: 630,
+        alt: 'Horizon Crest Estates real estate website preview',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Horizon Crest Estates | Premium Real Estate Experiences',
+    description:
+      'Modern real estate solutions for buyers, sellers, and investors.',
+    images: ['/opengraph-image'],
+  },
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en" className="scroll-smooth">
+      <body className="bg-[var(--color-background)] font-sans text-[var(--color-slate-900)] antialiased">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-[var(--color-slate-900)] focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"
+        >
+          Skip to content
+        </a>
+        {children}
+      </body>
+    </html>
+  );
+}
