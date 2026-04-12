@@ -253,8 +253,25 @@ export function Footer() {
       <div className="mx-auto mt-10 flex max-w-7xl flex-col gap-3 border-t border-white/10 pt-6 text-sm text-white/56 sm:flex-row sm:items-center sm:justify-between">
         <p>© 2026 Emlak Real Estate LLC. All rights reserved.</p>
         <p>
-          Designed for modern real estate brands that value trust and
-          presentation.
+          Designed and developed by{' '}
+          <a
+            href="https://webuildyourbrands.com"
+            target="_blank"
+            rel="noreferrer"
+            className="font-semibold text-white transition hover:text-[var(--color-gold-400)]"
+          >
+            WBYB
+          </a>{' '}
+          (
+          <a
+            href="https://webuildyourbrands.com"
+            target="_blank"
+            rel="noreferrer"
+            className="transition hover:text-white"
+          >
+            webuildyourbrands.com
+          </a>
+          )
         </p>
       </div>
     </footer>
