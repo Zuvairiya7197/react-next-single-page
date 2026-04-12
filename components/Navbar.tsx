@@ -157,7 +157,7 @@ export function Navbar() {
                   onClick={() => setIsOpen(false)}
                   className={`rounded-2xl px-4 py-3 text-sm font-semibold transition ${
                     isActive
-                      ? 'bg-[var(--color-slate-900)] text-white'
+                      ? 'bg-[var(--color-slate-500)] text-white'
                       : 'bg-white text-[var(--color-slate-700)]'
                   }`}
                 >
