@@ -8,7 +8,8 @@ import '@/styles/animations.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://react-next-single-page.vercel.app'),
-  title: 'Emlak Real Estate LLC | Premium Real Estate Experiences',
+  title:
+    'Emlak Real Estate LLC | Premium Real Estate Experiences in Dubai, UAE',
   description:
     'Emlak Real Estate LLC helps buyers, sellers, and investors discover high-value residential and commercial properties with confidence.',
   keywords: [
@@ -20,7 +21,8 @@ export const metadata: Metadata = {
     'real estate website',
   ],
   openGraph: {
-    title: 'Emlak Real Estate LLC | Premium Real Estate Experiences',
+    title:
+      'Emlak Real Estate LLC | Premium Real Estate Experiences in Dubai, UAE',
     description:
       'Discover curated properties, market guidance, and end-to-end real estate support from Emlak Real Estate LLC.',
     url: 'https://react-next-single-page.vercel.app',
@@ -38,7 +40,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Emlak Real Estate LLC | Premium Real Estate Experiences',
+    title:
+      'Emlak Real Estate LLC | Premium Real Estate Experiences in Dubai, UAE',
     description:
       'Modern real estate solutions for buyers, sellers, and investors.',
     images: ['/opengraph-image'],
