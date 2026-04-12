@@ -209,8 +209,8 @@ const testimonials: Testimonial[] = [
 export const contactDetails = {
   address: {
     label: 'Office',
-    value: '88 Harbor Avenue, Suite 410, San Francisco, CA',
-    href: 'https://maps.google.com/?q=88+Harbor+Avenue+Suite+410+San+Francisco+CA',
+    value: 'Office 1007, Sidra Tower, Al Sufouh 1, Dubai, UAE',
+    href: 'https://maps.google.com/?q=Office+1007+Sidra+Tower+Al+Sufouh+1+Dubai+UAE',
   },
   email: {
     label: 'Email',
@@ -219,8 +219,8 @@ export const contactDetails = {
   },
   phone: {
     label: 'Phone',
-    value: '+1 (415) 555-0182',
-    href: 'tel:+14155550182',
+    value: '+971 58 234 5359',
+    href: 'tel:+971582345359',
   },
 };
 
