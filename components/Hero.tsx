@@ -1,40 +1,59 @@
+'use client';
+
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 import { SectionReveal } from '@/components/SectionReveal';
 import { heroHighlights, marketStats } from '@/lib/data';
 
+const heroImages = [
+  '/images/1st.jpeg',
+  '/images/2nd.jpeg',
+  '/images/4th.jpeg',
+  '/images/5th.jpeg',
+];
+
 export function Hero() {
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
+
+  useEffect(() => {
+    const intervalId = window.setInterval(() => {
+      setActiveImageIndex((currentIndex) =>
+        currentIndex === heroImages.length - 1 ? 0 : currentIndex + 1,
+      );
+    }, 4500);
+
+    return () => window.clearInterval(intervalId);
+  }, []);
+
   return (
     <section
       id="home"
       className="relative min-h-[calc(100vh-6.5rem)] overflow-hidden px-6 lg:min-h-[calc(100vh-7rem)] lg:px-8"
     >
       <div className="absolute inset-0">
-        <Image
-          src="/images/1st.jpeg"
-          alt="Stylized exterior illustration of a premium modern residence"
-          fill
-          sizes="100vw"
-          priority
-          className="object-cover"
-        />
+        {heroImages.map((imageSrc, index) => (
+          <Image
+            key={imageSrc}
+            src={imageSrc}
+            alt="Stylized exterior illustration of a premium modern residence"
+            fill
+            sizes="100vw"
+            priority={index === 0}
+            className={`object-cover transition-opacity duration-[1600ms] ease-in-out ${
+              activeImageIndex === index ? 'opacity-100' : 'opacity-0'
+            }`}
+          />
+        ))}
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(21,43,71,0.96)_0%,rgba(21,43,71,0.88)_42%,rgba(21,43,71,0.52)_72%,rgba(21,43,71,0.22)_100%)]" />
       </div>
       <div className="hero-glow pointer-events-none absolute inset-0" />
       <div className="grid-overlay pointer-events-none absolute inset-0 opacity-30" />
-      <div className="relative z-10 mx-auto grid min-h-[calc(100vh-6.5rem)] max-w-7xl items-center gap-16 py-10 lg:min-h-[calc(100vh-7rem)] lg:grid-cols-[1.05fr_0.95fr] lg:py-12">
+      <div className="relative z-10 mx-auto grid min-h-[calc(100vh-6.5rem)] max-w-7xl items-start gap-16 py-10 lg:min-h-[calc(100vh-7rem)] lg:grid-cols-[1.05fr_0.95fr] lg:py-12">
         <SectionReveal className="relative z-10">
           <span className="inline-flex rounded-full border border-[rgba(212,175,55,0.3)] bg-[rgba(212,175,55,0.12)] px-4 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-[var(--color-gold-400)] shadow-[0_18px_50px_rgba(12,24,41,0.22)]">
-            Boutique Real Estate Advisors
+            Emlak Real Estate LLC
           </span>
-          <div className="mt-6 inline-flex flex-wrap items-center gap-3 rounded-[1.35rem] border border-white/12 bg-[rgba(255,255,255,0.08)] px-5 py-3 shadow-[0_18px_50px_rgba(12,24,41,0.2)] backdrop-blur">
-            <p className="font-display text-2xl leading-none text-white sm:text-[2rem]">
-              EMLAK{' '}
-              <span className="text-[var(--color-gold-400)]">
-                REAL ESTATE LLC
-              </span>
-            </p>
-          </div>
           <h1 className="mt-6 max-w-3xl font-display text-5xl leading-[0.95] text-white sm:text-6xl lg:text-7xl">
             Elevated spaces for{' '}
             <span className="text-[var(--color-gold-400)]">modern living</span>,
@@ -86,13 +105,21 @@ export function Hero() {
           <div className="relative rounded-[2rem] border border-white/12 bg-[rgba(255,255,255,0.08)] p-5 shadow-[0_30px_90px_rgba(12,24,41,0.28)] backdrop-blur-md sm:p-6">
             <div className="absolute inset-x-10 top-4 h-28 rounded-full bg-[rgba(212,175,55,0.18)] blur-3xl" />
             <div className="relative overflow-hidden rounded-[1.6rem] border border-[rgba(212,175,55,0.18)] bg-[rgba(9,20,35,0.28)]">
-              <Image
-                src="/images/1st.jpeg"
-                alt="Luxury modern property exterior with pool"
-                width={900}
-                height={760}
-                className="h-[16rem] w-full object-cover sm:h-[20rem] lg:h-[24rem]"
-              />
+              <div className="relative h-[16rem] w-full sm:h-[20rem] lg:h-[24rem]">
+                {heroImages.map((imageSrc, index) => (
+                  <Image
+                    key={imageSrc}
+                    src={imageSrc}
+                    alt="Luxury modern property exterior with pool"
+                    fill
+                    sizes="(min-width: 1024px) 40vw, (min-width: 640px) 50vw, 100vw"
+                    priority={index === 0}
+                    className={`object-cover transition-opacity duration-[1600ms] ease-in-out ${
+                      activeImageIndex === index ? 'opacity-100' : 'opacity-0'
+                    }`}
+                  />
+                ))}
+              </div>
             </div>
 
             <div className="relative mt-6 rounded-[1.6rem] border border-[rgba(212,175,55,0.18)] bg-[rgba(9,20,35,0.34)] p-6">
