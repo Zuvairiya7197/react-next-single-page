@@ -177,12 +177,12 @@ export function Footer() {
               referrerPolicy="no-referrer-when-downgrade"
             />
           </div>
-          <div className="mt-3 flex flex-wrap gap-2.5 text-sm">
+          <div className="mt-3 flex flex-nowrap gap-2 text-sm">
             <a
               href={wazeLink}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/8 px-3.5 py-2 text-white transition hover:border-[rgba(212,175,55,0.45)] hover:bg-white/12"
+              className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border border-white/10 bg-white/8 px-3 py-2 text-white transition hover:border-[rgba(212,175,55,0.45)] hover:bg-white/12"
             >
               <WazeIcon />
               Waze
@@ -191,7 +191,7 @@ export function Footer() {
               href={googleMapsLink}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/8 px-3.5 py-2 text-white transition hover:border-[rgba(212,175,55,0.45)] hover:bg-white/12"
+              className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border border-white/10 bg-white/8 px-3 py-2 text-white transition hover:border-[rgba(212,175,55,0.45)] hover:bg-white/12"
             >
               <GoogleMapsIcon />
               Google Maps
@@ -200,7 +200,7 @@ export function Footer() {
               href={appleMapsLink}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/8 px-3.5 py-2 text-white transition hover:border-[rgba(212,175,55,0.45)] hover:bg-white/12"
+              className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border border-white/10 bg-white/8 px-3 py-2 text-white transition hover:border-[rgba(212,175,55,0.45)] hover:bg-white/12"
             >
               <AppleMapsIcon />
               Apple Maps
