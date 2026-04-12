@@ -7,7 +7,7 @@ import '@/app/globals.css';
 import '@/styles/animations.css';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://react-next-single-page.vercel.app'),
+  metadataBase: new URL('https://emlakrealestatellc.vercel.app'),
   icons: {
     icon: '/images/favicon.svg',
     shortcut: '/images/favicon.svg',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
       'Emlak Real Estate LLC | Premium Real Estate Experiences in Dubai, UAE',
     description:
       'Discover curated properties, market guidance, and end-to-end real estate support from Emlak Real Estate LLC.',
-    url: 'https://react-next-single-page.vercel.app',
+    url: 'https://emlakrealestatellc.vercel.app',
     siteName: 'Emlak Real Estate LLC',
     type: 'website',
     locale: 'en_US',
