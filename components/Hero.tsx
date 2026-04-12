@@ -7,7 +7,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative overflow-hidden px-6 py-24 sm:py-28 lg:px-8"
+      className="relative min-h-[calc(100vh-6.5rem)] overflow-hidden px-6 lg:min-h-[calc(100vh-7rem)] lg:px-8"
     >
       <div className="absolute inset-0">
         <Image
@@ -22,18 +22,29 @@ export function Hero() {
       </div>
       <div className="hero-glow pointer-events-none absolute inset-0" />
       <div className="grid-overlay pointer-events-none absolute inset-0 opacity-30" />
-      <div className="mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-[1.05fr_0.95fr]">
+      <div className="relative z-10 mx-auto grid min-h-[calc(100vh-6.5rem)] max-w-7xl items-center gap-16 py-10 lg:min-h-[calc(100vh-7rem)] lg:grid-cols-[1.05fr_0.95fr] lg:py-12">
         <SectionReveal className="relative z-10">
           <span className="inline-flex rounded-full border border-[rgba(212,175,55,0.3)] bg-[rgba(212,175,55,0.12)] px-4 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-[var(--color-gold-400)] shadow-[0_18px_50px_rgba(12,24,41,0.22)]">
             Boutique Real Estate Advisors
           </span>
+          <div className="mt-6 inline-flex flex-wrap items-center gap-3 rounded-[1.35rem] border border-white/12 bg-[rgba(255,255,255,0.08)] px-5 py-3 shadow-[0_18px_50px_rgba(12,24,41,0.2)] backdrop-blur">
+            <p className="font-display text-2xl leading-none text-white sm:text-[2rem]">
+              EMLAK{' '}
+              <span className="text-[var(--color-gold-400)]">
+                REAL ESTATE LLC
+              </span>
+            </p>
+          </div>
           <h1 className="mt-6 max-w-3xl font-display text-5xl leading-[0.95] text-white sm:text-6xl lg:text-7xl">
             Elevated spaces for{' '}
             <span className="text-[var(--color-gold-400)]">modern living</span>,
             investing, and growth.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-white/82 sm:text-xl">
-            We pair local expertise with refined presentation to help clients
+            <span className="font-semibold text-white">
+              EMLAK REAL ESTATE LLC
+            </span>{' '}
+            pairs local expertise with refined presentation to help clients
             unlock exceptional homes, commercial opportunities, and long-term
             value in every move.
           </p>
