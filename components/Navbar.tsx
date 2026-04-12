@@ -78,13 +78,13 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-[rgba(21,43,71,0.08)] bg-[rgba(255,255,255,0.96)] shadow-[0_10px_35px_rgba(21,43,71,0.08)] backdrop-blur-xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2 lg:px-8">
+      <div className="mx-auto flex min-h-[6.5rem] max-w-7xl items-center justify-between px-6 py-4 lg:min-h-[7rem] lg:px-8">
         <a
           href="#home"
-          className="relative flex items-center"
+          className="relative flex shrink-0 items-center"
           aria-label="Emlak Real Estate LLC home"
         >
-          <div className="relative h-16 w-[10.5rem] sm:h-20 sm:w-[13.5rem]">
+          <div className="flex h-[4.75rem] w-[10rem] items-center sm:h-[5.25rem] sm:w-[11rem] lg:h-[5.75rem] lg:w-[12rem]">
             <Image
               src="/images/emlak-logo.png"
               alt="Emlak logo"
@@ -114,6 +114,7 @@ export function Navbar() {
                     ? 'bg-[var(--color-slate-700)] text-white shadow-[0_14px_32px_rgba(21,43,71,0.18)]'
                     : 'text-[var(--color-slate-500)] hover:bg-[rgba(30,58,95,0.08)] hover:text-[var(--color-slate-700)]'
                 }`}
+                style={isActive ? { color: '#ffffff' } : undefined}
               >
                 {item.label}
               </a>
@@ -124,6 +125,7 @@ export function Navbar() {
         <a
           href="#contact"
           className="hidden rounded-full bg-[var(--color-slate-700)] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[var(--color-slate-900)] md:inline-flex"
+          style={{ color: '#ffffff' }}
         >
           Book a Consultation
         </a>
@@ -160,6 +162,7 @@ export function Navbar() {
                       ? 'bg-[var(--color-slate-700)] text-white'
                       : 'bg-[var(--color-surface-strong)] text-[var(--color-slate-700)]'
                   }`}
+                  style={isActive ? { color: '#ffffff' } : undefined}
                 >
                   {item.label}
                 </a>
@@ -169,6 +172,7 @@ export function Navbar() {
               href="#contact"
               onClick={() => setIsOpen(false)}
               className="mt-2 rounded-2xl bg-[var(--color-slate-700)] px-4 py-3 text-center text-sm font-semibold text-white"
+              style={{ color: '#ffffff' }}
             >
               Book a Consultation
             </a>

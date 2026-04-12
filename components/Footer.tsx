@@ -27,6 +27,7 @@ export function Footer() {
               src="/images/emlak-logo.png"
               alt="Emlak logo"
               fill
+              sizes="192px"
               className="object-contain"
             />
           </div>

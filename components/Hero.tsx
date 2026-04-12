@@ -14,6 +14,7 @@ export function Hero() {
           src="/images/1st.jpeg"
           alt="Stylized exterior illustration of a premium modern residence"
           fill
+          sizes="100vw"
           priority
           className="object-cover"
         />
@@ -47,6 +48,7 @@ export function Hero() {
             <a
               href="#contact"
               className="inline-flex items-center justify-center rounded-full border border-white/35 bg-transparent px-7 py-4 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:border-[var(--color-gold-400)] hover:bg-white/10"
+              style={{ color: '#ffffff' }}
             >
               Schedule a Private Tour
             </a>
