@@ -1,15 +1,15 @@
 @import 'tailwindcss';
 
 :root {
-  --color-background: #f8f3eb;
-  --color-surface: #fffdf8;
-  --color-surface-strong: #fff7ec;
-  --color-slate-900: #10213a;
-  --color-slate-700: #35506f;
-  --color-slate-500: #61758e;
-  --color-gold-500: #d8b36a;
-  --color-gold-400: #e7c98a;
-  --color-border: rgba(16, 33, 58, 0.1);
+  --color-background: #f8fafc;
+  --color-surface: #ffffff;
+  --color-surface-strong: #f2f5f8;
+  --color-slate-900: #152b47;
+  --color-slate-700: #1e3a5f;
+  --color-slate-500: #5f6f84;
+  --color-gold-500: #d4af37;
+  --color-gold-400: #e3c96c;
+  --color-border: rgba(30, 58, 95, 0.12);
 }
 
 @theme inline {
@@ -31,14 +31,15 @@ body {
   background:
     radial-gradient(
       circle at top left,
-      rgba(216, 179, 106, 0.16),
-      transparent 28%
+      rgba(212, 175, 55, 0.12),
+      transparent 24%
     ),
-    linear-gradient(180deg, #fbf8f2 0%, var(--color-background) 100%);
+    linear-gradient(180deg, #ffffff 0%, var(--color-background) 100%);
+  color: var(--color-slate-900);
 }
 
 body::selection {
-  background: rgba(216, 179, 106, 0.28);
+  background: rgba(212, 175, 55, 0.28);
 }
 
 a {

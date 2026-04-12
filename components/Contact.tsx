@@ -81,7 +81,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="px-6 py-20 lg:px-8">
+    <section id="contact" className="bg-white px-6 py-24 lg:px-8">
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.95fr_1.05fr]">
         <SectionReveal>
           <SectionHeading
@@ -98,9 +98,9 @@ export function Contact() {
                 <a
                   key={detail.label}
                   href={detail.href}
-                  className="flex items-start gap-4 rounded-[1.5rem] border border-[var(--color-border)] bg-white/75 p-5 transition hover:-translate-y-0.5 hover:shadow-[0_18px_50px_rgba(16,33,58,0.08)]"
+                  className="flex items-start gap-4 rounded-[1.5rem] border border-[var(--color-border)] bg-[var(--color-surface-strong)] p-5 transition hover:-translate-y-0.5 hover:shadow-[0_18px_50px_rgba(21,43,71,0.08)]"
                 >
-                  <div className="mt-1 flex h-11 w-11 items-center justify-center rounded-2xl bg-[var(--color-slate-900)] text-white">
+                  <div className="mt-1 flex h-11 w-11 items-center justify-center rounded-2xl bg-[var(--color-slate-700)] text-white">
                     <Icon size={18} aria-hidden="true" />
                   </div>
                   <div>
@@ -118,7 +118,7 @@ export function Contact() {
         </SectionReveal>
 
         <SectionReveal delay={0.1}>
-          <div className="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-surface)] p-8 shadow-[0_24px_70px_rgba(16,33,58,0.08)] sm:p-10">
+          <div className="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-surface)] p-8 shadow-[0_24px_70px_rgba(21,43,71,0.08)] sm:p-10">
             <form onSubmit={handleSubmit} noValidate className="space-y-6">
               <div className="grid gap-6 sm:grid-cols-2">
                 <div className="sm:col-span-1">
@@ -213,7 +213,7 @@ export function Contact() {
 
               <button
                 type="submit"
-                className="inline-flex w-full items-center justify-center rounded-full bg-[var(--color-slate-900)] px-6 py-4 text-sm font-semibold text-white transition hover:bg-[var(--color-slate-700)] sm:w-auto"
+                className="inline-flex w-full items-center justify-center rounded-full bg-[var(--color-slate-700)] px-6 py-4 text-sm font-semibold text-white transition hover:bg-[var(--color-slate-900)] sm:w-auto"
               >
                 Send Inquiry
               </button>

@@ -77,30 +77,22 @@ export function Navbar() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/50 bg-[rgba(248,243,235,0.82)] backdrop-blur-xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+    <header className="sticky top-0 z-50 border-b border-[rgba(21,43,71,0.08)] bg-[rgba(255,255,255,0.96)] shadow-[0_10px_35px_rgba(21,43,71,0.08)] backdrop-blur-xl">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2 lg:px-8">
         <a
           href="#home"
-          className="flex items-center gap-3"
+          className="relative flex items-center"
           aria-label="Emlak Real Estate LLC home"
         >
-          <div className="flex h-12 w-12 items-center justify-center">
+          <div className="relative h-16 w-[10.5rem] sm:h-20 sm:w-[13.5rem]">
             <Image
               src="/images/emlak-logo.png"
               alt="Emlak logo"
               width={1522}
               height={1478}
               priority
-              className="h-full w-full object-contain"
+              className="h-full w-full object-contain object-left"
             />
-          </div>
-          <div>
-            <p className="font-display text-xl text-[var(--color-slate-900)]">
-              Emlak
-            </p>
-            <p className="text-xs uppercase tracking-[0.3em] text-[var(--color-slate-500)]">
-              Real Estate LLC
-            </p>
           </div>
         </a>
 
@@ -119,8 +111,8 @@ export function Navbar() {
                 aria-current={isActive ? 'page' : undefined}
                 className={`rounded-full px-4 py-2 text-sm font-semibold transition-all duration-300 ${
                   isActive
-                    ? 'bg-[var(--color-slate-500)] text-white shadow-[0_12px_30px_rgba(16,33,58,0.18)]'
-                    : 'text-[var(--color-slate-700)] hover:bg-white/80 hover:text-[var(--color-slate-900)]'
+                    ? 'bg-[var(--color-slate-700)] text-white shadow-[0_14px_32px_rgba(21,43,71,0.18)]'
+                    : 'text-[var(--color-slate-500)] hover:bg-[rgba(30,58,95,0.08)] hover:text-[var(--color-slate-700)]'
                 }`}
               >
                 {item.label}
@@ -131,14 +123,14 @@ export function Navbar() {
 
         <a
           href="#contact"
-          className="hidden rounded-full bg-[var(--color-gold-500)] px-5 py-3 text-sm font-semibold text-[var(--color-slate-900)] transition hover:bg-[var(--color-gold-400)] md:inline-flex"
+          className="hidden rounded-full bg-[var(--color-slate-700)] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[var(--color-slate-900)] md:inline-flex"
         >
           Book a Consultation
         </a>
 
         <button
           type="button"
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--color-border)] bg-white/80 text-[var(--color-slate-900)] md:hidden"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--color-border)] bg-white text-[var(--color-slate-900)] shadow-[0_10px_30px_rgba(21,43,71,0.08)] md:hidden"
           onClick={() => setIsOpen((open) => !open)}
           aria-expanded={isOpen}
           aria-controls="mobile-navigation"
@@ -151,7 +143,7 @@ export function Navbar() {
       {isOpen ? (
         <div
           id="mobile-navigation"
-          className="border-t border-white/60 bg-[rgba(255,253,248,0.95)] px-6 py-4 md:hidden"
+          className="border-t border-[var(--color-border)] bg-[rgba(255,255,255,0.98)] px-6 py-4 shadow-[0_18px_45px_rgba(21,43,71,0.1)] md:hidden"
         >
           <nav aria-label="Mobile navigation" className="flex flex-col gap-2">
             {navItems.map((item) => {
@@ -165,8 +157,8 @@ export function Navbar() {
                   onClick={() => setIsOpen(false)}
                   className={`rounded-2xl px-4 py-3 text-sm font-semibold transition ${
                     isActive
-                      ? 'bg-[var(--color-slate-500)] text-white'
-                      : 'bg-white text-[var(--color-slate-700)]'
+                      ? 'bg-[var(--color-slate-700)] text-white'
+                      : 'bg-[var(--color-surface-strong)] text-[var(--color-slate-700)]'
                   }`}
                 >
                   {item.label}
@@ -176,7 +168,7 @@ export function Navbar() {
             <a
               href="#contact"
               onClick={() => setIsOpen(false)}
-              className="mt-2 rounded-2xl bg-[var(--color-gold-500)] px-4 py-3 text-center text-sm font-semibold text-[var(--color-slate-900)]"
+              className="mt-2 rounded-2xl bg-[var(--color-slate-700)] px-4 py-3 text-center text-sm font-semibold text-white"
             >
               Book a Consultation
             </a>

@@ -22,7 +22,10 @@ const iconMap = {
 
 export function Services() {
   return (
-    <section id="services" className="px-6 py-20 lg:px-8">
+    <section
+      id="services"
+      className="bg-[var(--color-surface-strong)] px-6 py-24 lg:px-8"
+    >
       <div className="mx-auto max-w-7xl">
         <SectionReveal>
           <SectionHeading
@@ -39,8 +42,8 @@ export function Services() {
 
             return (
               <SectionReveal key={service.title} delay={index * 0.05}>
-                <article className="group h-full rounded-[1.75rem] border border-[var(--color-border)] bg-white/75 p-7 shadow-[0_20px_60px_rgba(16,33,58,0.06)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(16,33,58,0.12)]">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[linear-gradient(145deg,rgba(216,179,106,0.18),rgba(16,33,58,0.92))] text-white">
+                <article className="group h-full rounded-[1.75rem] border border-[var(--color-border)] bg-white p-7 shadow-[0_20px_60px_rgba(21,43,71,0.06)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(21,43,71,0.12)]">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[rgba(30,58,95,0.08)] text-[var(--color-slate-700)] transition duration-300 group-hover:bg-[var(--color-slate-700)] group-hover:text-white">
                     <Icon size={26} aria-hidden="true" />
                   </div>
                   <h3 className="mt-6 text-xl font-semibold text-[var(--color-slate-900)]">
