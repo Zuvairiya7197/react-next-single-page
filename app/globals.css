@@ -23,6 +23,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--navbar-height, 6.5rem) + 1rem);
   width: 100%;
   overflow-x: hidden;
 }
@@ -54,4 +55,8 @@ a {
 img {
   max-width: 100%;
   height: auto;
+}
+
+section[id] {
+  scroll-margin-top: calc(var(--navbar-height, 6.5rem) + 1rem);
 }
