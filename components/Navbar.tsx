@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useEffect, useMemo, useState } from 'react';
 
 import { Menu, X } from 'lucide-react';
@@ -83,8 +84,15 @@ export function Navbar() {
           className="flex items-center gap-3"
           aria-label="Emlak Real Estate LLC home"
         >
-          <div className="flex h-11 w-11 items-center justify-center rounded-full border border-white/60 bg-[linear-gradient(135deg,rgba(216,179,106,0.16),rgba(17,36,61,0.88))] text-sm font-semibold text-white shadow-[0_12px_30px_rgba(16,33,58,0.18)]">
-            HC
+          <div className="flex h-12 w-12 items-center justify-center">
+            <Image
+              src="/images/emlak-logo.png"
+              alt="Emlak logo"
+              width={1522}
+              height={1478}
+              priority
+              className="h-full w-full object-contain"
+            />
           </div>
           <div>
             <p className="font-display text-xl text-[var(--color-slate-900)]">
