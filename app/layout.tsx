@@ -8,9 +8,9 @@ import '@/styles/animations.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://react-next-single-page.vercel.app'),
-  title: 'Ibrahim Tisekar Estates | Premium Real Estate Experiences',
+  title: 'Emlak Real Estate LLC | Premium Real Estate Experiences',
   description:
-    'Ibrahim Tisekar Estates helps buyers, sellers, and investors discover high-value residential and commercial properties with confidence.',
+    'Emlak Real Estate LLC helps buyers, sellers, and investors discover high-value residential and commercial properties with confidence.',
   keywords: [
     'real estate agency',
     'luxury homes',
@@ -20,11 +20,11 @@ export const metadata: Metadata = {
     'real estate website',
   ],
   openGraph: {
-    title: 'Ibrahim Tisekar Estates | Premium Real Estate Experiences',
+    title: 'Emlak Real Estate LLC | Premium Real Estate Experiences',
     description:
-      'Discover curated properties, market guidance, and end-to-end real estate support from Ibrahim Tisekar Estates.',
+      'Discover curated properties, market guidance, and end-to-end real estate support from Emlak Real Estate LLC.',
     url: 'https://react-next-single-page.vercel.app',
-    siteName: 'Ibrahim Tisekar Estates',
+    siteName: 'Emlak Real Estate LLC',
     type: 'website',
     locale: 'en_US',
     images: [
@@ -32,13 +32,13 @@ export const metadata: Metadata = {
         url: '/opengraph-image',
         width: 1200,
         height: 630,
-        alt: 'Ibrahim Tisekar Estates real estate website preview',
+        alt: 'Emlak Real Estate LLC real estate website preview',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ibrahim Tisekar Estates | Premium Real Estate Experiences',
+    title: 'Emlak Real Estate LLC | Premium Real Estate Experiences',
     description:
       'Modern real estate solutions for buyers, sellers, and investors.',
     images: ['/opengraph-image'],

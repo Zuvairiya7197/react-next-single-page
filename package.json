@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "clean": "rm -rf .next",
+    "dev:clean": "rm -rf .next && next dev",
     "build": "npm run build:compile && npm run build:generate",
     "build:compile": "next build --webpack --experimental-build-mode compile",
     "build:generate": "next build --webpack --experimental-build-mode generate",

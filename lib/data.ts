@@ -201,7 +201,7 @@ const testimonials: Testimonial[] = [
     name: 'Priya Mehta',
     role: 'Relocating Buyer',
     quote:
-      'From virtual tours to neighborhood guidance, Ibrahim Tisekar made a long-distance move feel organized and genuinely personal.',
+      'From virtual tours to neighborhood guidance, Emlak Real Estate LLC made a long-distance move feel organized and genuinely personal.',
   },
 ];
 
@@ -213,8 +213,8 @@ export const contactDetails = {
   },
   email: {
     label: 'Email',
-    value: 'hello@ibrahimtisekarestates.com',
-    href: 'mailto:hello@ibrahimtisekarestates.com',
+    value: 'hello@emlakrealestate.com',
+    href: 'mailto:hello@emlakrealestate.com',
   },
   phone: {
     label: 'Phone',

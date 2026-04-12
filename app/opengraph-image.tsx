@@ -56,11 +56,11 @@ export default function OpenGraphImage() {
           >
             H
           </div>
-          Ibrahim Tisekar Estates
+          Emlak Real Estate LLC
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
           <div style={{ fontSize: '72px', lineHeight: 1.05, fontWeight: 700 }}>
-            Ibrahim Tisekar Estates | Premium Real Estate Experiences 
+            Emlak Real Estate LLC | Premium Real Estate Experiences
           </div>
           <div
             style={{

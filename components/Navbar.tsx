@@ -81,17 +81,17 @@ export function Navbar() {
         <a
           href="#home"
           className="flex items-center gap-3"
-          aria-label="Ibrahim Tisekar Estates home"
+          aria-label="Emlak Real Estate LLC home"
         >
           <div className="flex h-11 w-11 items-center justify-center rounded-full border border-white/60 bg-[linear-gradient(135deg,rgba(216,179,106,0.16),rgba(17,36,61,0.88))] text-sm font-semibold text-white shadow-[0_12px_30px_rgba(16,33,58,0.18)]">
             HC
           </div>
           <div>
             <p className="font-display text-xl text-[var(--color-slate-900)]">
-              Ibrahim Tisekar
+              Emlak
             </p>
             <p className="text-xs uppercase tracking-[0.3em] text-[var(--color-slate-500)]">
-              Estates
+              Real Estate LLC
             </p>
           </div>
         </a>
