@@ -123,11 +123,12 @@ export function Navbar() {
         </nav>
 
         <a
-          href="#contact"
-          className="hidden rounded-full bg-[var(--color-slate-700)] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[var(--color-slate-900)] md:inline-flex"
-          style={{ color: '#ffffff' }}
+          href="https://emlakdesign.com/"
+          target="_blank"
+          rel="noreferrer"
+          className="hidden rounded-full bg-[var(--color-gold-500)] px-5 py-3 text-sm font-semibold text-[var(--color-slate-900)] transition hover:bg-[var(--color-gold-400)] md:inline-flex"
         >
-          Book a Consultation
+          Visit Emlak Design
         </a>
 
         <button
@@ -169,12 +170,13 @@ export function Navbar() {
               );
             })}
             <a
-              href="#contact"
+              href="https://emlakdesign.com/"
+              target="_blank"
+              rel="noreferrer"
               onClick={() => setIsOpen(false)}
-              className="mt-2 rounded-2xl bg-[var(--color-slate-700)] px-4 py-3 text-center text-sm font-semibold text-white"
-              style={{ color: '#ffffff' }}
+              className="mt-2 rounded-2xl bg-[var(--color-gold-500)] px-4 py-3 text-center text-sm font-semibold text-[var(--color-slate-900)]"
             >
-              Book a Consultation
+              Visit Emlak Design
             </a>
           </nav>
         </div>

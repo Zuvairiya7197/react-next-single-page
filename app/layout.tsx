@@ -8,6 +8,11 @@ import '@/styles/animations.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://react-next-single-page.vercel.app'),
+  icons: {
+    icon: '/images/favicon.svg',
+    shortcut: '/images/favicon.svg',
+    apple: '/images/favicon.svg',
+  },
   title:
     'Emlak Real Estate LLC | Premium Real Estate Experiences in Dubai, UAE',
   description:
