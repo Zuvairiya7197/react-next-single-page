@@ -98,16 +98,16 @@ export function Contact() {
                 <a
                   key={detail.label}
                   href={detail.href}
-                  className="flex items-start gap-4 rounded-[1.5rem] border border-[var(--color-border)] bg-[var(--color-surface-strong)] p-5 transition hover:-translate-y-0.5 hover:shadow-[0_18px_50px_rgba(21,43,71,0.08)]"
+                  className="flex min-w-0 items-start gap-4 rounded-[1.5rem] border border-[var(--color-border)] bg-[var(--color-surface-strong)] p-5 transition hover:-translate-y-0.5 hover:shadow-[0_18px_50px_rgba(21,43,71,0.08)]"
                 >
                   <div className="mt-1 flex h-11 w-11 items-center justify-center rounded-2xl bg-[var(--color-slate-700)] text-white">
                     <Icon size={18} aria-hidden="true" />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <p className="text-xs uppercase tracking-[0.24em] text-[var(--color-slate-500)]">
                       {detail.label}
                     </p>
-                    <p className="mt-2 text-base font-semibold text-[var(--color-slate-900)]">
+                    <p className="mt-2 break-words text-base font-semibold text-[var(--color-slate-900)]">
                       {detail.value}
                     </p>
                   </div>

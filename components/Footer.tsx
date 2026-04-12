@@ -139,14 +139,14 @@ export function Footer() {
           <div className="mt-6 flex flex-wrap gap-4 text-sm">
             <a
               href={contactDetails.email.href}
-              className="inline-flex items-center gap-2"
+              className="inline-flex min-w-0 items-center gap-2 break-all sm:break-normal"
             >
               <Mail size={16} aria-hidden="true" />
               {contactDetails.email.value}
             </a>
             <a
               href={contactDetails.phone.href}
-              className="inline-flex items-center gap-2"
+              className="inline-flex min-w-0 items-center gap-2"
             >
               <Phone size={16} aria-hidden="true" />
               {contactDetails.phone.value}
@@ -155,15 +155,15 @@ export function Footer() {
         </div>
 
         <div className="rounded-[1.6rem] border border-white/10 bg-white/6 p-3.5 backdrop-blur">
-          <div className="flex items-center gap-3 text-white">
+          <div className="flex items-start gap-3 text-white">
             <div className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-white/10">
               <MapPin size={18} aria-hidden="true" />
             </div>
-            <div>
+            <div className="min-w-0">
               <p className="text-xs uppercase tracking-[0.24em] text-white/56">
                 Office Location
               </p>
-              <p className="mt-1 text-sm font-semibold text-white">
+              <p className="mt-1 break-words text-sm font-semibold leading-6 text-white">
                 {contactDetails.address.value}
               </p>
             </div>
@@ -177,12 +177,12 @@ export function Footer() {
               referrerPolicy="no-referrer-when-downgrade"
             />
           </div>
-          <div className="mt-3 flex flex-nowrap gap-2 text-sm">
+          <div className="mt-3 grid gap-2 text-sm sm:grid-cols-3">
             <a
               href={wazeLink}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border border-white/10 bg-white/8 px-3 py-2 text-white transition hover:border-[rgba(212,175,55,0.45)] hover:bg-white/12"
+              className="inline-flex items-center justify-center gap-1.5 rounded-full border border-white/10 bg-white/8 px-3 py-2 text-white transition hover:border-[rgba(212,175,55,0.45)] hover:bg-white/12"
             >
               <WazeIcon />
               Waze
@@ -191,7 +191,7 @@ export function Footer() {
               href={googleMapsLink}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border border-white/10 bg-white/8 px-3 py-2 text-white transition hover:border-[rgba(212,175,55,0.45)] hover:bg-white/12"
+              className="inline-flex items-center justify-center gap-1.5 rounded-full border border-white/10 bg-white/8 px-3 py-2 text-white transition hover:border-[rgba(212,175,55,0.45)] hover:bg-white/12"
             >
               <GoogleMapsIcon />
               Google Maps
@@ -200,7 +200,7 @@ export function Footer() {
               href={appleMapsLink}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border border-white/10 bg-white/8 px-3 py-2 text-white transition hover:border-[rgba(212,175,55,0.45)] hover:bg-white/12"
+              className="inline-flex items-center justify-center gap-1.5 rounded-full border border-white/10 bg-white/8 px-3 py-2 text-white transition hover:border-[rgba(212,175,55,0.45)] hover:bg-white/12"
             >
               <AppleMapsIcon />
               Apple Maps

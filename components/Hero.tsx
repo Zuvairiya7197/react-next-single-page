@@ -51,7 +51,7 @@ export function Hero() {
       <div className="grid-overlay pointer-events-none absolute inset-0 opacity-30" />
       <div className="relative z-10 mx-auto grid min-h-[calc(100vh-6.5rem)] max-w-7xl items-start gap-16 py-10 lg:min-h-[calc(100vh-7rem)] lg:grid-cols-[1.05fr_0.95fr] lg:py-12">
         <SectionReveal className="relative z-10">
-          <span className="inline-flex rounded-full border border-[rgba(212,175,55,0.3)] bg-[rgba(212,175,55,0.12)] px-4 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-[var(--color-gold-400)] shadow-[0_18px_50px_rgba(12,24,41,0.22)]">
+          <span className="inline-flex max-w-full flex-wrap rounded-full border border-[rgba(212,175,55,0.3)] bg-[rgba(212,175,55,0.12)] px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-[var(--color-gold-400)] shadow-[0_18px_50px_rgba(12,24,41,0.22)] sm:tracking-[0.35em]">
             Dubai and UAE Property Advisory
           </span>
           <h1 className="mt-6 max-w-3xl font-display text-5xl leading-[0.95] text-white sm:text-6xl lg:text-7xl">
