@@ -8,7 +8,10 @@ export async function Testimonials() {
   const testimonials = await getTestimonials();
 
   return (
-    <section id="testimonials" className="px-6 py-20 lg:px-8">
+    <section
+      id="testimonials"
+      className="bg-[var(--color-surface-strong)] px-6 py-24 lg:px-8"
+    >
       <div className="mx-auto max-w-7xl">
         <SectionReveal>
           <SectionHeading
@@ -22,7 +25,7 @@ export async function Testimonials() {
         <div className="mt-12 grid gap-6 lg:grid-cols-3">
           {testimonials.map((testimonial, index) => (
             <SectionReveal key={testimonial.name} delay={index * 0.08}>
-              <article className="h-full rounded-[1.9rem] border border-[var(--color-border)] bg-[linear-gradient(180deg,#fffdf8_0%,#fdf7ef_100%)] p-7 shadow-[0_20px_60px_rgba(16,33,58,0.06)]">
+              <article className="h-full rounded-[1.9rem] border border-[var(--color-border)] bg-white p-7 shadow-[0_20px_60px_rgba(21,43,71,0.06)]">
                 <div className="flex items-center justify-between">
                   <div className="flex gap-1 text-[var(--color-gold-500)]">
                     {Array.from({ length: 5 }).map((_, starIndex) => (
@@ -34,7 +37,7 @@ export async function Testimonials() {
                       />
                     ))}
                   </div>
-                  <Quote size={28} className="text-[rgba(16,33,58,0.18)]" />
+                  <Quote size={28} className="text-[rgba(212,175,55,0.28)]" />
                 </div>
                 <p className="mt-6 text-base leading-8 text-[var(--color-slate-700)]">
                   “{testimonial.quote}”

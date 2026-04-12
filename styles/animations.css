@@ -2,17 +2,21 @@
   background:
     radial-gradient(
       circle at 22% 22%,
-      rgba(216, 179, 106, 0.3),
-      transparent 22%
+      rgba(212, 175, 55, 0.2),
+      transparent 24%
     ),
-    radial-gradient(circle at 75% 18%, rgba(17, 36, 61, 0.14), transparent 28%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.65), transparent 90%);
+    radial-gradient(
+      circle at 82% 18%,
+      rgba(255, 255, 255, 0.14),
+      transparent 28%
+    ),
+    linear-gradient(180deg, rgba(21, 43, 71, 0.12), transparent 90%);
 }
 
 .grid-overlay {
   background-image:
-    linear-gradient(rgba(16, 33, 58, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(16, 33, 58, 0.04) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
   background-size: 56px 56px;
   mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.72), transparent);
 }

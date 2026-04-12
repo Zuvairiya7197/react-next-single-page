@@ -1,26 +1,69 @@
+'use client';
+
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 import { SectionReveal } from '@/components/SectionReveal';
 import { heroHighlights, marketStats } from '@/lib/data';
 
+const heroImages = [
+  '/images/1st.jpeg',
+  '/images/2nd.jpeg',
+  '/images/4th.jpeg',
+  '/images/5th.jpeg',
+];
+
 export function Hero() {
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
+
+  useEffect(() => {
+    const intervalId = window.setInterval(() => {
+      setActiveImageIndex((currentIndex) =>
+        currentIndex === heroImages.length - 1 ? 0 : currentIndex + 1,
+      );
+    }, 4500);
+
+    return () => window.clearInterval(intervalId);
+  }, []);
+
   return (
     <section
       id="home"
-      className="relative overflow-hidden px-6 pb-18 pt-16 sm:pb-20 lg:px-8 lg:pb-24 lg:pt-20"
+      className="relative min-h-[calc(100vh-6.5rem)] overflow-hidden px-6 lg:min-h-[calc(100vh-7rem)] lg:px-8"
     >
-      <div className="hero-glow pointer-events-none absolute inset-x-0 top-0 h-[34rem]" />
-      <div className="grid-overlay pointer-events-none absolute inset-0 opacity-40" />
-      <div className="mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-[1.1fr_0.9fr]">
+      <div className="absolute inset-0">
+        {heroImages.map((imageSrc, index) => (
+          <Image
+            key={imageSrc}
+            src={imageSrc}
+            alt="Stylized exterior illustration of a premium modern residence"
+            fill
+            sizes="100vw"
+            priority={index === 0}
+            className={`object-cover transition-opacity duration-[1600ms] ease-in-out ${
+              activeImageIndex === index ? 'opacity-100' : 'opacity-0'
+            }`}
+          />
+        ))}
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(21,43,71,0.96)_0%,rgba(21,43,71,0.88)_42%,rgba(21,43,71,0.52)_72%,rgba(21,43,71,0.22)_100%)]" />
+      </div>
+      <div className="hero-glow pointer-events-none absolute inset-0" />
+      <div className="grid-overlay pointer-events-none absolute inset-0 opacity-30" />
+      <div className="relative z-10 mx-auto grid min-h-[calc(100vh-6.5rem)] max-w-7xl items-start gap-16 py-10 lg:min-h-[calc(100vh-7rem)] lg:grid-cols-[1.05fr_0.95fr] lg:py-12">
         <SectionReveal className="relative z-10">
-          <span className="inline-flex rounded-full border border-white/60 bg-white/75 px-4 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-[var(--color-slate-700)] shadow-[0_18px_50px_rgba(16,33,58,0.08)]">
-            Boutique Real Estate Advisors
+          <span className="inline-flex rounded-full border border-[rgba(212,175,55,0.3)] bg-[rgba(212,175,55,0.12)] px-4 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-[var(--color-gold-400)] shadow-[0_18px_50px_rgba(12,24,41,0.22)]">
+            Emlak Real Estate LLC
           </span>
-          <h1 className="mt-6 max-w-3xl font-display text-5xl leading-[0.95] text-[var(--color-slate-900)] sm:text-6xl lg:text-7xl">
-            Elevated spaces for modern living, investing, and growth.
+          <h1 className="mt-6 max-w-3xl font-display text-5xl leading-[0.95] text-white sm:text-6xl lg:text-7xl">
+            Elevated spaces for{' '}
+            <span className="text-[var(--color-gold-400)]">modern living</span>,
+            investing, and growth.
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--color-slate-500)] sm:text-xl">
-            We pair local expertise with refined presentation to help clients
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-white/82 sm:text-xl">
+            <span className="font-semibold text-white">
+              EMLAK REAL ESTATE LLC
+            </span>{' '}
+            pairs local expertise with refined presentation to help clients
             unlock exceptional homes, commercial opportunities, and long-term
             value in every move.
           </p>
@@ -28,13 +71,14 @@ export function Hero() {
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
             <a
               href="#projects"
-              className="inline-flex items-center justify-center rounded-full bg-[var(--color-slate-500)] px-7 py-4 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[var(--color-slate-700)]"
+              className="inline-flex items-center justify-center rounded-full bg-white px-7 py-4 text-sm font-semibold text-[var(--color-slate-900)] transition hover:-translate-y-0.5 hover:bg-[var(--color-surface-strong)]"
             >
               Explore Properties
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center justify-center rounded-full border border-[var(--color-border)] bg-white/80 px-7 py-4 text-sm font-semibold text-[var(--color-slate-900)] transition hover:-translate-y-0.5 hover:border-[var(--color-gold-500)] hover:bg-white"
+              className="inline-flex items-center justify-center rounded-full border border-white/35 bg-transparent px-7 py-4 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:border-[var(--color-gold-400)] hover:bg-white/10"
+              style={{ color: '#ffffff' }}
             >
               Schedule a Private Tour
             </a>
@@ -44,12 +88,12 @@ export function Hero() {
             {marketStats.map((stat) => (
               <div
                 key={stat.label}
-                className="rounded-[1.75rem] border border-white/60 bg-white/72 p-5 shadow-[0_20px_60px_rgba(16,33,58,0.08)] backdrop-blur"
+                className="rounded-[1.75rem] border border-white/12 bg-[rgba(255,255,255,0.08)] p-5 shadow-[0_20px_60px_rgba(12,24,41,0.22)] backdrop-blur"
               >
-                <p className="text-3xl font-semibold text-[var(--color-slate-900)]">
+                <p className="text-3xl font-semibold text-white">
                   {stat.value}
                 </p>
-                <p className="mt-2 text-sm leading-6 text-[var(--color-slate-500)]">
+                <p className="mt-2 text-sm leading-6 text-white/70">
                   {stat.label}
                 </p>
               </div>
@@ -58,32 +102,52 @@ export function Hero() {
         </SectionReveal>
 
         <SectionReveal className="relative z-10" delay={0.1}>
-          <div className="relative rounded-[2rem] border border-white/60 bg-[linear-gradient(160deg,rgba(16,33,58,0.95),rgba(37,74,112,0.86))] p-4 shadow-[0_30px_90px_rgba(16,33,58,0.22)] sm:p-6">
-            <div className="absolute inset-x-10 top-0 h-28 rounded-full bg-[rgba(216,179,106,0.25)] blur-3xl" />
-            <div className="relative overflow-hidden rounded-[1.6rem] border border-white/10 bg-[rgba(255,255,255,0.03)]">
-              <Image
-                src="/images/1st.jpeg"
-                alt="Stylized exterior illustration of a premium modern residence"
-                width={900}
-                height={760}
-                priority
-                className="h-auto w-full"
-              />
+          <div className="relative rounded-[2rem] border border-white/12 bg-[rgba(255,255,255,0.08)] p-5 shadow-[0_30px_90px_rgba(12,24,41,0.28)] backdrop-blur-md sm:p-6">
+            <div className="absolute inset-x-10 top-4 h-28 rounded-full bg-[rgba(212,175,55,0.18)] blur-3xl" />
+            <div className="relative overflow-hidden rounded-[1.6rem] border border-[rgba(212,175,55,0.18)] bg-[rgba(9,20,35,0.28)]">
+              <div className="relative h-[16rem] w-full sm:h-[20rem] lg:h-[24rem]">
+                {heroImages.map((imageSrc, index) => (
+                  <Image
+                    key={imageSrc}
+                    src={imageSrc}
+                    alt="Luxury modern property exterior with pool"
+                    fill
+                    sizes="(min-width: 1024px) 40vw, (min-width: 640px) 50vw, 100vw"
+                    priority={index === 0}
+                    className={`object-cover transition-opacity duration-[1600ms] ease-in-out ${
+                      activeImageIndex === index ? 'opacity-100' : 'opacity-0'
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
+
+            <div className="relative mt-6 rounded-[1.6rem] border border-[rgba(212,175,55,0.18)] bg-[rgba(9,20,35,0.34)] p-6">
+              <p className="text-xs uppercase tracking-[0.32em] text-[var(--color-gold-400)]">
+                Signature Approach
+              </p>
+              <p className="mt-3 font-display text-3xl leading-tight text-white">
+                Every listing is positioned with the polish of a premium brand.
+              </p>
+              <p className="mt-4 text-sm leading-7 text-white/72">
+                From market preparation to final negotiation, we shape each
+                touchpoint to feel clear, elevated, and deeply considered.
+              </p>
             </div>
 
             <div className="relative mt-6 grid gap-4 sm:grid-cols-2">
               {heroHighlights.map((highlight) => (
                 <div
                   key={highlight.title}
-                  className="rounded-[1.4rem] border border-white/10 bg-white/8 p-4 backdrop-blur"
+                  className="rounded-[1.4rem] border border-white/10 bg-[rgba(255,255,255,0.06)] p-4 backdrop-blur"
                 >
-                  <p className="text-xs uppercase tracking-[0.3em] text-[rgba(248,243,235,0.65)]">
+                  <p className="text-xs uppercase tracking-[0.3em] text-[var(--color-gold-400)]">
                     {highlight.label}
                   </p>
                   <p className="mt-2 text-lg font-semibold text-white">
                     {highlight.title}
                   </p>
-                  <p className="mt-2 text-sm leading-6 text-[rgba(248,243,235,0.72)]">
+                  <p className="mt-2 text-sm leading-6 text-white/70">
                     {highlight.description}
                   </p>
                 </div>

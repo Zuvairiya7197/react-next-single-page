@@ -60,7 +60,8 @@ export default function OpenGraphImage() {
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
           <div style={{ fontSize: '72px', lineHeight: 1.05, fontWeight: 700 }}>
-            Emlak Real Estate LLC | Premium Real Estate Experiences
+            Emlak Real Estate LLC | Premium Real Estate Experiences in Dubai,
+            UAE
           </div>
           <div
             style={{
