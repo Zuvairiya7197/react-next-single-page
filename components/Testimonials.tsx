@@ -16,8 +16,8 @@ export async function Testimonials() {
         <SectionReveal>
           <SectionHeading
             eyebrow="Testimonials"
-            title="What clients remember most is how supported they felt at every step."
-            description="Our process is detail-driven, discreet, and relationship-first. Here is how that experience feels from the client side."
+            title="Clients remember the clarity, responsiveness, and hands-on guidance."
+            description="From initial consultation to documentation and handover planning, the experience is designed to feel structured, informed, and easy to follow."
             align="center"
           />
         </SectionReveal>

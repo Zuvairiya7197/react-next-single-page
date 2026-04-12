@@ -14,15 +14,15 @@ export async function Projects() {
         <SectionReveal>
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <SectionHeading
-              eyebrow="Featured Listings"
-              title="Distinctive properties selected for lifestyle, design, and long-term upside."
-              description="Explore a curated mix of residences and commercial assets positioned in sought-after neighborhoods and growth corridors."
+              eyebrow="Prime Opportunities"
+              title="Selected residences and investment assets shaped by lifestyle demand and long-term upside."
+              description="Explore a curated mix of villas, waterfront homes, and commercial assets inspired by the pace and profile of Dubai and UAE property demand."
             />
             <a
               href="#contact"
               className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--color-slate-700)] transition hover:text-[var(--color-gold-500)]"
             >
-              Request the full portfolio
+              Request more opportunities
               <MoveRight size={16} aria-hidden="true" />
             </a>
           </div>

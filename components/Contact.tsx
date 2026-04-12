@@ -86,8 +86,8 @@ export function Contact() {
         <SectionReveal>
           <SectionHeading
             eyebrow="Contact"
-            title="Let’s talk about your next move."
-            description="Whether you’re searching for a primary residence, preparing a listing, or evaluating an investment, we’re here to help you move with confidence."
+            title="Tell us what you need and we will shape the next step."
+            description="Whether you are buying, selling, comparing investment options, or exploring a property strategy tied to wider life goals, we are here to help."
           />
 
           <div className="mt-8 space-y-4">
@@ -198,7 +198,7 @@ export function Contact() {
                     errors.message ? 'message-error' : undefined
                   }
                   className="mt-3 w-full rounded-[1.6rem] border border-[var(--color-border)] bg-white px-4 py-3.5 text-sm text-[var(--color-slate-900)] outline-none transition focus:border-[var(--color-gold-500)] focus:ring-2 focus:ring-[rgba(216,179,106,0.22)]"
-                  placeholder="Tell us what you’re looking for, your timeline, and any neighborhoods or property types you have in mind."
+                  placeholder="Share your goals, budget, timeline, and whether you are exploring end-use, off-plan, resale, or investment opportunities."
                   required
                 />
                 {errors.message ? (

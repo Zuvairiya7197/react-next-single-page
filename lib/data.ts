@@ -11,94 +11,95 @@ export const navItems = [
 
 export const marketStats = [
   {
-    value: '$480M+',
+    value: 'AED 1.76B+',
     label:
-      'transaction value managed across residential and commercial portfolios',
+      'transaction value advised across residential, commercial, and investment portfolios',
   },
   {
     value: '220+',
     label:
-      'buyers, sellers, and investors advised with tailored search strategies',
+      'buyers, sellers, and investors supported with tailored search and acquisition strategies',
   },
   {
     value: '28 days',
-    label: 'average timeline to secure qualified offers on premium listings',
+    label:
+      'average window to move serious inquiries into qualified offers on premium listings',
   },
 ];
 
 export const heroHighlights = [
   {
-    label: 'Signature Approach',
-    title: 'Curated, not crowded',
+    label: 'Golden Visa Support',
+    title: 'Property choices that fit broader goals',
     description:
-      'Every listing and buyer brief is positioned with precision to attract the right momentum quickly.',
+      'We help clients shortlist homes and investment assets that align with residency, family, and long-term planning priorities.',
   },
   {
-    label: 'Investor Lens',
-    title: 'Value beyond the closing table',
+    label: 'Transaction Guidance',
+    title: 'Documentation handled with clarity',
     description:
-      'We help clients weigh neighborhood growth, rental upside, and long-term appreciation before they commit.',
+      'From seller coordination to legal paperwork and handover prep, every stage is managed with calm, step-by-step support.',
   },
 ];
 
 export const companyValues = [
   {
-    title: 'Market intelligence',
+    title: 'Property sourcing with intent',
     description:
-      'We analyze pricing patterns, absorption rates, and buyer behavior so your decisions rest on real context.',
+      'We narrow the market around your actual goals, whether that means end-use comfort, rental income, resale upside, or developer reputation.',
   },
   {
-    title: 'Presentation that performs',
+    title: 'Golden Visa and family support',
     description:
-      'Listings are elevated through design-led staging advice, compelling copy, and premium visual direction.',
+      'When a purchase is part of a wider relocation or residency plan, we help clients understand the property and documentation implications early.',
   },
   {
-    title: 'Negotiation with composure',
+    title: 'Legal and transfer coordination',
     description:
-      'From offer strategy to contingency planning, we protect leverage without adding unnecessary friction.',
+      'We keep communication moving between buyers, sellers, legal representatives, and service providers so the process stays organized.',
   },
   {
-    title: 'Relationships that last',
+    title: 'After-sales continuity',
     description:
-      'Clients rely on us before, during, and after the transaction because service does not stop at the signature.',
+      'Support does not stop at the signature. We stay useful after the deal with practical next-step guidance and ownership support.',
   },
 ];
 
 export const services = [
   {
-    title: 'Buyer Representation',
+    title: 'Buy, Sell, and Rent',
     description:
-      'Personalized property searches, off-market introductions, and strategic offer preparation for confident acquisitions.',
+      'End-to-end support for buying, selling, and leasing with guided property selection, seller communication, and transaction planning.',
     icon: 'search',
   },
   {
-    title: 'Seller Advisory',
+    title: 'Golden Visa Assistance',
     description:
-      'Pricing strategy, listing preparation, photography direction, and launch planning built to maximize demand.',
+      'Guidance on property pathways that can support residency goals, with practical help around the process and required documentation.',
     icon: 'key',
   },
   {
-    title: 'Luxury Residences',
+    title: 'Asset Management',
     description:
-      'Specialized support for architecturally notable homes, private estates, and premium lifestyle properties.',
+      'Hands-on help for owners who want smoother oversight, stronger tenant continuity, and dependable day-to-day property coordination.',
     icon: 'sparkles',
   },
   {
-    title: 'Commercial Assets',
+    title: 'Legal and Documentation',
     description:
-      'Office, retail, and mixed-use opportunities sourced with tenant potential and long-term performance in mind.',
+      'We help clients stay on top of contracts, compliance steps, transfer requirements, and the paperwork surrounding each transaction.',
     icon: 'building',
   },
   {
-    title: 'Investment Strategy',
+    title: 'Relocation and Family Setup',
     description:
-      'Targeted acquisition analysis for clients expanding rental portfolios or entering new growth markets.',
+      'Additional support for the practical side of settling in, from utilities and insurance to school and lifestyle-related coordination.',
     icon: 'landmark',
   },
   {
-    title: 'Closing Coordination',
+    title: 'Investment Advisory',
     description:
-      'End-to-end transaction management with lenders, inspectors, legal teams, and vendors for a smooth finish.',
+      'Targeted guidance for clients comparing off-plan, ready, rental-yield, and capital-growth opportunities across the market.',
     icon: 'handshake',
   },
 ] as const;
@@ -120,11 +121,11 @@ export type Property = {
 const properties: Property[] = [
   {
     id: 1,
-    title: 'Oceanview Crest Residence',
-    location: 'Pacific Heights, San Francisco',
-    price: '$4.85M',
+    title: 'Palm Horizon Signature Villa',
+    location: 'Palm Jumeirah, Dubai',
+    price: 'AED 17.8M',
     description:
-      'A light-filled five-bedroom home with expansive terraces, smart-home features, and seamless indoor-outdoor entertaining spaces.',
+      'A waterfront residence with expansive indoor-outdoor living, private leisure spaces, and the lifestyle appeal expected from a flagship Dubai address.',
     beds: '5',
     baths: '4.5',
     area: '4,380 sq ft',
@@ -135,11 +136,11 @@ const properties: Property[] = [
   },
   {
     id: 2,
-    title: 'Harbor Point Lofts',
-    location: 'South Lake Union, Seattle',
-    price: '$2.15M',
+    title: 'Marina Crest Residences',
+    location: 'Dubai Marina, Dubai',
+    price: 'AED 7.9M',
     description:
-      'Contemporary penthouse loft with skyline views, designer finishes, and a private rooftop lounge built for hosting.',
+      'A refined high-rise residence positioned for skyline views, strong end-user demand, and the convenience buyers expect in a central waterfront district.',
     beds: '3',
     baths: '3',
     area: '2,180 sq ft',
@@ -149,11 +150,11 @@ const properties: Property[] = [
   },
   {
     id: 3,
-    title: 'Stonegate Family Estate',
-    location: 'Highland Park, Dallas',
-    price: '$3.3M',
+    title: 'Emerald Hills Family Estate',
+    location: 'Dubai Hills Estate, Dubai',
+    price: 'AED 12.1M',
     description:
-      'Elegant estate living with a resort-style pool, expansive garden court, and refined interiors tailored for family life.',
+      'A spacious family-oriented villa with landscaped outdoor living, generous entertaining areas, and long-term appeal for both residents and investors.',
     beds: '6',
     baths: '5.5',
     area: '5,120 sq ft',
@@ -163,11 +164,11 @@ const properties: Property[] = [
   },
   {
     id: 4,
-    title: 'Summit Square Retail Hub',
-    location: 'Scottsdale, Arizona',
-    price: '$6.9M',
+    title: 'Canal Gate Mixed-Use Offices',
+    location: 'Business Bay, Dubai',
+    price: 'AED 25.3M',
     description:
-      'A fully leased mixed-use retail and office destination positioned in one of the region’s strongest foot-traffic corridors.',
+      'A mixed-use commercial asset in a high-activity district, positioned for tenant demand, visibility, and long-term income resilience.',
     beds: '12 suites',
     baths: 'Multi',
     area: '18,400 sq ft',
@@ -186,22 +187,22 @@ export type Testimonial = {
 
 const testimonials: Testimonial[] = [
   {
-    name: 'Amelia Rodriguez',
-    role: 'Luxury Home Seller',
+    name: 'Sara Al Mansoori',
+    role: 'End-User Buyer',
     quote:
-      'The team handled every detail with calm precision. Our home launched beautifully, attracted the right buyers, and closed above expectations.',
+      'The process felt fully guided from shortlist to paperwork. Every step was explained clearly, and I never felt like I was chasing updates.',
   },
   {
-    name: 'Nathan Chen',
-    role: 'First-Time Investor',
+    name: 'Omar Khoury',
+    role: 'Property Investor',
     quote:
-      'They translated complex market data into a clear acquisition strategy. I felt informed, never overwhelmed, and we found a property with real upside.',
+      'They helped me compare yield, location, payment structure, and exit potential in a practical way. It felt like real advisory support, not just a sales pitch.',
   },
   {
-    name: 'Priya Mehta',
-    role: 'Relocating Buyer',
+    name: 'Aisha Raman',
+    role: 'Relocating Family',
     quote:
-      'From virtual tours to neighborhood guidance, Emlak Real Estate LLC made a long-distance move feel organized and genuinely personal.',
+      'From virtual viewings to documentation guidance, Emlak Real Estate LLC made a cross-border move feel structured, responsive, and manageable.',
   },
 ];
 

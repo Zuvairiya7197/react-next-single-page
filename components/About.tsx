@@ -12,30 +12,31 @@ export function About() {
               About Emlak Real Estate LLC
             </p>
             <p className="mt-6 font-display text-3xl leading-tight text-[var(--color-slate-900)] sm:text-4xl">
-              Trusted advisors crafting memorable buying and selling journeys.
+              End-to-end property guidance built for confident decisions.
             </p>
             <p className="mt-6 text-base leading-7 text-[var(--color-slate-500)]">
-              Our team blends market intelligence, strategic marketing, and
-              white-glove guidance to help every client move decisively. From
-              city residences to destination homes and growth-minded investment
-              assets, we focus on long-term fit, not just short-term closings.
+              Inspired by the service depth seen across leading UAE brokerages,
+              our approach combines market intelligence, transaction support,
+              documentation guidance, and calm communication. We stay focused on
+              practical outcomes, not just the closing moment.
             </p>
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               <div className="rounded-[1.5rem] bg-[var(--color-surface-strong)] p-5">
                 <p className="text-3xl font-semibold text-[var(--color-slate-900)]">
-                  18+
+                  15+
                 </p>
                 <p className="mt-2 text-sm leading-6 text-[var(--color-slate-500)]">
-                  years guiding premium residential and commercial transactions.
+                  years of real estate guidance across residential, commercial,
+                  and investment-focused decisions.
                 </p>
               </div>
               <div className="rounded-[1.5rem] bg-[var(--color-surface-strong)] p-5">
                 <p className="text-3xl font-semibold text-[var(--color-slate-900)]">
-                  96%
+                  98%
                 </p>
                 <p className="mt-2 text-sm leading-6 text-[var(--color-slate-500)]">
-                  of clients come through referrals, repeat partnerships, and
-                  investor relationships.
+                  client satisfaction driven by responsive communication,
+                  transparent advice, and ongoing support.
                 </p>
               </div>
             </div>
@@ -45,8 +46,8 @@ export function About() {
         <SectionReveal delay={0.1}>
           <SectionHeading
             eyebrow="Why Clients Choose Us"
-            title="Real estate guidance built on clarity, calm, and sharp execution."
-            description="We believe remarkable service should feel polished and personal. Every campaign, viewing, and negotiation is designed to make complex decisions easier to trust."
+            title="Support that goes well beyond the property shortlist."
+            description="We help clients move through search, evaluation, negotiation, documentation, and post-sale coordination with less friction and better context."
           />
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             {companyValues.map((value) => (
