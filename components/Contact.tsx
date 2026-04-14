@@ -81,7 +81,10 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="bg-white px-6 py-24 lg:px-8">
+    <section
+      id="contact"
+      className="bg-[var(--color-surface-strong)] px-6 py-24 lg:px-8"
+    >
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.95fr_1.05fr]">
         <SectionReveal>
           <SectionHeading

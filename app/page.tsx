@@ -8,11 +8,11 @@ import { Navbar } from '@/components/Navbar';
 import { Projects } from '@/components/Projects';
 import {
   ProjectsSkeleton,
-  TestimonialsSkeleton,
+  // TestimonialsSkeleton,
 } from '@/components/SectionSkeleton';
 import { ScrollToTop } from '@/components/ScrollToTop';
 import { Services } from '@/components/Services';
-import { Testimonials } from '@/components/Testimonials';
+// import { Testimonials } from '@/components/Testimonials';
 
 export default function HomePage() {
   return (
@@ -25,9 +25,9 @@ export default function HomePage() {
         <Suspense fallback={<ProjectsSkeleton />}>
           <Projects />
         </Suspense>
-        <Suspense fallback={<TestimonialsSkeleton />}>
+        {/* <Suspense fallback={<TestimonialsSkeleton />}>
           <Testimonials />
-        </Suspense>
+        </Suspense> */}
         <Contact />
       </main>
       <Footer />
