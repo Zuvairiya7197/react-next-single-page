@@ -11,12 +11,12 @@ export const navItems = [
 
 export const marketStats = [
   {
-    value: 'AED 1.76B+',
+    value: 'AED 75M+',
     label:
       'transaction value advised across residential, commercial, and investment portfolios',
   },
   {
-    value: '220+',
+    value: '100+',
     label:
       'buyers, sellers, and investors supported with tailored search and acquisition strategies',
   },
