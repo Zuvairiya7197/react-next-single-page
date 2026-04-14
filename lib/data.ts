@@ -11,12 +11,12 @@ export const navItems = [
 
 export const marketStats = [
   {
-    value: 'AED 1.76B+',
+    value: 'AED 75M+',
     label:
       'transaction value advised across residential, commercial, and investment portfolios',
   },
   {
-    value: '220+',
+    value: '100+',
     label:
       'buyers, sellers, and investors supported with tailored search and acquisition strategies',
   },
@@ -209,7 +209,7 @@ const testimonials: Testimonial[] = [
 export const contactDetails = {
   address: {
     label: 'Office',
-    value: 'Office 1007, Sidra Tower, Al Sufouh 1, Dubai, UAE',
+    value: 'Dubai National Insurance Building, Office 506, Dubai, UAE',
     href: 'https://maps.google.com/?q=Office+1007+Sidra+Tower+Al+Sufouh+1+Dubai+UAE',
   },
   email: {
@@ -219,8 +219,8 @@ export const contactDetails = {
   },
   phone: {
     label: 'Phone',
-    value: '+971 58 234 5359',
-    href: 'tel:+971582345359',
+    value: '+971 50 210 9592',
+    href: 'tel:+971502109592',
   },
 };
 

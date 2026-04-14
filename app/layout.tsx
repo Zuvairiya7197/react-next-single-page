@@ -59,8 +59,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className="bg-[var(--color-background)] font-sans text-[var(--color-slate-900)] antialiased">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+      <body
+        suppressHydrationWarning
+        className="bg-[var(--color-background)] font-sans text-[var(--color-slate-900)] antialiased"
+      >
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-[var(--color-slate-900)] focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"
