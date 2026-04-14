@@ -209,7 +209,7 @@ const testimonials: Testimonial[] = [
 export const contactDetails = {
   address: {
     label: 'Office',
-    value: 'Office 1007, Sidra Tower, Al Sufouh 1, Dubai, UAE',
+    value: 'Dubai National Insurance Building, Office 506, Dubai, UAE',
     href: 'https://maps.google.com/?q=Office+1007+Sidra+Tower+Al+Sufouh+1+Dubai+UAE',
   },
   email: {
@@ -219,8 +219,8 @@ export const contactDetails = {
   },
   phone: {
     label: 'Phone',
-    value: '+971 58 234 5359',
-    href: 'tel:+971582345359',
+    value: '+971 50 210 9592',
+    href: 'tel:+971502109592',
   },
 };
 

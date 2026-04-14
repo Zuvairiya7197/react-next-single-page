@@ -122,9 +122,15 @@ export function Contact() {
 
         <SectionReveal delay={0.1}>
           <div className="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-surface)] p-8 shadow-[0_24px_70px_rgba(21,43,71,0.08)] sm:p-10">
-            <form onSubmit={handleSubmit} noValidate className="space-y-6">
+            <form
+              onSubmit={handleSubmit}
+              noValidate
+              className="space-y-6"
+              autoComplete="off"
+              data-lpignore="true"
+            >
               <div className="grid gap-6 sm:grid-cols-2">
-                <div className="sm:col-span-1">
+                <div className="sm:col-span-1" suppressHydrationWarning>
                   <label
                     htmlFor="name"
                     className="text-sm font-semibold text-[var(--color-slate-900)]"
@@ -141,6 +147,8 @@ export function Contact() {
                     aria-describedby={errors.name ? 'name-error' : undefined}
                     className="mt-3 w-full rounded-2xl border border-[var(--color-border)] bg-white px-4 py-3.5 text-sm text-[var(--color-slate-900)] outline-none transition focus:border-[var(--color-gold-500)] focus:ring-2 focus:ring-[rgba(216,179,106,0.22)]"
                     placeholder="Jordan Lee"
+                    autoComplete="off"
+                    data-lpignore="true"
                     required
                   />
                   {errors.name ? (
@@ -153,7 +161,7 @@ export function Contact() {
                   ) : null}
                 </div>
 
-                <div className="sm:col-span-1">
+                <div className="sm:col-span-1" suppressHydrationWarning>
                   <label
                     htmlFor="email"
                     className="text-sm font-semibold text-[var(--color-slate-900)]"
@@ -170,6 +178,8 @@ export function Contact() {
                     aria-describedby={errors.email ? 'email-error' : undefined}
                     className="mt-3 w-full rounded-2xl border border-[var(--color-border)] bg-white px-4 py-3.5 text-sm text-[var(--color-slate-900)] outline-none transition focus:border-[var(--color-gold-500)] focus:ring-2 focus:ring-[rgba(216,179,106,0.22)]"
                     placeholder="jordan@email.com"
+                    autoComplete="off"
+                    data-lpignore="true"
                     required
                   />
                   {errors.email ? (
@@ -183,7 +193,7 @@ export function Contact() {
                 </div>
               </div>
 
-              <div>
+              <div suppressHydrationWarning>
                 <label
                   htmlFor="message"
                   className="text-sm font-semibold text-[var(--color-slate-900)]"
@@ -202,6 +212,8 @@ export function Contact() {
                   }
                   className="mt-3 w-full rounded-[1.6rem] border border-[var(--color-border)] bg-white px-4 py-3.5 text-sm text-[var(--color-slate-900)] outline-none transition focus:border-[var(--color-gold-500)] focus:ring-2 focus:ring-[rgba(216,179,106,0.22)]"
                   placeholder="Share your goals, budget, timeline, and whether you are exploring end-use, off-plan, resale, or investment opportunities."
+                  autoComplete="off"
+                  data-lpignore="true"
                   required
                 />
                 {errors.message ? (
