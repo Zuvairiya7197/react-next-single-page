@@ -23,7 +23,7 @@ export function About() {
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               <div className="rounded-[1.5rem] bg-[var(--color-surface-strong)] p-5">
                 <p className="text-3xl font-semibold text-[var(--color-slate-900)]">
-                  15+
+                  10+
                 </p>
                 <p className="mt-2 text-sm leading-6 text-[var(--color-slate-500)]">
                   years of real estate guidance across residential, commercial,
