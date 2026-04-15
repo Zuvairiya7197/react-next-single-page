@@ -16,9 +16,10 @@ const developers = [
   {
     name: 'DAMAC',
     logo: '/images/developers/damac.svg',
-    width: 178,
-    height: 46,
-    logoClassName: 'max-h-10 sm:max-h-11',
+    width: 240,
+    height: 56,
+    logoClassName:
+      'w-[11.5rem] max-w-none sm:w-[12.75rem] md:w-[13.25rem] max-h-12 sm:max-h-13',
   },
   {
     name: 'Emaar Properties',
@@ -152,7 +153,7 @@ export function DevelopersMarquee() {
                         alt={`${developer.name} logo`}
                         width={developer.width}
                         height={developer.height}
-                        className={`h-auto w-auto max-w-full object-contain ${developer.logoClassName}`}
+                        className={`h-auto w-auto object-contain ${developer.logoClassName}`}
                       />
                     </article>
                   ))}
