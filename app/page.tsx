@@ -12,6 +12,7 @@ import {
 } from '@/components/SectionSkeleton';
 import { ScrollToTop } from '@/components/ScrollToTop';
 import { Services } from '@/components/Services';
+import { WhatsAppFab } from '@/components/WhatsAppFab';
 // import { Testimonials } from '@/components/Testimonials';
 
 export default function HomePage() {
@@ -31,6 +32,7 @@ export default function HomePage() {
         <Contact />
       </main>
       <Footer />
+      <WhatsAppFab />
       <ScrollToTop />
     </>
   );
