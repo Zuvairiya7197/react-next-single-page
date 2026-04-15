@@ -26,10 +26,9 @@ export function WhatsAppFab() {
       target="_blank"
       rel="noreferrer"
       aria-label="Chat with us on WhatsApp"
-      className="fixed right-4 bottom-4 z-40 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_20px_45px_rgba(37,211,102,0.3)] transition duration-300 hover:-translate-y-1 hover:bg-[#1ebe5b] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#25D366] sm:right-5 sm:bottom-5 sm:h-auto sm:w-auto sm:gap-3 sm:px-5 sm:py-3"
+      className="fixed right-4 bottom-20 z-40 inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/60 bg-[#25D366] text-white shadow-[0_18px_40px_rgba(37,211,102,0.34)] transition duration-300 hover:-translate-y-1 hover:bg-[#1ebe5b] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#25D366] sm:right-5 sm:bottom-24"
     >
       <WhatsAppIcon />
-      <span className="hidden text-sm font-semibold sm:inline">WhatsApp</span>
     </a>
   );
 }
