@@ -32,7 +32,6 @@ export function Services() {
             eyebrow="Services"
             title="Comprehensive real estate support across every stage of the journey."
             description="From acquisition strategy to launch-ready listings, our services are designed to protect value, accelerate decisions, and elevate the client experience."
-            align="center"
           />
         </SectionReveal>
 
