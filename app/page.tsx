@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 
 import { About } from '@/components/About';
 import { Contact } from '@/components/Contact';
+import { DevelopersMarquee } from '@/components/DevelopersMarquee';
 import { Footer } from '@/components/Footer';
 import { Hero } from '@/components/Hero';
 import { Navbar } from '@/components/Navbar';
@@ -23,6 +24,7 @@ export default function HomePage() {
         <Hero />
         <About />
         <Services />
+        <DevelopersMarquee />
         <Suspense fallback={<ProjectsSkeleton />}>
           <Projects />
         </Suspense>

@@ -82,6 +82,10 @@ section[id] {
   animation: whatsapp-glow-pulse 2.4s ease-in-out infinite;
 }
 
+.developer-marquee-track {
+  will-change: transform;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .whatsapp-fab-glow {
     animation: none;

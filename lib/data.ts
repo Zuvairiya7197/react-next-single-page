@@ -104,6 +104,16 @@ export const services = [
   },
 ] as const;
 
+export const topDevelopers = [
+  { name: 'Nakheel' },
+  { name: 'Damac' },
+  { name: 'Emaar' },
+  { name: 'Danube' },
+  { name: 'Meraas' },
+  { name: 'Select Group' },
+  { name: 'Sobha' },
+] as const;
+
 export type Property = {
   id: number;
   title: string;
