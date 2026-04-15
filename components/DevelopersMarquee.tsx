@@ -12,14 +12,16 @@ const developers = [
     width: 140,
     height: 90,
     logoClassName: 'max-h-18 sm:max-h-20',
+    cardClassName: '',
   },
   {
     name: 'DAMAC',
     logo: '/images/developers/damac.svg',
-    width: 240,
-    height: 56,
+    width: 300,
+    height: 72,
     logoClassName:
-      'w-[11.5rem] max-w-none sm:w-[12.75rem] md:w-[13.25rem] max-h-12 sm:max-h-13',
+      'w-[15.75rem] max-w-none sm:w-[12.75rem] md:w-[13.25rem] max-h-16 sm:max-h-13',
+    cardClassName: 'w-[16.5rem] sm:w-[13.8rem]',
   },
   {
     name: 'Emaar Properties',
@@ -27,6 +29,7 @@ const developers = [
     width: 184,
     height: 50,
     logoClassName: 'max-h-11 sm:max-h-12',
+    cardClassName: '',
   },
   {
     name: 'Danube Properties',
@@ -34,6 +37,7 @@ const developers = [
     width: 190,
     height: 70,
     logoClassName: 'max-h-14 sm:max-h-16',
+    cardClassName: '',
   },
   {
     name: 'Meraas',
@@ -41,6 +45,7 @@ const developers = [
     width: 174,
     height: 54,
     logoClassName: 'max-h-11 sm:max-h-12',
+    cardClassName: '',
   },
   {
     name: 'Select Group',
@@ -48,6 +53,7 @@ const developers = [
     width: 178,
     height: 58,
     logoClassName: 'max-h-12 sm:max-h-13',
+    cardClassName: '',
   },
   {
     name: 'Sobha Realty',
@@ -55,6 +61,7 @@ const developers = [
     width: 182,
     height: 60,
     logoClassName: 'max-h-12 sm:max-h-13',
+    cardClassName: '',
   },
 ] as const;
 
@@ -146,7 +153,7 @@ export function DevelopersMarquee() {
                   {marqueeDevelopers.map((developer, index) => (
                     <article
                       key={`${developer.name}-${index}`}
-                      className="flex h-34 w-[12.8rem] shrink-0 items-center justify-center rounded-[1.35rem] border border-[rgba(30,58,95,0.08)] bg-[#eef1f6] px-4 shadow-[0_16px_40px_rgba(21,43,71,0.05)] sm:h-38 sm:w-[13.8rem] sm:rounded-[1.55rem] sm:px-5"
+                      className={`flex h-34 w-[12.8rem] shrink-0 items-center justify-center rounded-[1.35rem] border border-[rgba(30,58,95,0.08)] bg-[#eef1f6] px-4 shadow-[0_16px_40px_rgba(21,43,71,0.05)] sm:h-38 sm:w-[13.8rem] sm:rounded-[1.55rem] sm:px-5 ${developer.cardClassName}`}
                     >
                       <Image
                         src={developer.logo}
