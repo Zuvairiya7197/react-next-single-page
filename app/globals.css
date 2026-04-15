@@ -60,3 +60,30 @@ img {
 section[id] {
   scroll-margin-top: calc(var(--navbar-height, 6.5rem) + 1rem);
 }
+
+@keyframes whatsapp-glow-pulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 4px rgba(37, 211, 102, 0.1),
+      0 16px 34px rgba(37, 211, 102, 0.22),
+      0 0 18px rgba(37, 211, 102, 0.24);
+  }
+
+  50% {
+    box-shadow:
+      0 0 0 8px rgba(37, 211, 102, 0.18),
+      0 18px 40px rgba(37, 211, 102, 0.34),
+      0 0 32px rgba(37, 211, 102, 0.46);
+  }
+}
+
+.whatsapp-fab-glow {
+  animation: whatsapp-glow-pulse 2.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp-fab-glow {
+    animation: none;
+  }
+}
