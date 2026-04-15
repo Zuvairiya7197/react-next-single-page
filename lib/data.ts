@@ -104,6 +104,16 @@ export const services = [
   },
 ] as const;
 
+export const topDevelopers = [
+  { name: 'Nakheel' },
+  { name: 'Damac' },
+  { name: 'Emaar' },
+  { name: 'Danube' },
+  { name: 'Meraas' },
+  { name: 'Select Group' },
+  { name: 'Sobha' },
+] as const;
+
 export type Property = {
   id: number;
   title: string;
@@ -123,7 +133,7 @@ const properties: Property[] = [
     id: 1,
     title: 'Palm Horizon Signature Villa',
     location: 'Palm Jumeirah, Dubai',
-    price: 'AED 17.8M',
+    price: 'AED 8.8M',
     description:
       'A waterfront residence with expansive indoor-outdoor living, private leisure spaces, and the lifestyle appeal expected from a flagship Dubai address.',
     beds: '5',
@@ -152,7 +162,7 @@ const properties: Property[] = [
     id: 3,
     title: 'Emerald Hills Family Estate',
     location: 'Dubai Hills Estate, Dubai',
-    price: 'AED 12.1M',
+    price: 'AED 9.1M',
     description:
       'A spacious family-oriented villa with landscaped outdoor living, generous entertaining areas, and long-term appeal for both residents and investors.',
     beds: '6',
@@ -166,7 +176,7 @@ const properties: Property[] = [
     id: 4,
     title: 'Canal Gate Mixed-Use Offices',
     location: 'Business Bay, Dubai',
-    price: 'AED 25.3M',
+    price: 'AED 10.3M',
     description:
       'A mixed-use commercial asset in a high-activity district, positioned for tenant demand, visibility, and long-term income resilience.',
     beds: '12 suites',

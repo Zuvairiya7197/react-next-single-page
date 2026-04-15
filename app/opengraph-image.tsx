@@ -8,6 +8,9 @@ export const size = {
 export const contentType = 'image/png';
 
 export default function OpenGraphImage() {
+  const logo = new URL('../public/images/emlak-logo.png', import.meta.url)
+    .href;
+
   return new ImageResponse(
     <div
       style={{
@@ -42,20 +45,18 @@ export default function OpenGraphImage() {
             fontWeight: 600,
           }}
         >
-          <div
+          <img
+            src={logo}
+            alt="Emlak Real Estate LLC logo"
             style={{
-              display: 'flex',
               height: '56px',
               width: '56px',
-              alignItems: 'center',
-              justifyContent: 'center',
               borderRadius: '999px',
-              background: 'rgba(216, 179, 106, 0.22)',
+              objectFit: 'cover',
               border: '1px solid rgba(248,243,235,0.2)',
+              background: 'rgba(216, 179, 106, 0.22)',
             }}
-          >
-            H
-          </div>
+          />
           Emlak Real Estate LLC
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>

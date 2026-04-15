@@ -9,9 +9,9 @@ import '@/styles/animations.css';
 export const metadata: Metadata = {
   metadataBase: new URL('https://emlakrealestatellc.vercel.app'),
   icons: {
-    icon: '/images/favicon.svg',
-    shortcut: '/images/favicon.svg',
-    apple: '/images/favicon.svg',
+    icon: '/images/emlak-logo.png',
+    shortcut: '/images/emlak-logo.png',
+    apple: '/images/emlak-logo.png',
   },
   title:
     'Emlak Real Estate LLC | Premium Real Estate Experiences in Dubai, UAE',

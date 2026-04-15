@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 
 import { About } from '@/components/About';
 import { Contact } from '@/components/Contact';
+import { DevelopersMarquee } from '@/components/DevelopersMarquee';
 import { Footer } from '@/components/Footer';
 import { Hero } from '@/components/Hero';
 import { Navbar } from '@/components/Navbar';
@@ -12,6 +13,7 @@ import {
 } from '@/components/SectionSkeleton';
 import { ScrollToTop } from '@/components/ScrollToTop';
 import { Services } from '@/components/Services';
+import { WhatsAppFab } from '@/components/WhatsAppFab';
 // import { Testimonials } from '@/components/Testimonials';
 
 export default function HomePage() {
@@ -22,6 +24,7 @@ export default function HomePage() {
         <Hero />
         <About />
         <Services />
+        <DevelopersMarquee />
         <Suspense fallback={<ProjectsSkeleton />}>
           <Projects />
         </Suspense>
@@ -31,6 +34,7 @@ export default function HomePage() {
         <Contact />
       </main>
       <Footer />
+      <WhatsAppFab />
       <ScrollToTop />
     </>
   );
