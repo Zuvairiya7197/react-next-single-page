@@ -196,7 +196,7 @@ const properties: Property[] = [
     area: '2',
     areaLabel: 'Units Left',
     handover: 'Q2 / 2028',
-    handoverLabel: 'Handover',
+    handoverLabel: 'Completion',
     status: 'Book Now',
     image: '/images/projects/aeon-creek-harbour.jpg',
     imageAlt: 'Aeon towers overlooking Dubai Creek Harbour waterfront',
