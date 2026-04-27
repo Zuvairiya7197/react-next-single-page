@@ -1,6 +1,6 @@
 'use client';
 
-import { ChangeEvent, FormEvent, useMemo, useState } from 'react';
+import { ChangeEvent, FormEvent, useEffect, useMemo, useState } from 'react';
 
 import { Mail, MapPin, Phone } from 'lucide-react';
 
@@ -25,6 +25,7 @@ const initialState: FormState = {
 export function Contact() {
   const [formData, setFormData] = useState<FormState>(initialState);
   const [errors, setErrors] = useState<FormErrors>({});
+  const [isFormReady, setIsFormReady] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const details = useMemo(
@@ -35,6 +36,16 @@ export function Contact() {
     ],
     [],
   );
+
+  useEffect(() => {
+    const animationFrameId = window.requestAnimationFrame(() => {
+      setIsFormReady(true);
+    });
+
+    return () => {
+      window.cancelAnimationFrame(animationFrameId);
+    };
+  }, []);
 
   const validate = (values: FormState): FormErrors => {
     const nextErrors: FormErrors = {};
@@ -122,126 +133,140 @@ export function Contact() {
 
         <SectionReveal delay={0.1}>
           <div className="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-surface)] p-8 shadow-[0_24px_70px_rgba(21,43,71,0.08)] sm:p-10">
-            <form
-              onSubmit={handleSubmit}
-              noValidate
-              className="space-y-6"
-              autoComplete="off"
-              data-lpignore="true"
-            >
-              <div className="grid gap-6 sm:grid-cols-2">
-                <div className="sm:col-span-1" suppressHydrationWarning>
+            {isFormReady ? (
+              <form
+                onSubmit={handleSubmit}
+                noValidate
+                className="space-y-6"
+                autoComplete="off"
+                data-lpignore="true"
+                data-1p-ignore="true"
+                data-form-type="other"
+              >
+                <div className="grid gap-6 sm:grid-cols-2">
+                  <div className="sm:col-span-1">
+                    <label
+                      htmlFor="name"
+                      className="text-sm font-semibold text-[var(--color-slate-900)]"
+                    >
+                      Full name
+                    </label>
+                    <input
+                      id="name"
+                      name="name"
+                      type="text"
+                      value={formData.name}
+                      onChange={handleChange}
+                      aria-invalid={Boolean(errors.name)}
+                      aria-describedby={errors.name ? 'name-error' : undefined}
+                      className="mt-3 w-full rounded-2xl border border-[var(--color-border)] bg-white px-4 py-3.5 text-sm text-[var(--color-slate-900)] outline-none transition focus:border-[var(--color-gold-500)] focus:ring-2 focus:ring-[rgba(216,179,106,0.22)]"
+                      placeholder="Jordan Lee"
+                      autoComplete="off"
+                      data-lpignore="true"
+                      data-1p-ignore="true"
+                      data-form-type="other"
+                      required
+                    />
+                    {errors.name ? (
+                      <p
+                        id="name-error"
+                        className="mt-2 text-sm text-[rgb(170,53,42)]"
+                      >
+                        {errors.name}
+                      </p>
+                    ) : null}
+                  </div>
+
+                  <div className="sm:col-span-1">
+                    <label
+                      htmlFor="email"
+                      className="text-sm font-semibold text-[var(--color-slate-900)]"
+                    >
+                      Email address
+                    </label>
+                    <input
+                      id="email"
+                      name="email"
+                      type="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      aria-invalid={Boolean(errors.email)}
+                      aria-describedby={
+                        errors.email ? 'email-error' : undefined
+                      }
+                      className="mt-3 w-full rounded-2xl border border-[var(--color-border)] bg-white px-4 py-3.5 text-sm text-[var(--color-slate-900)] outline-none transition focus:border-[var(--color-gold-500)] focus:ring-2 focus:ring-[rgba(216,179,106,0.22)]"
+                      placeholder="jordan@email.com"
+                      autoComplete="off"
+                      data-lpignore="true"
+                      data-1p-ignore="true"
+                      data-form-type="other"
+                      required
+                    />
+                    {errors.email ? (
+                      <p
+                        id="email-error"
+                        className="mt-2 text-sm text-[rgb(170,53,42)]"
+                      >
+                        {errors.email}
+                      </p>
+                    ) : null}
+                  </div>
+                </div>
+
+                <div>
                   <label
-                    htmlFor="name"
+                    htmlFor="message"
                     className="text-sm font-semibold text-[var(--color-slate-900)]"
                   >
-                    Full name
+                    Project details
                   </label>
-                  <input
-                    id="name"
-                    name="name"
-                    type="text"
-                    value={formData.name}
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={6}
+                    value={formData.message}
                     onChange={handleChange}
-                    aria-invalid={Boolean(errors.name)}
-                    aria-describedby={errors.name ? 'name-error' : undefined}
-                    className="mt-3 w-full rounded-2xl border border-[var(--color-border)] bg-white px-4 py-3.5 text-sm text-[var(--color-slate-900)] outline-none transition focus:border-[var(--color-gold-500)] focus:ring-2 focus:ring-[rgba(216,179,106,0.22)]"
-                    placeholder="Jordan Lee"
+                    aria-invalid={Boolean(errors.message)}
+                    aria-describedby={
+                      errors.message ? 'message-error' : undefined
+                    }
+                    className="mt-3 w-full rounded-[1.6rem] border border-[var(--color-border)] bg-white px-4 py-3.5 text-sm text-[var(--color-slate-900)] outline-none transition focus:border-[var(--color-gold-500)] focus:ring-2 focus:ring-[rgba(216,179,106,0.22)]"
+                    placeholder="Share your goals, budget, timeline, and whether you are exploring end-use, off-plan, resale, or investment opportunities."
                     autoComplete="off"
                     data-lpignore="true"
+                    data-1p-ignore="true"
+                    data-form-type="other"
                     required
                   />
-                  {errors.name ? (
+                  {errors.message ? (
                     <p
-                      id="name-error"
+                      id="message-error"
                       className="mt-2 text-sm text-[rgb(170,53,42)]"
                     >
-                      {errors.name}
+                      {errors.message}
                     </p>
                   ) : null}
                 </div>
 
-                <div className="sm:col-span-1" suppressHydrationWarning>
-                  <label
-                    htmlFor="email"
-                    className="text-sm font-semibold text-[var(--color-slate-900)]"
-                  >
-                    Email address
-                  </label>
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    aria-invalid={Boolean(errors.email)}
-                    aria-describedby={errors.email ? 'email-error' : undefined}
-                    className="mt-3 w-full rounded-2xl border border-[var(--color-border)] bg-white px-4 py-3.5 text-sm text-[var(--color-slate-900)] outline-none transition focus:border-[var(--color-gold-500)] focus:ring-2 focus:ring-[rgba(216,179,106,0.22)]"
-                    placeholder="jordan@email.com"
-                    autoComplete="off"
-                    data-lpignore="true"
-                    required
-                  />
-                  {errors.email ? (
-                    <p
-                      id="email-error"
-                      className="mt-2 text-sm text-[rgb(170,53,42)]"
-                    >
-                      {errors.email}
-                    </p>
-                  ) : null}
-                </div>
-              </div>
-
-              <div suppressHydrationWarning>
-                <label
-                  htmlFor="message"
-                  className="text-sm font-semibold text-[var(--color-slate-900)]"
+                <button
+                  type="submit"
+                  className="inline-flex w-full items-center justify-center rounded-full bg-[var(--color-slate-700)] px-6 py-4 text-sm font-semibold text-white transition hover:bg-[var(--color-slate-900)] sm:w-auto"
                 >
-                  Project details
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={6}
-                  value={formData.message}
-                  onChange={handleChange}
-                  aria-invalid={Boolean(errors.message)}
-                  aria-describedby={
-                    errors.message ? 'message-error' : undefined
-                  }
-                  className="mt-3 w-full rounded-[1.6rem] border border-[var(--color-border)] bg-white px-4 py-3.5 text-sm text-[var(--color-slate-900)] outline-none transition focus:border-[var(--color-gold-500)] focus:ring-2 focus:ring-[rgba(216,179,106,0.22)]"
-                  placeholder="Share your goals, budget, timeline, and whether you are exploring end-use, off-plan, resale, or investment opportunities."
-                  autoComplete="off"
-                  data-lpignore="true"
-                  required
-                />
-                {errors.message ? (
-                  <p
-                    id="message-error"
-                    className="mt-2 text-sm text-[rgb(170,53,42)]"
-                  >
-                    {errors.message}
-                  </p>
-                ) : null}
-              </div>
+                  Send Inquiry
+                </button>
 
-              <button
-                type="submit"
-                className="inline-flex w-full items-center justify-center rounded-full bg-[var(--color-slate-700)] px-6 py-4 text-sm font-semibold text-white transition hover:bg-[var(--color-slate-900)] sm:w-auto"
-              >
-                Send Inquiry
-              </button>
-
-              <p
-                className="min-h-6 text-sm text-[var(--color-slate-500)]"
-                aria-live="polite"
-              >
-                {isSubmitted
-                  ? 'Thanks for reaching out. Your inquiry is ready for backend wiring when you are.'
-                  : 'All fields are required. This form is front-end only for now.'}
-              </p>
-            </form>
+                <p
+                  className="min-h-6 text-sm text-[var(--color-slate-500)]"
+                  aria-live="polite"
+                >
+                  {isSubmitted
+                    ? 'Thanks for reaching out. Your inquiry is ready for backend wiring when you are.'
+                    : 'All fields are required. This form is front-end only for now.'}
+                </p>
+              </form>
+            ) : (
+              <div className="min-h-[28rem]" aria-hidden="true" />
+            )}
           </div>
         </SectionReveal>
       </div>

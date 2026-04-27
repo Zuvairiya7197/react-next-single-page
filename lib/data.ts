@@ -123,6 +123,9 @@ export type Property = {
   beds: string;
   baths: string;
   area: string;
+  areaLabel: string;
+  handover: string;
+  handoverLabel: string;
   status: string;
   image: string;
   imageAlt: string;
@@ -131,61 +134,72 @@ export type Property = {
 const properties: Property[] = [
   {
     id: 1,
-    title: 'Palm Horizon Signature Villa',
-    location: 'Palm Jumeirah, Dubai',
-    price: 'AED 8.8M',
+    title: 'Lagoon Views 2 BR Apartment',
+    location: 'Dubailand, Dubai',
+    price: 'AED 1,826,000',
     description:
-      'A waterfront residence with expansive indoor-outdoor living, private leisure spaces, and the lifestyle appeal expected from a flagship Dubai address.',
-    beds: '5',
-    baths: '4.5',
-    area: '4,380 sq ft',
-    status: 'For Sale',
-    image: '/images/1st.jpeg',
-    imageAlt:
-      'Modern oceanview residence with layered terraces and landscaping',
+      'A Golden Visa-eligible apartment in DAMAC Lagoon Views, combining resort-style community living, contemporary interiors, and a Q1 2029 handover timeline.',
+    beds: '2',
+    baths: '2',
+    area: 'Up to 1,797 sq ft',
+    areaLabel: 'Sq Ft',
+    handover: 'Q1 / 2029',
+    handoverLabel: 'Completion',
+    status: 'Golden Visa',
+    image: '/images/projects/lagoon-views-2br.jpg',
+    imageAlt: 'Interior view of a DAMAC Lagoon Views two bedroom apartment',
   },
   {
     id: 2,
-    title: 'Marina Crest Residences',
-    location: 'Dubai Marina, Dubai',
-    price: 'AED 7.9M',
+    title: 'Greenz by Danube',
+    location: 'Academic City, Dubai',
+    price: 'AED 3.5M',
     description:
-      'A refined high-rise residence positioned for skyline views, strong end-user demand, and the convenience buyers expect in a central waterfront district.',
-    beds: '3',
+      'A townhouse-focused Danube community in Dubai International Academic City, planned around greenery, open spaces, and a 1% monthly payment plan.',
+    beds: '3, 4 & 5',
     baths: '3',
-    area: '2,180 sq ft',
-    status: 'New Listing',
-    image: '/images/2nd.jpeg',
-    imageAlt: 'Sophisticated loft development near an urban waterfront skyline',
+    area: '700',
+    areaLabel: 'Apartments',
+    handover: 'Q4 / 2029',
+    handoverLabel: 'Completion',
+    status: 'Payment Plan',
+    image: '/images/projects/greenz-exterior.webp',
+    imageAlt: 'Exterior view of Greenz by Danube in Academic City Dubai',
   },
   {
     id: 3,
-    title: 'Emerald Hills Family Estate',
-    location: 'Dubai Hills Estate, Dubai',
-    price: 'AED 9.1M',
+    title: 'River Cove Residences',
+    location: 'Abu Dhabi',
+    price: 'AED 2.34M',
     description:
-      'A spacious family-oriented villa with landscaped outdoor living, generous entertaining areas, and long-term appeal for both residents and investors.',
-    beds: '6',
-    baths: '5.5',
-    area: '5,120 sq ft',
-    status: 'Private Tour',
-    image: '/images/4th.jpeg',
-    imageAlt: 'Estate property with landscaped grounds and warm stone facade',
+      'A new Sobha Realty apartment address in Abu Dhabi, offering two-bedroom residences with waterfront-inspired community living and premium amenities.',
+    beds: '2',
+    baths: '2',
+    area: 'From 1,013.5 sq ft',
+    areaLabel: 'Sq Ft',
+    handover: 'Dec 2029',
+    handoverLabel: 'Completion',
+    status: 'New',
+    image: '/images/projects/river-cove-residences.webp',
+    imageAlt:
+      'River Cove Residences waterfront apartment development in Abu Dhabi',
   },
   {
     id: 4,
-    title: 'Canal Gate Mixed-Use Offices',
-    location: 'Business Bay, Dubai',
-    price: 'AED 10.3M',
+    title: 'Aeon at Dubai Creek Harbour',
+    location: 'Dubai Creek Harbour',
+    price: 'AED 3,197,888',
     description:
-      'A mixed-use commercial asset in a high-activity district, positioned for tenant demand, visibility, and long-term income resilience.',
-    beds: '12 suites',
-    baths: 'Multi',
-    area: '18,400 sq ft',
-    status: 'Investment',
-    image: '/images/5th.jpeg',
-    imageAlt:
-      'Modern mixed-use commercial property with landscaped pedestrian plaza',
+      'A waterfront Emaar address in Dubai Creek Harbour, offering modern city-facing residences with access to Creek Beach, parks, promenade living, and marina lifestyle.',
+    beds: '1-3',
+    baths: '2',
+    area: '2',
+    areaLabel: 'Units Left',
+    handover: 'Q2 / 2028',
+    handoverLabel: 'Completion',
+    status: 'Book Now',
+    image: '/images/projects/aeon-creek-harbour.jpg',
+    imageAlt: 'Aeon towers overlooking Dubai Creek Harbour waterfront',
   },
 ];
 

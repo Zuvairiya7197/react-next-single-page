@@ -63,6 +63,22 @@ const developers = [
     logoClassName: 'max-h-12 sm:max-h-13',
     cardClassName: '',
   },
+  {
+    name: 'Tiger Group',
+    logo: '/images/developers/tiger-group.webp',
+    width: 259,
+    height: 68,
+    logoClassName: 'max-h-13 sm:max-h-14',
+    cardClassName: '',
+  },
+  {
+    name: 'Binghatti',
+    logo: '/images/developers/binghatti-dark.svg',
+    width: 201,
+    height: 37,
+    logoClassName: 'max-h-11 sm:max-h-12',
+    cardClassName: '',
+  },
 ] as const;
 
 const marqueeDevelopers = [...developers, ...developers];
