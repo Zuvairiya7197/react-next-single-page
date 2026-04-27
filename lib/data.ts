@@ -123,6 +123,7 @@ export type Property = {
   beds: string;
   baths: string;
   area: string;
+  handover: string;
   status: string;
   image: string;
   imageAlt: string;
@@ -131,18 +132,18 @@ export type Property = {
 const properties: Property[] = [
   {
     id: 1,
-    title: 'Palm Horizon Signature Villa',
-    location: 'Palm Jumeirah, Dubai',
-    price: 'AED 8.8M',
+    title: 'Lagoon Views 2 BR Apartment',
+    location: 'Dubailand, Dubai',
+    price: 'AED 1,826,000',
     description:
-      'A waterfront residence with expansive indoor-outdoor living, private leisure spaces, and the lifestyle appeal expected from a flagship Dubai address.',
-    beds: '5',
-    baths: '4.5',
-    area: '4,380 sq ft',
-    status: 'For Sale',
-    image: '/images/1st.jpeg',
-    imageAlt:
-      'Modern oceanview residence with layered terraces and landscaping',
+      'A Golden Visa-eligible apartment in DAMAC Lagoon Views, combining resort-style community living, contemporary interiors, and a Q1 2029 handover timeline.',
+    beds: '2',
+    baths: '2',
+    area: 'Up to 1,797 sq ft',
+    handover: 'Q1 / 2029',
+    status: 'Golden Visa',
+    image: '/images/projects/lagoon-views-2br.jpg',
+    imageAlt: 'Interior view of a DAMAC Lagoon Views two bedroom apartment',
   },
   {
     id: 2,
@@ -154,6 +155,7 @@ const properties: Property[] = [
     beds: '3',
     baths: '3',
     area: '2,180 sq ft',
+    handover: 'Ready',
     status: 'New Listing',
     image: '/images/2nd.jpeg',
     imageAlt: 'Sophisticated loft development near an urban waterfront skyline',
@@ -168,6 +170,7 @@ const properties: Property[] = [
     beds: '6',
     baths: '5.5',
     area: '5,120 sq ft',
+    handover: 'Ready',
     status: 'Private Tour',
     image: '/images/4th.jpeg',
     imageAlt: 'Estate property with landscaped grounds and warm stone facade',
@@ -182,6 +185,7 @@ const properties: Property[] = [
     beds: '12 suites',
     baths: 'Multi',
     area: '18,400 sq ft',
+    handover: 'Ready',
     status: 'Investment',
     image: '/images/5th.jpeg',
     imageAlt:

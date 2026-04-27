@@ -1,5 +1,12 @@
 import Image from 'next/image';
-import { Bath, BedDouble, MapPin, MoveRight, Ruler } from 'lucide-react';
+import {
+  Bath,
+  BedDouble,
+  CalendarCheck,
+  MapPin,
+  MoveRight,
+  Ruler,
+} from 'lucide-react';
 
 import { SectionHeading } from '@/components/SectionHeading';
 import { SectionReveal } from '@/components/SectionReveal';
@@ -102,6 +109,20 @@ export async function Projects() {
                         </p>
                         <p className="text-xs uppercase tracking-[0.2em] text-[var(--color-slate-500)]">
                           Interior
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-3 rounded-2xl bg-[var(--color-surface-strong)] px-4 py-3">
+                      <CalendarCheck
+                        size={18}
+                        className="text-[var(--color-slate-700)]"
+                      />
+                      <div>
+                        <p className="text-sm font-semibold text-[var(--color-slate-900)]">
+                          {property.handover}
+                        </p>
+                        <p className="text-xs uppercase tracking-[0.2em] text-[var(--color-slate-500)]">
+                          Handover
                         </p>
                       </div>
                     </div>
