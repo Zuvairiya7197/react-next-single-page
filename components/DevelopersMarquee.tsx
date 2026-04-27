@@ -73,11 +73,11 @@ const developers = [
   },
   {
     name: 'Binghatti',
-    logo: '/images/developers/binghatti.svg',
+    logo: '/images/developers/binghatti-dark.svg',
     width: 201,
     height: 37,
     logoClassName: 'max-h-11 sm:max-h-12',
-    cardClassName: 'bg-black',
+    cardClassName: '',
   },
 ] as const;
 
