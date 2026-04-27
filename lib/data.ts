@@ -125,6 +125,7 @@ export type Property = {
   area: string;
   areaLabel: string;
   handover: string;
+  handoverLabel: string;
   status: string;
   image: string;
   imageAlt: string;
@@ -143,6 +144,7 @@ const properties: Property[] = [
     area: 'Up to 1,797 sq ft',
     areaLabel: 'Sq Ft',
     handover: 'Q1 / 2029',
+    handoverLabel: 'Completion',
     status: 'Golden Visa',
     image: '/images/projects/lagoon-views-2br.jpg',
     imageAlt: 'Interior view of a DAMAC Lagoon Views two bedroom apartment',
@@ -159,25 +161,28 @@ const properties: Property[] = [
     area: '700',
     areaLabel: 'Apartments',
     handover: 'Q4 / 2029',
+    handoverLabel: 'Completion',
     status: 'Payment Plan',
     image: '/images/projects/greenz-exterior.webp',
     imageAlt: 'Exterior view of Greenz by Danube in Academic City Dubai',
   },
   {
     id: 3,
-    title: 'Emerald Hills Family Estate',
-    location: 'Dubai Hills Estate, Dubai',
-    price: 'AED 9.1M',
+    title: 'River Cove Residences',
+    location: 'Abu Dhabi',
+    price: 'AED 2.34M',
     description:
-      'A spacious family-oriented villa with landscaped outdoor living, generous entertaining areas, and long-term appeal for both residents and investors.',
-    beds: '6',
-    baths: '5.5',
-    area: '5,120 sq ft',
-    areaLabel: 'Interior',
-    handover: 'Ready',
-    status: 'Private Tour',
-    image: '/images/4th.jpeg',
-    imageAlt: 'Estate property with landscaped grounds and warm stone facade',
+      'A new Sobha Realty apartment address in Abu Dhabi, offering two-bedroom residences with waterfront-inspired community living and premium amenities.',
+    beds: '2',
+    baths: '2',
+    area: 'From 1,013.5 sq ft',
+    areaLabel: 'Sq Ft',
+    handover: 'Dec 2029',
+    handoverLabel: 'Completion',
+    status: 'New',
+    image: '/images/projects/river-cove-residences.webp',
+    imageAlt:
+      'River Cove Residences waterfront apartment development in Abu Dhabi',
   },
   {
     id: 4,
@@ -191,6 +196,7 @@ const properties: Property[] = [
     area: '18,400 sq ft',
     areaLabel: 'Interior',
     handover: 'Ready',
+    handoverLabel: 'Completion',
     status: 'Investment',
     image: '/images/5th.jpeg',
     imageAlt:
