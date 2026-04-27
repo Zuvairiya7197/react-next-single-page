@@ -38,20 +38,20 @@ export async function Projects() {
         <div className="mt-12 grid gap-6 lg:grid-cols-2">
           {properties.map((property, index) => (
             <SectionReveal key={property.id} delay={index * 0.08}>
-              <article className="overflow-hidden rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-surface)] shadow-[0_24px_70px_rgba(21,43,71,0.08)]">
-                <div className="relative overflow-hidden">
+              <article className="flex h-full flex-col overflow-hidden rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-surface)] shadow-[0_24px_70px_rgba(21,43,71,0.08)]">
+                <div className="relative aspect-[16/9] shrink-0 overflow-hidden">
                   <Image
                     src={property.image}
                     alt={property.imageAlt}
-                    width={900}
-                    height={640}
-                    className="h-72 w-full object-cover transition duration-500 hover:scale-[1.03]"
+                    fill
+                    sizes="(min-width: 1024px) 50vw, 100vw"
+                    className="h-full w-full object-cover transition duration-500 hover:scale-[1.03]"
                   />
                   {/* <div className="absolute left-5 top-5 inline-flex rounded-full bg-[rgba(21,43,71,0.84)] px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-white backdrop-blur">
                     {property.status}
                   </div> */}
                 </div>
-                <div className="p-7">
+                <div className="flex flex-1 flex-col p-7">
                   <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                     <div>
                       <h3 className="text-2xl font-semibold text-[var(--color-slate-900)]">
@@ -69,7 +69,7 @@ export async function Projects() {
                   <p className="mt-4 text-sm leading-7 text-[var(--color-slate-500)]">
                     {property.description}
                   </p>
-                  <div className="mt-6 grid gap-3 border-t border-[var(--color-border)] pt-6 sm:grid-cols-3">
+                  <div className="mt-6 grid gap-3 border-t border-[var(--color-border)] pt-6 sm:grid-cols-3 lg:mt-auto">
                     <div className="flex items-center gap-3 rounded-2xl bg-[var(--color-surface-strong)] px-4 py-3">
                       <BedDouble
                         size={18}
