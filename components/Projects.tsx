@@ -40,9 +40,9 @@ export async function Projects() {
                     height={640}
                     className="h-72 w-full object-cover transition duration-500 hover:scale-[1.03]"
                   />
-                  <div className="absolute left-5 top-5 inline-flex rounded-full bg-[rgba(21,43,71,0.84)] px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-white backdrop-blur">
+                  {/* <div className="absolute left-5 top-5 inline-flex rounded-full bg-[rgba(21,43,71,0.84)] px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-white backdrop-blur">
                     {property.status}
-                  </div>
+                  </div> */}
                 </div>
                 <div className="p-7">
                   <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
@@ -77,7 +77,7 @@ export async function Projects() {
                         </p>
                       </div>
                     </div>
-                    <div className="flex items-center gap-3 rounded-2xl bg-[var(--color-surface-strong)] px-4 py-3">
+                    {/* <div className="flex items-center gap-3 rounded-2xl bg-[var(--color-surface-strong)] px-4 py-3">
                       <Bath
                         size={18}
                         className="text-[var(--color-slate-700)]"
@@ -90,7 +90,7 @@ export async function Projects() {
                           Bathrooms
                         </p>
                       </div>
-                    </div>
+                    </div> */}
                     <div className="flex items-center gap-3 rounded-2xl bg-[var(--color-surface-strong)] px-4 py-3">
                       <Ruler
                         size={18}
