@@ -108,7 +108,7 @@ export async function Projects() {
                           {property.area}
                         </p>
                         <p className="text-xs uppercase tracking-[0.2em] text-[var(--color-slate-500)]">
-                          Interior
+                          {property.areaLabel}
                         </p>
                       </div>
                     </div>
@@ -122,7 +122,7 @@ export async function Projects() {
                           {property.handover}
                         </p>
                         <p className="text-xs uppercase tracking-[0.2em] text-[var(--color-slate-500)]">
-                          Handover
+                          Completion
                         </p>
                       </div>
                     </div>

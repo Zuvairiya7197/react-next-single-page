@@ -123,6 +123,7 @@ export type Property = {
   beds: string;
   baths: string;
   area: string;
+  areaLabel: string;
   handover: string;
   status: string;
   image: string;
@@ -140,6 +141,7 @@ const properties: Property[] = [
     beds: '2',
     baths: '2',
     area: 'Up to 1,797 sq ft',
+    areaLabel: 'Sq Ft',
     handover: 'Q1 / 2029',
     status: 'Golden Visa',
     image: '/images/projects/lagoon-views-2br.jpg',
@@ -147,18 +149,19 @@ const properties: Property[] = [
   },
   {
     id: 2,
-    title: 'Marina Crest Residences',
-    location: 'Dubai Marina, Dubai',
-    price: 'AED 7.9M',
+    title: 'Greenz by Danube',
+    location: 'Academic City, Dubai',
+    price: 'AED 3.5M',
     description:
-      'A refined high-rise residence positioned for skyline views, strong end-user demand, and the convenience buyers expect in a central waterfront district.',
-    beds: '3',
+      'A townhouse-focused Danube community in Dubai International Academic City, planned around greenery, open spaces, and a 1% monthly payment plan.',
+    beds: '3, 4 & 5',
     baths: '3',
-    area: '2,180 sq ft',
-    handover: 'Ready',
-    status: 'New Listing',
-    image: '/images/2nd.jpeg',
-    imageAlt: 'Sophisticated loft development near an urban waterfront skyline',
+    area: '700',
+    areaLabel: 'Apartments',
+    handover: 'Q4 / 2029',
+    status: 'Payment Plan',
+    image: '/images/projects/greenz-exterior.webp',
+    imageAlt: 'Exterior view of Greenz by Danube in Academic City Dubai',
   },
   {
     id: 3,
@@ -170,6 +173,7 @@ const properties: Property[] = [
     beds: '6',
     baths: '5.5',
     area: '5,120 sq ft',
+    areaLabel: 'Interior',
     handover: 'Ready',
     status: 'Private Tour',
     image: '/images/4th.jpeg',
@@ -185,6 +189,7 @@ const properties: Property[] = [
     beds: '12 suites',
     baths: 'Multi',
     area: '18,400 sq ft',
+    areaLabel: 'Interior',
     handover: 'Ready',
     status: 'Investment',
     image: '/images/5th.jpeg',
