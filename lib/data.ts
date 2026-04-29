@@ -137,7 +137,7 @@ const properties: Property[] = [
     id: 1,
     title: 'Lagoon Views 2 BR Apartment',
     location: 'Dubailand, Dubai',
-    price: 'AED 1,826,000',
+    price: 'From AED 1.82M',
     description:
       'A Golden Visa-eligible apartment in DAMAC Lagoon Views, combining resort-style community living, contemporary interiors, and a Q1 2029 handover timeline.',
     beds: '2',
@@ -190,7 +190,7 @@ const properties: Property[] = [
     id: 4,
     title: 'Greenz by Danube',
     location: 'Academic City, Dubai',
-    price: 'AED 3.5M',
+    price: 'From AED 3.5M',
     description:
       'A townhouse-focused Danube community in Dubai International Academic City, planned around greenery, open spaces, and a 1% monthly payment plan.',
     beds: '3, 4 & 5',
