@@ -10,6 +10,8 @@ type FormState = {
 
 type FormErrors = Partial<Record<keyof FormState, string>>;
 
+type SubmitStatus = 'idle' | 'sending' | 'sent' | 'error';
+
 type ContactFormProps = {
   initialMessage?: string;
   submitLabel?: string;
@@ -55,7 +57,10 @@ export function ContactForm({
   );
   const [errors, setErrors] = useState<FormErrors>({});
   const [isFormReady, setIsFormReady] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<SubmitStatus>('idle');
+  const [submitMessage, setSubmitMessage] = useState(
+    'All fields are required.',
+  );
 
   const nameId = `${formId}-name`;
   const emailId = `${formId}-email`;
@@ -78,10 +83,11 @@ export function ContactForm({
 
     setFormData((current) => ({ ...current, [name]: value }));
     setErrors((current) => ({ ...current, [name]: undefined }));
-    setIsSubmitted(false);
+    setSubmitStatus('idle');
+    setSubmitMessage('All fields are required.');
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     const nextErrors = validate(formData);
@@ -91,8 +97,37 @@ export function ContactForm({
       return;
     }
 
-    setIsSubmitted(true);
-    setFormData(createInitialState(initialMessage));
+    setSubmitStatus('sending');
+    setSubmitMessage('Sending your inquiry...');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = (await response.json().catch(() => ({}))) as {
+        error?: string;
+      };
+
+      if (!response.ok) {
+        throw new Error(result.error ?? 'Something went wrong.');
+      }
+
+      setSubmitStatus('sent');
+      setSubmitMessage('Thanks for reaching out. Your inquiry has been sent.');
+      setFormData(createInitialState(initialMessage));
+    } catch (error) {
+      setSubmitStatus('error');
+      setSubmitMessage(
+        error instanceof Error
+          ? error.message
+          : 'We could not send your message right now.',
+      );
+    }
   };
 
   if (!isFormReady) {
@@ -212,18 +247,21 @@ export function ContactForm({
 
       <button
         type="submit"
-        className="inline-flex w-full items-center justify-center rounded-full bg-[var(--color-slate-700)] px-6 py-4 text-sm font-semibold text-white transition hover:bg-[var(--color-slate-900)] sm:w-auto"
+        disabled={submitStatus === 'sending'}
+        className="inline-flex w-full items-center justify-center rounded-full bg-[var(--color-slate-700)] px-6 py-4 text-sm font-semibold text-white transition hover:bg-[var(--color-slate-900)] disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
       >
-        {submitLabel}
+        {submitStatus === 'sending' ? 'Sending...' : submitLabel}
       </button>
 
       <p
-        className="min-h-6 text-sm text-[var(--color-slate-500)]"
+        className={`min-h-6 text-sm ${
+          submitStatus === 'error'
+            ? 'text-[rgb(170,53,42)]'
+            : 'text-[var(--color-slate-500)]'
+        }`}
         aria-live="polite"
       >
-        {isSubmitted
-          ? 'Thanks for reaching out. Your inquiry is ready for backend wiring when you are.'
-          : 'All fields are required. This form is front-end only for now.'}
+        {submitMessage}
       </p>
     </form>
   );
