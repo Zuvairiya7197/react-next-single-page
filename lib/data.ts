@@ -128,6 +128,7 @@ export type Property = {
   handoverLabel: string;
   status: string;
   image: string;
+  imagePosition?: string;
   imageAlt: string;
 };
 
@@ -199,6 +200,7 @@ const properties: Property[] = [
     handoverLabel: 'Status',
     status: 'Properties Available',
     image: '/images/projects/the-edit-at-d3.jpg',
+    imagePosition: 'center top',
     imageAlt: 'The Edit at d3 residential towers in Dubai Design District',
   },
 ];

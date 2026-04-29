@@ -46,6 +46,7 @@ export async function Projects() {
                     fill
                     sizes="(min-width: 1024px) 50vw, 100vw"
                     className="h-full w-full object-cover transition duration-500 hover:scale-[1.03]"
+                    style={{ objectPosition: property.imagePosition }}
                   />
                   {/* <div className="absolute left-5 top-5 inline-flex rounded-full bg-[rgba(21,43,71,0.84)] px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-white backdrop-blur">
                     {property.status}
