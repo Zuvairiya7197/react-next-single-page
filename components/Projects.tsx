@@ -1,13 +1,6 @@
-import Image from 'next/image';
-import {
-  Bath,
-  BedDouble,
-  CalendarCheck,
-  MapPin,
-  MoveRight,
-  Ruler,
-} from 'lucide-react';
+import { MoveRight } from 'lucide-react';
 
+import { PropertyCards } from '@/components/PropertyCards';
 import { SectionHeading } from '@/components/SectionHeading';
 import { SectionReveal } from '@/components/SectionReveal';
 import { getProperties } from '@/lib/data';
@@ -35,104 +28,7 @@ export async function Projects() {
           </div>
         </SectionReveal>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-2">
-          {properties.map((property, index) => (
-            <SectionReveal key={property.id} delay={index * 0.08}>
-              <article className="flex h-full flex-col overflow-hidden rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-surface)] shadow-[0_24px_70px_rgba(21,43,71,0.08)]">
-                <div className="relative aspect-[16/9] shrink-0 overflow-hidden">
-                  <Image
-                    src={property.image}
-                    alt={property.imageAlt}
-                    fill
-                    sizes="(min-width: 1024px) 50vw, 100vw"
-                    className="h-full w-full object-cover transition duration-500 hover:scale-[1.03]"
-                    style={{ objectPosition: property.imagePosition }}
-                  />
-                  {/* <div className="absolute left-5 top-5 inline-flex rounded-full bg-[rgba(21,43,71,0.84)] px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-white backdrop-blur">
-                    {property.status}
-                  </div> */}
-                </div>
-                <div className="flex flex-1 flex-col p-7">
-                  <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-                    <div>
-                      <h3 className="text-2xl font-semibold text-[var(--color-slate-900)]">
-                        {property.title}
-                      </h3>
-                      <p className="mt-2 flex items-center gap-2 text-sm text-[var(--color-slate-500)]">
-                        <MapPin size={16} aria-hidden="true" />
-                        {property.location}
-                      </p>
-                    </div>
-                    <p className="text-2xl font-semibold text-[var(--color-slate-900)]">
-                      {property.price}
-                    </p>
-                  </div>
-                  <p className="mt-4 text-sm leading-7 text-[var(--color-slate-500)]">
-                    {property.description}
-                  </p>
-                  <div className="mt-6 grid gap-3 border-t border-[var(--color-border)] pt-6 sm:grid-cols-3 lg:mt-auto">
-                    <div className="flex items-center gap-3 rounded-2xl bg-[var(--color-surface-strong)] px-4 py-3">
-                      <BedDouble
-                        size={18}
-                        className="text-[var(--color-slate-700)]"
-                      />
-                      <div>
-                        <p className="text-sm font-semibold text-[var(--color-slate-900)]">
-                          {property.beds}
-                        </p>
-                        <p className="text-xs uppercase tracking-[0.2em] text-[var(--color-slate-500)]">
-                          Bedrooms
-                        </p>
-                      </div>
-                    </div>
-                    {/* <div className="flex items-center gap-3 rounded-2xl bg-[var(--color-surface-strong)] px-4 py-3">
-                      <Bath
-                        size={18}
-                        className="text-[var(--color-slate-700)]"
-                      />
-                      <div>
-                        <p className="text-sm font-semibold text-[var(--color-slate-900)]">
-                          {property.baths}
-                        </p>
-                        <p className="text-xs uppercase tracking-[0.2em] text-[var(--color-slate-500)]">
-                          Bathrooms
-                        </p>
-                      </div>
-                    </div> */}
-                    {/* <div className="flex items-center gap-3 rounded-2xl bg-[var(--color-surface-strong)] px-4 py-3">
-                      <Ruler
-                        size={18}
-                        className="text-[var(--color-slate-700)]"
-                      />
-                      <div>
-                        <p className="text-sm font-semibold text-[var(--color-slate-900)]">
-                          {property.area}
-                        </p>
-                        <p className="text-xs uppercase tracking-[0.2em] text-[var(--color-slate-500)]">
-                          {property.areaLabel}
-                        </p>
-                      </div>
-                    </div> */}
-                    <div className="flex items-center gap-3 rounded-2xl bg-[var(--color-surface-strong)] px-4 py-3">
-                      <CalendarCheck
-                        size={18}
-                        className="text-[var(--color-slate-700)]"
-                      />
-                      <div>
-                        <p className="text-sm font-semibold text-[var(--color-slate-900)]">
-                          {property.handover}
-                        </p>
-                        <p className="text-xs uppercase tracking-[0.2em] text-[var(--color-slate-500)]">
-                          {property.handoverLabel}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </article>
-            </SectionReveal>
-          ))}
-        </div>
+        <PropertyCards properties={properties} />
       </div>
     </section>
   );
