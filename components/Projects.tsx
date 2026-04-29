@@ -99,7 +99,7 @@ export async function Projects() {
                         </p>
                       </div>
                     </div> */}
-                    <div className="flex items-center gap-3 rounded-2xl bg-[var(--color-surface-strong)] px-4 py-3">
+                    {/* <div className="flex items-center gap-3 rounded-2xl bg-[var(--color-surface-strong)] px-4 py-3">
                       <Ruler
                         size={18}
                         className="text-[var(--color-slate-700)]"
@@ -112,7 +112,7 @@ export async function Projects() {
                           {property.areaLabel}
                         </p>
                       </div>
-                    </div>
+                    </div> */}
                     <div className="flex items-center gap-3 rounded-2xl bg-[var(--color-surface-strong)] px-4 py-3">
                       <CalendarCheck
                         size={18}
