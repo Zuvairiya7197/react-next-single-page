@@ -128,6 +128,7 @@ export type Property = {
   handoverLabel: string;
   status: string;
   image: string;
+  imagePosition?: string;
   imageAlt: string;
 };
 
@@ -136,7 +137,7 @@ const properties: Property[] = [
     id: 1,
     title: 'Lagoon Views 2 BR Apartment',
     location: 'Dubailand, Dubai',
-    price: 'AED 1,826,000',
+    price: 'From AED 1.82M',
     description:
       'A Golden Visa-eligible apartment in DAMAC Lagoon Views, combining resort-style community living, contemporary interiors, and a Q1 2029 handover timeline.',
     beds: '2',
@@ -151,9 +152,45 @@ const properties: Property[] = [
   },
   {
     id: 2,
+    title: 'The Edit at d3',
+    location: 'Dubai Design District',
+    price: 'From AED 2.00M',
+    description:
+      'A Meraas address in Dubai Design District, offering 1 to 4-bedroom residences and exclusive penthouses with sculptural towers, continuous balcony lines, and sky gardens.',
+    beds: '1-4',
+    baths: '2',
+    area: 'Penthouses',
+    areaLabel: 'Exclusive',
+    handover: 'Q2 / 2030',
+    handoverLabel: 'Completion',
+    status: 'Properties Available',
+    image: '/images/projects/the-edit-at-d3.jpg',
+    imagePosition: 'center top',
+    imageAlt: 'The Edit at d3 residential towers in Dubai Design District',
+  },
+  {
+    id: 3,
+    title: 'The Brooks',
+    location: 'Dubai Land, Dubai',
+    price: 'From AED 4.16M',
+    description:
+      'A Sobha villa community in Dubai Land, offering 4 and 5-bedroom homes with contemporary facades, generous layouts, and landscaped family-focused surroundings.',
+    beds: '4 & 5',
+    baths: '5',
+    area: '2,520.9-4,106.8 sq ft',
+    areaLabel: 'Sq Ft',
+    handover: '2029',
+    handoverLabel: 'Completion',
+    status: 'Villas',
+    image: '/images/projects/the-brooks.webp',
+    imagePosition: 'center center',
+    imageAlt: 'The Brooks villa facade in Dubai Land by Sobha Realty',
+  },
+  {
+    id: 4,
     title: 'Greenz by Danube',
     location: 'Academic City, Dubai',
-    price: 'AED 3.5M',
+    price: 'From AED 3.5M',
     description:
       'A townhouse-focused Danube community in Dubai International Academic City, planned around greenery, open spaces, and a 1% monthly payment plan.',
     beds: '3, 4 & 5',
@@ -165,41 +202,6 @@ const properties: Property[] = [
     status: 'Payment Plan',
     image: '/images/projects/greenz-exterior.webp',
     imageAlt: 'Exterior view of Greenz by Danube in Academic City Dubai',
-  },
-  {
-    id: 3,
-    title: 'River Cove Residences',
-    location: 'Abu Dhabi',
-    price: 'AED 2.34M',
-    description:
-      'A new Sobha Realty apartment address in Abu Dhabi, offering two-bedroom residences with waterfront-inspired community living and premium amenities.',
-    beds: '2',
-    baths: '2',
-    area: 'From 1,013.5 sq ft',
-    areaLabel: 'Sq Ft',
-    handover: 'Dec 2029',
-    handoverLabel: 'Completion',
-    status: 'New',
-    image: '/images/projects/river-cove-residences.webp',
-    imageAlt:
-      'River Cove Residences waterfront apartment development in Abu Dhabi',
-  },
-  {
-    id: 4,
-    title: 'Aeon at Dubai Creek Harbour',
-    location: 'Dubai Creek Harbour',
-    price: 'AED 3,197,888',
-    description:
-      'A waterfront Emaar address in Dubai Creek Harbour, offering modern city-facing residences with access to Creek Beach, parks, promenade living, and marina lifestyle.',
-    beds: '1-3',
-    baths: '2',
-    area: '2',
-    areaLabel: 'Units Left',
-    handover: 'Q2 / 2028',
-    handoverLabel: 'Completion',
-    status: 'Book Now',
-    image: '/images/projects/aeon-creek-harbour.jpg',
-    imageAlt: 'Aeon towers overlooking Dubai Creek Harbour waterfront',
   },
 ];
 
