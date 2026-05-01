@@ -7,12 +7,18 @@ const MAX_MESSAGE_LENGTH = 3000;
 type ContactPayload = {
   name?: unknown;
   email?: unknown;
+  phone?: unknown;
+  interest?: unknown;
+  source?: unknown;
   message?: unknown;
 };
 
 type ContactValues = {
   name: string;
   email: string;
+  phone: string;
+  interest: string;
+  source: string;
   message: string;
 };
 
@@ -38,6 +44,9 @@ const escapeHtml = (value: string) =>
 const normalizePayload = (payload: ContactPayload): ContactValues => ({
   name: typeof payload.name === 'string' ? payload.name.trim() : '',
   email: typeof payload.email === 'string' ? payload.email.trim() : '',
+  phone: typeof payload.phone === 'string' ? payload.phone.trim() : '',
+  interest: typeof payload.interest === 'string' ? payload.interest.trim() : '',
+  source: typeof payload.source === 'string' ? payload.source.trim() : '',
   message: typeof payload.message === 'string' ? payload.message.trim() : '',
 });
 
@@ -52,6 +61,18 @@ const validatePayload = (values: ContactValues) => {
 
   if (!emailPattern.test(values.email) || values.email.length > 254) {
     return 'Please enter a valid email address.';
+  }
+
+  if (values.phone.length > 40) {
+    return 'Please keep your phone number under 40 characters.';
+  }
+
+  if (values.interest.length > 120) {
+    return 'Please keep your interest under 120 characters.';
+  }
+
+  if (values.source.length > 120) {
+    return 'Please keep your request source under 120 characters.';
   }
 
   if (values.message.length > MAX_MESSAGE_LENGTH) {
@@ -122,26 +143,42 @@ export async function POST(request: Request) {
 
   const safeName = escapeHtml(values.name);
   const safeEmail = escapeHtml(values.email);
+  const safePhone = escapeHtml(values.phone);
+  const safeInterest = escapeHtml(values.interest);
+  const safeSource = escapeHtml(values.source);
   const safeMessage = escapeHtml(values.message).replace(/\n/g, '<br />');
+  const subjectPrefix = values.source || 'New Emlak inquiry';
 
   try {
     await transporter.sendMail({
       from: smtpConfig.from,
       to: RECIPIENT_EMAIL,
       replyTo: values.email,
-      subject: `New Emlak inquiry from ${values.name}`,
+      subject: `${subjectPrefix} from ${values.name}`,
       text: [
         `Name: ${values.name}`,
         `Email: ${values.email}`,
+        values.phone ? `Phone: ${values.phone}` : '',
+        values.interest ? `Interest: ${values.interest}` : '',
+        values.source ? `Source: ${values.source}` : '',
         '',
         'Message:',
         values.message,
-      ].join('\n'),
+      ]
+        .filter(Boolean)
+        .join('\n'),
       html: `
         <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #152b47;">
           <h2 style="margin: 0 0 16px;">New Emlak Website Inquiry</h2>
           <p><strong>Name:</strong> ${safeName}</p>
           <p><strong>Email:</strong> ${safeEmail}</p>
+          ${values.phone ? `<p><strong>Phone:</strong> ${safePhone}</p>` : ''}
+          ${
+            values.interest
+              ? `<p><strong>Interest:</strong> ${safeInterest}</p>`
+              : ''
+          }
+          ${values.source ? `<p><strong>Source:</strong> ${safeSource}</p>` : ''}
           <p><strong>Message:</strong></p>
           <p>${safeMessage}</p>
         </div>

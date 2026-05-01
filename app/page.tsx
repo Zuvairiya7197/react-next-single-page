@@ -5,6 +5,7 @@ import { Contact } from '@/components/Contact';
 import { DevelopersMarquee } from '@/components/DevelopersMarquee';
 import { Footer } from '@/components/Footer';
 import { Hero } from '@/components/Hero';
+import { LeadMagnet } from '@/components/LeadMagnet';
 import { Navbar } from '@/components/Navbar';
 import { Projects } from '@/components/Projects';
 import {
@@ -22,6 +23,7 @@ export default function HomePage() {
       <Navbar />
       <main id="main-content">
         <Hero />
+        <LeadMagnet />
         <About />
         <Services />
         <DevelopersMarquee />

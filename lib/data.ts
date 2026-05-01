@@ -2,6 +2,7 @@ import { cache } from 'react';
 
 export const navItems = [
   { label: 'Home', href: '#home' },
+  { label: 'Guide', href: '#guide' },
   { label: 'About', href: '#about' },
   { label: 'Services', href: '#services' },
   { label: 'Properties', href: '#projects' },

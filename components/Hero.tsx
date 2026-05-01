@@ -76,11 +76,11 @@ export function Hero() {
               Explore Properties
             </a>
             <a
-              href="#contact"
+              href="#guide"
               className="inline-flex items-center justify-center rounded-full border border-white/35 bg-transparent px-7 py-4 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:border-[var(--color-gold-400)] hover:bg-white/10"
               style={{ color: '#ffffff' }}
             >
-              Schedule a Private Tour
+              Get Buyer Checklist
             </a>
           </div>
 

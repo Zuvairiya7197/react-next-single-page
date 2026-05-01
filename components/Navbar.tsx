@@ -68,7 +68,7 @@ export function Navbar() {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 768) {
+      if (window.innerWidth >= 1024) {
         setIsOpen(false);
       }
     };
@@ -130,7 +130,7 @@ export function Navbar() {
 
           <nav
             aria-label="Primary navigation"
-            className="hidden items-center gap-2 md:flex"
+            className="hidden items-center gap-2 lg:flex"
           >
             {navItems.map((item) => {
               const sectionId = item.href.replace('#', '');
@@ -158,14 +158,14 @@ export function Navbar() {
             href="https://emlakdesign.com/"
             target="_blank"
             rel="noreferrer"
-            className="hidden rounded-full bg-[var(--color-gold-500)] px-5 py-3 text-sm font-semibold text-[var(--color-slate-900)] transition hover:bg-[var(--color-gold-400)] md:inline-flex"
+            className="hidden rounded-full bg-[var(--color-gold-500)] px-5 py-3 text-sm font-semibold text-[var(--color-slate-900)] transition hover:bg-[var(--color-gold-400)] lg:inline-flex"
           >
             Visit Emlak Design
           </a>
 
           <button
             type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--color-border)] bg-white text-[var(--color-slate-900)] shadow-[0_10px_30px_rgba(21,43,71,0.08)] md:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--color-border)] bg-white text-[var(--color-slate-900)] shadow-[0_10px_30px_rgba(21,43,71,0.08)] lg:hidden"
             onClick={() => setIsOpen((open) => !open)}
             aria-expanded={isOpen}
             aria-controls="mobile-navigation"
@@ -178,7 +178,7 @@ export function Navbar() {
         {isOpen ? (
           <div
             id="mobile-navigation"
-            className="border-t border-[var(--color-border)] bg-[rgba(255,255,255,0.98)] px-6 py-4 shadow-[0_18px_45px_rgba(21,43,71,0.1)] md:hidden"
+            className="border-t border-[var(--color-border)] bg-[rgba(255,255,255,0.98)] px-6 py-4 shadow-[0_18px_45px_rgba(21,43,71,0.1)] lg:hidden"
           >
             <nav aria-label="Mobile navigation" className="flex flex-col gap-2">
               {navItems.map((item) => {
