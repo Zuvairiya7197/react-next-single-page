@@ -119,9 +119,9 @@ export function Footer() {
   const wazeLink = `https://www.waze.com/ul?q=${googleMapsQuery}`;
 
   return (
-    <footer className="border-t border-[rgba(255,255,255,0.08)] bg-[var(--color-slate-900)] px-6 py-14 text-white/78 lg:px-8">
+    <footer className="border-t border-[rgba(255,255,255,0.08)] bg-[var(--color-slate-900)] px-4 py-12 text-white/78 sm:px-6 sm:py-14 lg:px-8">
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(21rem,0.95fr)_auto_auto] lg:items-start">
-        <div className="max-w-lg">
+        <div className="min-w-0 max-w-lg">
           <div className="relative h-[4.5rem] w-48 rounded-2xl bg-white p-3 shadow-[0_20px_50px_rgba(10,20,35,0.28)]">
             <Image
               src="/images/emlak-logo.png"
@@ -141,29 +141,29 @@ export function Footer() {
               href={contactDetails.email.href}
               className="inline-flex min-w-0 items-center gap-2 break-all sm:break-normal"
             >
-              <Mail size={16} aria-hidden="true" />
+              <Mail size={16} className="shrink-0" aria-hidden="true" />
               {contactDetails.email.value}
             </a>
             <a
               href={contactDetails.phone.href}
               className="inline-flex min-w-0 items-center gap-2"
             >
-              <Phone size={16} aria-hidden="true" />
+              <Phone size={16} className="shrink-0" aria-hidden="true" />
               {contactDetails.phone.value}
             </a>
           </div>
         </div>
 
-        <div className="rounded-[1.6rem] border border-white/10 bg-white/6 p-3.5 backdrop-blur">
+        <div className="min-w-0 rounded-[1.4rem] border border-white/10 bg-white/6 p-3 backdrop-blur sm:rounded-[1.6rem] sm:p-3.5">
           <div className="flex items-start gap-3 text-white">
-            <div className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-white/10">
+            <div className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-white/10">
               <MapPin size={18} aria-hidden="true" />
             </div>
             <div className="min-w-0">
-              <p className="text-xs uppercase tracking-[0.24em] text-white/56">
+              <p className="text-xs uppercase tracking-[0.16em] text-white/56 sm:tracking-[0.24em]">
                 Office Location
               </p>
-              <p className="mt-1 break-words text-sm font-semibold leading-6 text-white">
+              <p className="mt-1 overflow-wrap-anywhere text-sm font-semibold leading-6 text-white">
                 {contactDetails.address.value}
               </p>
             </div>
@@ -191,10 +191,10 @@ export function Footer() {
               href={googleMapsLink}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center justify-center gap-1.5 rounded-full border border-white/10 bg-white/8 px-3 py-2 text-white transition hover:border-[rgba(212,175,55,0.45)] hover:bg-white/12"
+              className="inline-flex min-w-0 items-center justify-center gap-1.5 rounded-full border border-white/10 bg-white/8 px-3 py-2 text-center text-white transition hover:border-[rgba(212,175,55,0.45)] hover:bg-white/12"
             >
               <GoogleMapsIcon />
-              Google Maps
+              <span className="min-w-0">Google Maps</span>
             </a>
             <a
               href={appleMapsLink}
@@ -208,7 +208,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div>
+        <div className="min-w-0">
           <p className="text-sm font-semibold uppercase tracking-[0.26em] text-white">
             Sections
           </p>
@@ -225,7 +225,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div>
+        <div className="min-w-0">
           <p className="text-sm font-semibold uppercase tracking-[0.26em] text-white">
             Social
           </p>
@@ -252,7 +252,7 @@ export function Footer() {
 
       <div className="mx-auto mt-10 flex max-w-7xl flex-col gap-3 border-t border-white/10 pt-6 text-sm text-white/56 sm:flex-row sm:items-center sm:justify-between">
         <p>© 2026 Emlak Real Estate LLC. All rights reserved.</p>
-        <p>
+        <p className="break-words">
           Designed and developed by{' '}
           <a
             href="https://webuildyourbrands.com"
