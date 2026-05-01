@@ -146,7 +146,7 @@ function PropertyInquiryModal({
   }, [onClose]);
 
   return (
-    <div className="fixed inset-0 z-[90] flex items-end justify-center p-4 sm:items-center sm:p-6">
+    <div className="fixed inset-0 z-[90] flex min-h-[100dvh] items-center justify-center p-3 sm:p-6">
       <button
         type="button"
         className="absolute inset-0 cursor-default bg-[rgba(21,43,71,0.6)] backdrop-blur-sm"
@@ -157,16 +157,16 @@ function PropertyInquiryModal({
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
-        className="relative z-10 max-h-[calc(100dvh-2rem)] w-full max-w-3xl overflow-y-auto rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-surface)] p-6 shadow-[0_28px_90px_rgba(21,43,71,0.28)] sm:p-8"
+        className="relative z-10 h-[calc(100dvh-1.5rem)] w-full max-w-3xl overflow-y-auto rounded-[1.5rem] border border-[var(--color-border)] bg-[var(--color-surface)] p-4 shadow-[0_28px_90px_rgba(21,43,71,0.28)] sm:h-auto sm:max-h-[calc(100dvh-3rem)] sm:rounded-[2rem] sm:p-8"
       >
         <div className="flex items-start justify-between gap-4">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--color-gold-500)]">
+          <div className="min-w-0">
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-gold-500)] sm:tracking-[0.24em]">
               Property Inquiry
             </p>
             <h2
               id={titleId}
-              className="mt-3 text-2xl font-semibold text-[var(--color-slate-900)] sm:text-3xl"
+              className="mt-3 text-xl font-semibold text-[var(--color-slate-900)] sm:text-3xl"
             >
               Contact us about {property.title}
             </h2>

@@ -57,6 +57,10 @@ img {
   height: auto;
 }
 
+.overflow-wrap-anywhere {
+  overflow-wrap: anywhere;
+}
+
 section[id] {
   scroll-margin-top: calc(var(--navbar-height, 6.5rem) + 1rem);
 }
