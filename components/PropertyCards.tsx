@@ -96,7 +96,7 @@ export function PropertyCards({ properties }: PropertyCardsProps) {
                 <button
                   type="button"
                   onClick={() => setSelectedProperty(property)}
-                  className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[var(--color-slate-700)] px-6 py-4 text-sm font-semibold text-white transition hover:bg-[var(--color-slate-900)] sm:w-auto"
+                  className="mt-6 inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-full bg-[var(--color-slate-700)] px-6 py-4 text-sm font-semibold text-white transition hover:bg-[var(--color-slate-900)] sm:w-auto"
                   aria-haspopup="dialog"
                 >
                   <MessageCircle size={17} aria-hidden="true" />
@@ -178,7 +178,7 @@ function PropertyInquiryModal({
             ref={closeButtonRef}
             type="button"
             onClick={onClose}
-            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-surface-strong)] text-[var(--color-slate-700)] transition hover:bg-white"
+            className="flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-surface-strong)] text-[var(--color-slate-700)] transition hover:bg-white"
             aria-label="Close contact form"
           >
             <X size={18} aria-hidden="true" />
