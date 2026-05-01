@@ -16,6 +16,12 @@ type ContactValues = {
   message: string;
 };
 
+type SmtpError = {
+  code?: unknown;
+  response?: unknown;
+  responseCode?: unknown;
+};
+
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
@@ -53,6 +59,12 @@ const validatePayload = (values: ContactValues) => {
   }
 
   return null;
+};
+
+const isSmtpAuthError = (error: unknown) => {
+  const smtpError = error as SmtpError;
+
+  return smtpError.code === 'EAUTH' || smtpError.responseCode === 535;
 };
 
 const getSmtpConfig = () => {
@@ -139,6 +151,18 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: true });
   } catch (error) {
     console.error('Contact email failed:', error);
+
+    if (isSmtpAuthError(error)) {
+      return NextResponse.json(
+        {
+          error:
+            process.env.NODE_ENV === 'production'
+              ? 'We could not send your message right now.'
+              : 'Email login failed. Please check SMTP_USER and SMTP_PASS on the server.',
+        },
+        { status: 503 },
+      );
+    }
 
     return NextResponse.json(
       { error: 'We could not send your message right now.' },
