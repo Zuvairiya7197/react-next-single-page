@@ -240,8 +240,8 @@ export const contactDetails = {
   },
   email: {
     label: 'Email',
-    value: 'hello@emlakrealestate.com',
-    href: 'mailto:hello@emlakrealestate.com',
+    value: 'contactus@emlakrealestatellc.com',
+    href: 'mailto:contactus@emlakrealestatellc.com',
   },
   phone: {
     label: 'Phone',
