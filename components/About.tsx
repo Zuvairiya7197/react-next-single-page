@@ -32,7 +32,7 @@ export function About() {
               </div>
               <div className="rounded-[1.5rem] bg-[var(--color-surface-strong)] p-5">
                 <p className="text-3xl font-semibold text-[var(--color-slate-900)]">
-                  98%
+                  100%
                 </p>
                 <p className="mt-2 text-sm leading-6 text-[var(--color-slate-500)]">
                   client satisfaction driven by responsive communication,

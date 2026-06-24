@@ -21,7 +21,7 @@ export const marketStats = [
       'buyers, sellers, and investors supported with tailored search and acquisition strategies',
   },
   {
-    value: '28 days',
+    value: '30 days',
     label:
       'average window to move serious inquiries into qualified offers on premium listings',
   },
