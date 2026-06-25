@@ -228,7 +228,7 @@ export function ContactForm({
           aria-invalid={Boolean(errors.message)}
           aria-describedby={errors.message ? `${messageId}-error` : undefined}
           className="mt-3 w-full rounded-[1.6rem] border border-[var(--color-border)] bg-white px-4 py-3.5 text-sm text-[var(--color-slate-900)] outline-none transition focus:border-[var(--color-gold-500)] focus:ring-2 focus:ring-[rgba(216,179,106,0.22)]"
-          placeholder="Share your goals, budget, timeline, and whether you are exploring end-use, off-plan, resale, or investment opportunities."
+          placeholder="Share your goal, budget, and timeline."
           autoComplete="off"
           data-lpignore="true"
           data-1p-ignore="true"

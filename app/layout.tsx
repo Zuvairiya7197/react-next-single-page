@@ -14,9 +14,9 @@ export const metadata: Metadata = {
     apple: '/images/emlak-logo.png',
   },
   title:
-    'Emlak Real Estate LLC | Premium Real Estate Experiences in Dubai, UAE',
+    'Emlak Real Estate LLC | Dubai Property Advisory',
   description:
-    'Emlak Real Estate LLC helps buyers, sellers, and investors discover high-value residential and commercial properties with confidence.',
+    'Dubai property advisory for buying, selling, leasing, investing, and relocating.',
   keywords: [
     'real estate agency',
     'luxury homes',
@@ -27,9 +27,9 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title:
-      'Emlak Real Estate LLC | Premium Real Estate Experiences in Dubai, UAE',
+      'Emlak Real Estate LLC | Dubai Property Advisory',
     description:
-      'Discover curated properties, market guidance, and end-to-end real estate support from Emlak Real Estate LLC.',
+      'Buy, sell, lease, invest, and relocate with Emlak Real Estate LLC.',
     url: 'https://emlakrealestatellc.vercel.app',
     siteName: 'Emlak Real Estate LLC',
     type: 'website',
@@ -46,9 +46,9 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title:
-      'Emlak Real Estate LLC | Premium Real Estate Experiences in Dubai, UAE',
+      'Emlak Real Estate LLC | Dubai Property Advisory',
     description:
-      'Modern real estate solutions for buyers, sellers, and investors.',
+      'Invest smart. Live premium.',
     images: ['/opengraph-image'],
   },
 };

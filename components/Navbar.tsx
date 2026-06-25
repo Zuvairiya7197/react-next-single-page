@@ -11,6 +11,7 @@ export function Navbar() {
   const [activeSection, setActiveSection] = useState('home');
   const [isOpen, setIsOpen] = useState(false);
   const headerRef = useRef<HTMLElement | null>(null);
+  const isHeroNav = activeSection === 'home';
 
   const sectionIds = useMemo(
     () => navItems.map((item) => item.href.replace('#', '')),
@@ -108,15 +109,15 @@ export function Navbar() {
     <Fragment>
       <header
         ref={headerRef}
-        className="fixed inset-x-0 top-0 z-50 border-b border-[rgba(21,43,71,0.08)] bg-[rgba(255,255,255,0.96)] pt-[env(safe-area-inset-top)] shadow-[0_10px_35px_rgba(21,43,71,0.08)] backdrop-blur-xl"
+        className="fixed inset-x-0 top-0 z-50 pt-[env(safe-area-inset-top)]"
       >
-        <div className="mx-auto flex min-h-[6.5rem] max-w-7xl items-center justify-between px-6 py-4 lg:min-h-[7rem] lg:px-8">
+        <div className="mx-auto flex min-h-[5.25rem] max-w-7xl items-center justify-between px-6 py-3 lg:min-h-[5.75rem] lg:px-8">
           <a
             href="#home"
             className="relative flex shrink-0 items-center"
             aria-label="Emlak Real Estate LLC home"
           >
-            <div className="flex h-[4.75rem] w-[10rem] items-center sm:h-[5.25rem] sm:w-[11rem] lg:h-[5.75rem] lg:w-[12rem]">
+            <div className="flex h-[3.9rem] w-[8.5rem] items-center sm:h-[4.25rem] sm:w-[9.5rem] lg:h-[4.6rem] lg:w-[10.25rem]">
               <Image
                 src="/images/emlak-logo.png"
                 alt="Emlak logo"
@@ -130,7 +131,7 @@ export function Navbar() {
 
           <nav
             aria-label="Primary navigation"
-            className="hidden items-center gap-2 md:flex"
+            className="hidden items-center gap-9 md:flex"
           >
             {navItems.map((item) => {
               const sectionId = item.href.replace('#', '');
@@ -141,12 +142,15 @@ export function Navbar() {
                   key={item.href}
                   href={item.href}
                   aria-current={isActive ? 'page' : undefined}
-                  className={`rounded-full px-4 py-2 text-sm font-semibold transition-all duration-300 ${
-                    isActive
-                      ? 'bg-[var(--color-slate-700)] text-white shadow-[0_14px_32px_rgba(21,43,71,0.18)]'
-                      : 'text-[var(--color-slate-500)] hover:bg-[rgba(30,58,95,0.08)] hover:text-[var(--color-slate-700)]'
+                  className={`relative px-0 py-2 text-sm font-medium transition-all duration-300 ${
+                    isHeroNav
+                      ? isActive
+                        ? 'text-[#d4af37] after:absolute after:right-0 after:-bottom-2 after:left-0 after:h-0.5 after:bg-[#d4af37]'
+                        : 'text-white hover:text-[#d4af37]'
+                      : isActive
+                        ? 'rounded-full bg-[var(--color-slate-700)] text-white shadow-[0_14px_32px_rgba(21,43,71,0.16)]'
+                        : 'rounded-full px-4 text-[var(--color-slate-700)] hover:bg-[rgba(212,175,55,0.14)] hover:text-[var(--color-slate-900)]'
                   }`}
-                  style={isActive ? { color: '#ffffff' } : undefined}
                 >
                   {item.label}
                 </a>
@@ -155,17 +159,23 @@ export function Navbar() {
           </nav>
 
           <a
-            href="https://emlakdesign.com/"
-            target="_blank"
-            rel="noreferrer"
-            className="hidden rounded-full bg-[var(--color-gold-500)] px-5 py-3 text-sm font-semibold text-[var(--color-slate-900)] transition hover:bg-[var(--color-gold-400)] md:inline-flex"
+            href="#contact"
+            className={`hidden border px-8 py-3.5 text-xs font-semibold uppercase tracking-[0.04em] transition md:inline-flex ${
+              isHeroNav
+                ? 'border-[#d4af37] text-white hover:border-[#e3c96c] hover:bg-[#d4af37] hover:text-[var(--color-slate-900)]'
+                : 'border-[var(--color-gold-500)] text-white hover:bg-[var(--color-gold-500)] hover:text-[var(--color-slate-900)]'
+            }`}
           >
-            Visit Emlak Design
+            Private Consultation
           </a>
 
           <button
             type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--color-border)] bg-white text-[var(--color-slate-900)] shadow-[0_10px_30px_rgba(21,43,71,0.08)] md:hidden"
+            className={`inline-flex h-11 w-11 items-center justify-center rounded-full border shadow-[0_10px_30px_rgba(21,43,71,0.08)] md:hidden ${
+              isHeroNav
+                ? 'border-white/20 bg-white/10 text-white'
+                : 'border-[var(--color-border)] bg-white text-[var(--color-slate-900)]'
+            }`}
             onClick={() => setIsOpen((open) => !open)}
             aria-expanded={isOpen}
             aria-controls="mobile-navigation"
@@ -202,22 +212,16 @@ export function Navbar() {
                 );
               })}
               <a
-                href="https://emlakdesign.com/"
-                target="_blank"
-                rel="noreferrer"
+                href="#contact"
                 onClick={() => setIsOpen(false)}
-                className="mt-2 rounded-2xl bg-[var(--color-gold-500)] px-4 py-3 text-center text-sm font-semibold text-[var(--color-slate-900)]"
+                className="mt-2 rounded-2xl bg-[var(--color-gold-500)] px-4 py-3 text-center text-sm font-semibold text-white"
               >
-                Visit Emlak Design
+                Private Consultation
               </a>
             </nav>
           </div>
         ) : null}
       </header>
-      <div
-        aria-hidden="true"
-        className="h-[var(--navbar-height,6.5rem)] lg:h-[var(--navbar-height,7rem)]"
-      />
     </Fragment>
   );
 }

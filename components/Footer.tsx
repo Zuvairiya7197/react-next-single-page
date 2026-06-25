@@ -132,9 +132,8 @@ export function Footer() {
             />
           </div>
           <p className="mt-5 text-sm leading-7 text-white/68">
-            Real estate guidance shaped by clearer advice, practical execution,
-            and end-to-end support around search, documentation, and
-            ownership-related decisions.
+            Dubai property advisory for buying, selling, leasing, investing,
+            and relocating.
           </p>
           <div className="mt-6 flex flex-wrap gap-4 text-sm">
             <a

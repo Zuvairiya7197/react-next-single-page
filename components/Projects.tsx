@@ -15,8 +15,8 @@ export async function Projects() {
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <SectionHeading
               eyebrow="Prime Opportunities"
-              title="Selected residences and investment assets shaped by lifestyle demand and long-term upside."
-              description="Explore a curated mix of villas, waterfront homes, and commercial assets inspired by the pace and profile of Dubai and UAE property demand."
+              title="Selected Dubai opportunities."
+              description="Curated for lifestyle demand, yield potential, and long-term value."
             />
             <a
               href="#contact"

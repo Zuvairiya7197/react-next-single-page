@@ -12,95 +12,85 @@ export const navItems = [
 export const marketStats = [
   {
     value: 'AED 75M+',
-    label:
-      'transaction value advised across residential, commercial, and investment portfolios',
+    label: 'career transaction value advised',
   },
   {
-    value: '100+',
-    label:
-      'buyers, sellers, and investors supported with tailored search and acquisition strategies',
+    value: '10+',
+    label: 'years of expert real estate guidance',
   },
   {
-    value: '30 days',
-    label:
-      'average window to move serious inquiries into qualified offers on premium listings',
+    value: '100%',
+    label: 'transparency from sourcing to signature',
   },
 ];
 
 export const heroHighlights = [
   {
-    label: 'Golden Visa Support',
-    title: 'Property choices that fit broader goals',
-    description:
-      'We help clients shortlist homes and investment assets that align with residency, family, and long-term planning priorities.',
+    label: 'Buy',
+    title: 'Shortlist with confidence',
+    description: 'Goal-led sourcing across Dubai and the UAE.',
   },
   {
-    label: 'Transaction Guidance',
-    title: 'Documentation handled with clarity',
-    description:
-      'From seller coordination to legal paperwork and handover prep, every stage is managed with calm, step-by-step support.',
+    label: 'Invest',
+    title: 'Compare the right signals',
+    description: 'Pricing, yield, location, and exit context.',
   },
 ];
 
 export const companyValues = [
   {
-    title: 'Property sourcing with intent',
-    description:
-      'We narrow the market around your actual goals, whether that means end-use comfort, rental income, resale upside, or developer reputation.',
+    title: 'Property sourcing',
+    description: 'Goal-focused opportunities.',
   },
   {
-    title: 'Golden Visa and family support',
-    description:
-      'When a purchase is part of a wider relocation or residency plan, we help clients understand the property and documentation implications early.',
+    title: 'Golden Visa support',
+    description: 'Residency-aligned guidance.',
   },
   {
-    title: 'Legal and transfer coordination',
-    description:
-      'We keep communication moving between buyers, sellers, legal representatives, and service providers so the process stays organized.',
+    title: 'Legal coordination',
+    description: 'Organised transaction process.',
   },
   {
-    title: 'After-sales continuity',
-    description:
-      'Support does not stop at the signature. We stay useful after the deal with practical next-step guidance and ownership support.',
+    title: 'After-sales support',
+    description: 'Continued liaison after purchase.',
   },
 ];
 
 export const services = [
   {
-    title: 'Buy, Sell, and Rent',
-    description:
-      'End-to-end support for buying, selling, and leasing with guided property selection, seller communication, and transaction planning.',
+    title: 'Buy, Sell & Rent',
+    description: 'Guided transactions from inquiry to handover.',
     icon: 'search',
   },
   {
-    title: 'Golden Visa Assistance',
-    description:
-      'Guidance on property pathways that can support residency goals, with practical help around the process and required documentation.',
-    icon: 'key',
+    title: 'Investment Advisory',
+    description: 'Strategic opportunities across the UAE.',
+    icon: 'handshake',
   },
   {
-    title: 'Asset Management',
-    description:
-      'Hands-on help for owners who want smoother oversight, stronger tenant continuity, and dependable day-to-day property coordination.',
+    title: 'Off-Plan Sales',
+    description: 'Developer launches and growth-focused assets.',
     icon: 'sparkles',
   },
   {
-    title: 'Legal and Documentation',
-    description:
-      'We help clients stay on top of contracts, compliance steps, transfer requirements, and the paperwork surrounding each transaction.',
+    title: 'Asset & Leasing',
+    description: 'Ownership and tenant support.',
     icon: 'building',
   },
   {
-    title: 'Relocation and Family Setup',
-    description:
-      'Additional support for the practical side of settling in, from utilities and insurance to school and lifestyle-related coordination.',
+    title: 'Mortgage & Finance',
+    description: 'Financing guidance and lender coordination.',
     icon: 'landmark',
   },
   {
-    title: 'Investment Advisory',
-    description:
-      'Targeted guidance for clients comparing off-plan, ready, rental-yield, and capital-growth opportunities across the market.',
-    icon: 'handshake',
+    title: 'Golden Visa',
+    description: 'Property-linked residency guidance.',
+    icon: 'key',
+  },
+  {
+    title: 'Legal & Documentation',
+    description: 'Contracts, compliance, transfers, and paperwork.',
+    icon: 'building',
   },
 ] as const;
 
@@ -138,8 +128,7 @@ const properties: Property[] = [
     title: 'Lagoon Views 2 BR Apartment',
     location: 'Dubailand, Dubai',
     price: 'From AED 1.82M',
-    description:
-      'A Golden Visa-eligible apartment in DAMAC Lagoon Views, combining resort-style community living, contemporary interiors, and a Q1 2029 handover timeline.',
+    description: 'Golden Visa-eligible living in DAMAC Lagoon Views.',
     beds: '2',
     baths: '2',
     area: 'Up to 1,797 sq ft',
@@ -155,8 +144,7 @@ const properties: Property[] = [
     title: 'The Edit at d3',
     location: 'Dubai Design District',
     price: 'From AED 2.00M',
-    description:
-      'A Meraas address in Dubai Design District, offering 1 to 4-bedroom residences and exclusive penthouses with sculptural towers, continuous balcony lines, and sky gardens.',
+    description: 'A Meraas address in Dubai Design District.',
     beds: '1-4',
     baths: '2',
     area: 'Penthouses',
@@ -173,8 +161,7 @@ const properties: Property[] = [
     title: 'The Brooks',
     location: 'Dubai Land, Dubai',
     price: 'From AED 4.16M',
-    description:
-      'A Sobha villa community in Dubai Land, offering 4 and 5-bedroom homes with contemporary facades, generous layouts, and landscaped family-focused surroundings.',
+    description: 'Sobha 4 and 5-bedroom villas in Dubai Land.',
     beds: '4 & 5',
     baths: '5',
     area: '2,520.9-4,106.8 sq ft',
@@ -191,8 +178,7 @@ const properties: Property[] = [
     title: 'Greenz by Danube',
     location: 'Academic City, Dubai',
     price: 'From AED 3.5M',
-    description:
-      'A townhouse-focused Danube community in Dubai International Academic City, planned around greenery, open spaces, and a 1% monthly payment plan.',
+    description: 'Danube townhouses with a 1% monthly payment plan.',
     beds: '3, 4 & 5',
     baths: '3',
     area: '700',
@@ -236,7 +222,7 @@ export const contactDetails = {
   address: {
     label: 'Office',
     value: 'Dubai National Insurance Building, Office 506, Dubai, UAE',
-    href: 'https://maps.google.com/?q=Office+1007+Sidra+Tower+Al+Sufouh+1+Dubai+UAE',
+    href: 'https://maps.google.com/?q=Dubai+National+Insurance+Building+Office+506+Dubai+UAE',
   },
   email: {
     label: 'Email',

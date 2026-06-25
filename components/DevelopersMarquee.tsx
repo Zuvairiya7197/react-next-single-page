@@ -146,14 +146,12 @@ export function DevelopersMarquee() {
             <div className="grid gap-8 border-b border-[var(--color-border)] px-6 py-8 md:grid-cols-[1.05fr_1fr] md:px-10 md:py-10">
               <div>
                 <h2 className="font-display text-3xl leading-tight text-[var(--color-slate-900)] sm:text-4xl">
-                  Top Developers in UAE
+                  Developer Partnerships
                 </h2>
               </div>
 
               <p className="max-w-2xl text-base leading-8 text-[var(--color-slate-500)]">
-                We work with leading UAE real estate developers to help clients
-                access stronger inventory, high-demand communities, and
-                well-positioned opportunities across Dubai and the wider market.
+                Access to leading UAE developers and high-demand communities.
               </p>
             </div>
 

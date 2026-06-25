@@ -3,23 +3,53 @@
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
-import { SectionReveal } from '@/components/SectionReveal';
-import { heroHighlights, marketStats } from '@/lib/data';
+import { MapPin, MoveRight } from 'lucide-react';
 
-const heroImages = [
-  '/images/1st.jpeg',
-  '/images/2nd.jpeg',
-  '/images/4th.jpeg',
-  '/images/5th.jpeg',
-];
+import { SectionReveal } from '@/components/SectionReveal';
+
+const heroProperties = [
+  {
+    location: 'Dubailand',
+    title: 'Lagoon Views',
+    type: '2 Bed Apartment',
+    price: 'AED 1.82M',
+    specs: '2 Bed | 2 Bath | 1,797 Sqft',
+    image: '/images/projects/lagoon-views-2br.jpg',
+  },
+  {
+    location: 'Dubai Design District',
+    title: 'The Edit at d3',
+    type: 'Design-Led Residences',
+    price: 'AED 2.00M',
+    specs: '1-4 Bed | Penthouses | Q2 2030',
+    image: '/images/projects/the-edit-at-d3.jpg',
+  },
+  {
+    location: 'Dubai Land',
+    title: 'The Brooks',
+    type: 'Sobha Villa Community',
+    price: 'AED 4.16M',
+    specs: '4-5 Bed | 5 Bath | 4,106 Sqft',
+    image: '/images/projects/the-brooks.webp',
+  },
+  {
+    location: 'Academic City',
+    title: 'Greenz by Danube',
+    type: 'Townhouse Community',
+    price: 'AED 3.5M',
+    specs: '3-5 Bed | 1% Monthly Plan',
+    image: '/images/projects/greenz-exterior.webp',
+  },
+] as const;
 
 export function Hero() {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const activeProperty = heroProperties[activeImageIndex];
 
   useEffect(() => {
     const intervalId = window.setInterval(() => {
       setActiveImageIndex((currentIndex) =>
-        currentIndex === heroImages.length - 1 ? 0 : currentIndex + 1,
+        currentIndex === heroProperties.length - 1 ? 0 : currentIndex + 1,
       );
     }, 4500);
 
@@ -29,128 +59,117 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-[calc(100vh-6.5rem)] overflow-hidden px-6 lg:min-h-[calc(100vh-7rem)] lg:px-8"
+      className="relative min-h-[100svh] overflow-hidden px-6 pt-24 text-white sm:pt-26 lg:px-8 lg:pt-28"
     >
       <div className="absolute inset-0">
-        {heroImages.map((imageSrc, index) => (
-          <Image
-            key={imageSrc}
-            src={imageSrc}
-            alt="Stylized exterior illustration of a premium modern residence"
-            fill
-            sizes="100vw"
-            priority={index === 0}
-            className={`object-cover transition-opacity duration-[1600ms] ease-in-out ${
-              activeImageIndex === index ? 'opacity-100' : 'opacity-0'
-            }`}
-          />
-        ))}
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(21,43,71,0.96)_0%,rgba(21,43,71,0.88)_42%,rgba(21,43,71,0.52)_72%,rgba(21,43,71,0.22)_100%)]" />
+        <Image
+          src="/images/hero-emlak-main.png"
+          alt="Luxury Dubai waterfront villa with skyline view"
+          fill
+          sizes="100vw"
+          priority
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(2,18,34,0.96)_0%,rgba(2,18,34,0.82)_34%,rgba(2,18,34,0.24)_54%,rgba(2,18,34,0)_70%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,18,34,0.46)_0%,rgba(2,18,34,0.02)_42%,rgba(2,18,34,0.42)_100%)]" />
       </div>
-      <div className="hero-glow pointer-events-none absolute inset-0" />
-      <div className="grid-overlay pointer-events-none absolute inset-0 opacity-30" />
-      <div className="relative z-10 mx-auto grid min-h-[calc(100vh-6.5rem)] max-w-7xl items-start gap-16 py-10 lg:min-h-[calc(100vh-7rem)] lg:grid-cols-[1.05fr_0.95fr] lg:py-12">
-        <SectionReveal className="relative z-10">
-          <span className="inline-flex max-w-full whitespace-nowrap rounded-full border border-[rgba(212,175,55,0.3)] bg-[rgba(212,175,55,0.12)] px-3 py-2 text-[clamp(0.55rem,2.7vw,0.75rem)] font-semibold uppercase leading-none tracking-[0.08em] text-[var(--color-gold-400)] shadow-[0_18px_50px_rgba(12,24,41,0.22)] sm:px-4 sm:text-xs sm:tracking-[0.35em]">
-            Dubai and UAE Property Advisory
-          </span>
-          <h1 className="mt-6 max-w-3xl font-display text-5xl leading-[0.95] text-white sm:text-6xl lg:text-7xl">
-            Elevated spaces for{' '}
-            <span className="text-[var(--color-gold-400)]">modern living</span>,
-            investing, and growth.
+
+      <div className="relative z-10 mx-auto flex min-h-[calc(100svh-6rem)] max-w-7xl flex-col justify-end gap-6 pb-5 sm:min-h-[calc(100svh-6.5rem)] sm:pb-6 lg:min-h-[calc(100svh-7rem)] lg:gap-7">
+        <SectionReveal className="max-w-3xl">
+          <div className="flex items-center gap-4 text-xs font-semibold uppercase tracking-[0.34em] text-[var(--color-gold-400)] sm:text-sm">
+            <span>Dubai Property Advisory</span>
+            <span className="h-px w-14 bg-[var(--color-gold-500)]" />
+            <span className="h-2 w-2 rotate-45 bg-[var(--color-gold-500)]" />
+          </div>
+          <h1 className="mt-6 font-display text-[clamp(3rem,6.2vw,6.25rem)] leading-[0.9] tracking-normal text-white sm:mt-7">
+            Invest smart,
+            <span className="block text-[var(--color-gold-400)]">
+              live premium.
+            </span>
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-white/82 sm:text-xl">
-            <span className="font-semibold text-white">
-              EMLAK REAL ESTATE LLC
-            </span>{' '}
-            supports buyers, sellers, and investors with property sourcing,
-            transaction guidance, documentation support, and clearer decisions
-            across every stage of the journey.
+          <div className="mt-6 h-px max-w-sm bg-[linear-gradient(90deg,var(--color-gold-500),rgba(212,175,55,0))]" />
+          <p className="mt-5 max-w-2xl text-base leading-7 text-white/84 sm:text-lg lg:leading-8">
+            Emlak Real Estate LLC helps clients buy, sell, lease, invest, and
+            relocate with clear guidance from search to signature.
           </p>
 
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row lg:mt-7">
             <a
               href="#projects"
-              className="inline-flex items-center justify-center rounded-full bg-white px-7 py-4 text-sm font-semibold text-[var(--color-slate-900)] transition hover:-translate-y-0.5 hover:bg-[var(--color-surface-strong)]"
+              className="inline-flex items-center justify-center gap-3 rounded-sm bg-[var(--color-gold-500)] px-7 py-3 text-sm font-semibold uppercase tracking-[0.02em] text-[var(--color-slate-900)] shadow-[0_22px_55px_rgba(212,175,55,0.22)] transition hover:-translate-y-0.5 hover:bg-[var(--color-gold-400)]"
             >
               Explore Properties
+              <MoveRight size={18} aria-hidden="true" />
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center justify-center rounded-full border border-white/35 bg-transparent px-7 py-4 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:border-[var(--color-gold-400)] hover:bg-white/10"
-              style={{ color: '#ffffff' }}
+              className="inline-flex items-center justify-center gap-3 rounded-sm border border-[rgba(212,175,55,0.62)] bg-transparent px-7 py-3 text-sm font-semibold uppercase tracking-[0.02em] text-white transition hover:-translate-y-0.5 hover:bg-[rgba(212,175,55,0.12)]"
             >
-              Schedule a Private Tour
+              Book Consultation
+              <MoveRight size={18} aria-hidden="true" />
             </a>
-          </div>
-
-          <div className="mt-12 grid gap-4 sm:grid-cols-3">
-            {marketStats.map((stat) => (
-              <div
-                key={stat.label}
-                className="rounded-[1.75rem] border border-white/12 bg-[rgba(255,255,255,0.08)] p-5 shadow-[0_20px_60px_rgba(12,24,41,0.22)] backdrop-blur"
-              >
-                <p className="text-3xl font-semibold text-white">
-                  {stat.value}
-                </p>
-                <p className="mt-2 text-sm leading-6 text-white/70">
-                  {stat.label}
-                </p>
-              </div>
-            ))}
           </div>
         </SectionReveal>
 
-        <SectionReveal className="relative z-10" delay={0.1}>
-          <div className="relative rounded-[2rem] border border-white/12 bg-[rgba(255,255,255,0.08)] p-5 shadow-[0_30px_90px_rgba(12,24,41,0.28)] backdrop-blur-md sm:p-6">
-            <div className="absolute inset-x-10 top-4 h-28 rounded-full bg-[rgba(212,175,55,0.18)] blur-3xl" />
-            <div className="relative overflow-hidden rounded-[1.6rem] border border-[rgba(212,175,55,0.18)] bg-[rgba(9,20,35,0.28)]">
-              <div className="relative h-[16rem] w-full sm:h-[20rem] lg:h-[24rem]">
-                {heroImages.map((imageSrc, index) => (
-                  <Image
-                    key={imageSrc}
-                    src={imageSrc}
-                    alt="Luxury modern property exterior with pool"
-                    fill
-                    sizes="(min-width: 1024px) 40vw, (min-width: 640px) 50vw, 100vw"
-                    priority={index === 0}
-                    className={`object-cover transition-opacity duration-[1600ms] ease-in-out ${
-                      activeImageIndex === index ? 'opacity-100' : 'opacity-0'
-                    }`}
-                  />
-                ))}
+        <SectionReveal delay={0.1}>
+          <div className="flex flex-col gap-5 lg:items-end">
+            <div className="w-full max-w-2xl overflow-hidden rounded-[1rem] border border-white/18 bg-[rgba(9,24,42,0.68)] shadow-[0_28px_90px_rgba(0,0,0,0.32)] backdrop-blur-md">
+              <div className="grid gap-0 sm:grid-cols-[8rem_1fr_auto_1fr] sm:items-center">
+                <div className="relative h-28 sm:h-full sm:min-h-28">
+                  {heroProperties.map((property, index) => (
+                    <Image
+                      key={property.title}
+                      src={property.image}
+                      alt={`${property.title} property image`}
+                      fill
+                      sizes="128px"
+                      className={`object-cover transition-opacity duration-700 ${
+                        activeImageIndex === index ? 'opacity-100' : 'opacity-0'
+                      }`}
+                    />
+                  ))}
+                  <div className="absolute inset-0 bg-[rgba(2,18,34,0.16)]" />
+                </div>
+                <div className="flex items-center gap-4 p-4">
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[rgba(212,175,55,0.18)] text-[var(--color-gold-400)]">
+                    <MapPin size={23} aria-hidden="true" />
+                  </span>
+                  <div>
+                    <p className="text-xl font-semibold text-white">
+                      {activeProperty.location}
+                    </p>
+                    <p className="mt-1 text-sm text-white/72">
+                      {activeProperty.type}
+                    </p>
+                  </div>
+                </div>
+                <div className="hidden h-16 w-px bg-white/18 sm:block" />
+                <div className="p-4">
+                  <p className="text-xl font-semibold text-white">
+                    {activeProperty.price}
+                  </p>
+                  <p className="mt-1 text-sm text-white/72">
+                    {activeProperty.specs}
+                  </p>
+                </div>
               </div>
             </div>
 
-            <div className="relative mt-6 rounded-[1.6rem] border border-[rgba(212,175,55,0.18)] bg-[rgba(9,20,35,0.34)] p-6">
-              <p className="text-xs uppercase tracking-[0.32em] text-[var(--color-gold-400)]">
-                Signature Approach
-              </p>
-              <p className="mt-3 font-display text-3xl leading-tight text-white">
-                Every listing is positioned with the polish of a premium brand.
-              </p>
-              <p className="mt-4 text-sm leading-7 text-white/72">
-                From market preparation to final negotiation, we shape each
-                touchpoint to feel clear, elevated, and deeply considered.
-              </p>
-            </div>
-
-            <div className="relative mt-6 grid gap-4 sm:grid-cols-2">
-              {heroHighlights.map((highlight) => (
-                <div
-                  key={highlight.title}
-                  className="rounded-[1.4rem] border border-white/10 bg-[rgba(255,255,255,0.06)] p-4 backdrop-blur"
+            <div className="flex gap-2">
+              {heroProperties.map((property, index) => (
+                <button
+                  key={property.title}
+                  type="button"
+                  onClick={() => setActiveImageIndex(index)}
+                  aria-label={`Show ${property.title}`}
+                  className={`h-1.5 rounded-full transition-all ${
+                    activeImageIndex === index
+                      ? 'w-12 bg-[var(--color-gold-500)]'
+                      : 'w-5 bg-white/40 hover:bg-white/70'
+                  }`}
                 >
-                  <p className="text-xs uppercase tracking-[0.3em] text-[var(--color-gold-400)]">
-                    {highlight.label}
-                  </p>
-                  <p className="mt-2 text-lg font-semibold text-white">
-                    {highlight.title}
-                  </p>
-                  <p className="mt-2 text-sm leading-6 text-white/70">
-                    {highlight.description}
-                  </p>
-                </div>
+                  <span className="sr-only">{property.title}</span>
+                </button>
               ))}
             </div>
           </div>

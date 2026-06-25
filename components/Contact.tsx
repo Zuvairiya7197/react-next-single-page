@@ -28,8 +28,8 @@ export function Contact() {
         <SectionReveal className="min-w-0">
           <SectionHeading
             eyebrow="Contact"
-            title="Tell us what you need and we will shape the next step."
-            description="Whether you are buying, selling, comparing investment options, or exploring a property strategy tied to wider life goals, we are here to help."
+            title="Let’s start the conversation."
+            description="Private consultation, opportunity review, then clear next steps."
           />
 
           <div className="mt-8 space-y-4">
