@@ -139,27 +139,41 @@ export function DevelopersMarquee() {
   }, []);
 
   return (
-    <section className="bg-white px-6 py-24 lg:px-8">
+    <section className="bg-white px-6 py-20 lg:px-8">
       <div className="mx-auto max-w-7xl">
         <SectionReveal>
-          <div className="overflow-hidden rounded-[2rem] border border-[var(--color-border)] bg-[linear-gradient(180deg,#ffffff_0%,#f7f9fc_100%)] shadow-[0_24px_70px_rgba(21,43,71,0.06)]">
-            <div className="grid gap-8 border-b border-[var(--color-border)] px-6 py-8 md:grid-cols-[1.05fr_1fr] md:px-10 md:py-10">
-              <div>
-                <h2 className="font-display text-3xl leading-tight text-[var(--color-slate-900)] sm:text-4xl">
-                  Developer Partnerships
-                </h2>
+          <div className="mb-12 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-2xl">
+              <div className="flex items-center gap-4 text-xs font-semibold uppercase tracking-[0.22em] text-[var(--color-slate-900)]">
+                <span>Developer Partnerships</span>
+                <span className="h-px w-12 bg-[var(--color-gold-500)]" />
               </div>
-
-              <p className="max-w-2xl text-base leading-8 text-[var(--color-slate-500)]">
-                Access to leading UAE developers and high-demand communities.
-              </p>
+              <h2 className="mt-7 font-display text-4xl uppercase leading-[0.98] text-[var(--color-slate-900)] sm:text-5xl">
+                Trusted Developer
+                <span className="block text-[var(--color-gold-500)]">
+                  Access
+                </span>
+              </h2>
+              <div className="mt-5 flex items-center gap-4">
+                <span className="h-2 w-2 rotate-45 bg-[var(--color-gold-500)]" />
+                <span className="h-px w-56 max-w-[70%] bg-[var(--color-gold-500)]" />
+              </div>
             </div>
 
-            <div className="relative">
-              <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-[linear-gradient(90deg,#f8fafc_0%,rgba(248,250,252,0)_100%)] sm:w-20" />
-              <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-[linear-gradient(270deg,#f8fafc_0%,rgba(248,250,252,0)_100%)] sm:w-20" />
+            <p className="max-w-xl text-base leading-7 text-[var(--color-slate-900)]">
+              Access to leading UAE developers, stronger inventory, high-demand
+              communities, and well-positioned opportunities across Dubai.
+            </p>
+          </div>
+        </SectionReveal>
 
-              <div className="overflow-hidden px-4 py-4 sm:px-6 sm:py-6">
+        <SectionReveal delay={0.1}>
+          <div className="overflow-hidden border-y border-[var(--color-gold-500)] bg-[var(--color-slate-900)] shadow-[0_24px_70px_rgba(21,43,71,0.16)]">
+            <div className="relative">
+              <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-[linear-gradient(90deg,var(--color-slate-900)_0%,rgba(21,43,71,0)_100%)] sm:w-20" />
+              <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-[linear-gradient(270deg,var(--color-slate-900)_0%,rgba(21,43,71,0)_100%)] sm:w-20" />
+
+              <div className="overflow-hidden px-4 py-6 sm:px-6 sm:py-8">
                 <div
                   ref={trackRef}
                   className="developer-marquee-track flex w-max flex-nowrap gap-4 sm:gap-5"
@@ -167,7 +181,7 @@ export function DevelopersMarquee() {
                   {marqueeDevelopers.map((developer, index) => (
                     <article
                       key={`${developer.name}-${index}`}
-                      className={`flex h-34 w-[12.8rem] shrink-0 items-center justify-center rounded-[1.35rem] border border-[rgba(30,58,95,0.08)] bg-[#eef1f6] px-4 shadow-[0_16px_40px_rgba(21,43,71,0.05)] sm:h-38 sm:w-[13.8rem] sm:rounded-[1.55rem] sm:px-5 ${developer.cardClassName}`}
+                      className={`flex h-32 w-[12.8rem] shrink-0 items-center justify-center rounded-[1.2rem] border border-[rgba(212,175,55,0.2)] bg-white px-4 shadow-[0_16px_40px_rgba(0,0,0,0.16)] sm:h-36 sm:w-[13.8rem] sm:px-5 ${developer.cardClassName}`}
                     >
                       <Image
                         src={developer.logo}

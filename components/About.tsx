@@ -1,65 +1,118 @@
-import { SectionHeading } from '@/components/SectionHeading';
+import Image from 'next/image';
+
+import { BadgeCheck, Coins, ThumbsUp, UsersRound } from 'lucide-react';
+
 import { SectionReveal } from '@/components/SectionReveal';
-import { companyValues } from '@/lib/data';
+
+const aboutStats = [
+  {
+    icon: Coins,
+    value: 'AED 75M+',
+    label: 'Career Transaction Value Advised',
+  },
+  {
+    icon: UsersRound,
+    value: '10+',
+    label: 'Years of Expert Real Estate Guidance',
+  },
+  {
+    icon: BadgeCheck,
+    value: '100%',
+    label: 'Transparency from Sourcing to Signature',
+  },
+  {
+    icon: ThumbsUp,
+    value: 'Bespoke Advisory',
+    label: 'via a Focused Client Roster',
+  },
+] as const;
 
 export function About() {
   return (
-    <section id="about" className="bg-white px-6 py-24 lg:px-8">
-      <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+    <section id="about" className="overflow-hidden bg-white px-6 py-16 lg:px-8">
+      <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
         <SectionReveal>
-          <div className="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-surface)] p-8 shadow-[0_24px_70px_rgba(21,43,71,0.08)] sm:p-10">
-            <p className="text-sm uppercase tracking-[0.32em] text-[var(--color-slate-500)]">
-              About Emlak
-            </p>
-            <p className="mt-6 font-display text-3xl leading-tight text-[var(--color-slate-900)] sm:text-4xl">
-              Clear advice. Strong execution.
-            </p>
-            <p className="mt-6 text-base leading-7 text-[var(--color-slate-500)]">
-              Dubai-based property advisory for buyers, sellers, and investors.
-              Built on market intelligence, transparent communication, and
-              end-to-end support.
-            </p>
-            <div className="mt-8 grid gap-4 sm:grid-cols-2">
-              <div className="rounded-[1.5rem] bg-[var(--color-surface-strong)] p-5">
-                <p className="text-3xl font-semibold text-[var(--color-slate-900)]">
-                  30-60
-                </p>
-                <p className="mt-2 text-sm leading-6 text-[var(--color-slate-500)]">
-                  days average from serious inquiry to qualified offer.
-                </p>
-              </div>
-              <div className="rounded-[1.5rem] bg-[var(--color-surface-strong)] p-5">
-                <p className="text-3xl font-semibold text-[var(--color-slate-900)]">
-                  12+
-                </p>
-                <p className="mt-2 text-sm leading-6 text-[var(--color-slate-500)]">
-                  developer partnerships across the UAE.
-                </p>
-              </div>
+          <div className="max-w-2xl">
+            <div className="flex items-center gap-4 text-xs font-semibold uppercase tracking-[0.22em] text-[var(--color-slate-900)]">
+              <span>About</span>
+              <span className="h-px w-12 bg-[var(--color-gold-500)]" />
             </div>
+
+            <h2 className="mt-7 font-display text-4xl uppercase leading-[0.98] text-[var(--color-slate-900)] sm:text-5xl">
+              About
+              <span className="block text-[var(--color-gold-500)]">
+                Emlak Real Estate
+              </span>
+            </h2>
+
+            <div className="mt-5 flex items-center gap-4">
+              <span className="h-2 w-2 rotate-45 bg-[var(--color-gold-500)]" />
+              <span className="h-px w-56 max-w-[70%] bg-[var(--color-gold-500)]" />
+            </div>
+
+            <div className="mt-6 max-w-xl space-y-4 text-base leading-7 text-[var(--color-slate-900)]">
+              <p>
+                Emlak Real Estate LLC is a Dubai-based property advisory firm
+                supporting buyers, sellers, and investors with strategic
+                property sourcing, expert transaction guidance, and
+                comprehensive documentation support.
+              </p>
+              <p>
+                Our approach is built on market intelligence, hands-on
+                execution, and transparent communication, enabling clearer
+                decisions at every stage of the asset lifecycle.
+              </p>
+            </div>
+
+            <a
+              href="#contact"
+              className="mt-8 inline-flex items-center justify-center gap-8 border border-[rgba(212,175,55,0.62)] px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.08em] text-[var(--color-gold-500)] transition hover:bg-[var(--color-gold-500)] hover:text-[var(--color-slate-900)]"
+            >
+              Learn More About Us
+              <span aria-hidden="true" className="text-xl leading-none">
+                →
+              </span>
+            </a>
           </div>
         </SectionReveal>
 
         <SectionReveal delay={0.1}>
-          <SectionHeading
-            eyebrow="Why Clients Choose Us"
-            title="Support beyond the shortlist."
-            description="Search, evaluation, negotiation, paperwork, and post-sale coordination."
-          />
-          <div className="mt-8 grid gap-4 sm:grid-cols-2">
-            {companyValues.map((value) => (
-              <article
-                key={value.title}
-                className="rounded-[1.6rem] border border-[var(--color-border)] bg-[var(--color-surface-strong)] p-6 shadow-[0_18px_50px_rgba(21,43,71,0.05)]"
-              >
-                <h3 className="text-lg font-semibold text-[var(--color-slate-900)]">
-                  {value.title}
-                </h3>
-                <p className="mt-3 text-sm leading-7 text-[var(--color-slate-500)]">
-                  {value.description}
-                </p>
-              </article>
-            ))}
+          <div className="relative min-h-[34rem]">
+            <div className="absolute inset-y-0 right-0 w-[82%] overflow-hidden rounded-[2rem] rounded-tl-[8rem] border border-[rgba(212,175,55,0.26)]">
+              <Image
+                src="/images/hero-emlak-main.png"
+                alt="Luxury Dubai villa and skyline"
+                fill
+                sizes="(min-width: 1024px) 55vw, 100vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-white/22" />
+            </div>
+            <div className="absolute left-6 top-0 hidden h-full w-28 rounded-l-[6rem] border-l border-t border-[rgba(212,175,55,0.52)] lg:block" />
+
+            <div className="relative z-10 flex min-h-[34rem] flex-col justify-center gap-3 py-5">
+              {aboutStats.map((stat) => {
+                const Icon = stat.icon;
+
+                return (
+                  <div
+                    key={stat.value}
+                    className="relative max-w-[18rem] rounded-[1rem] border border-white/45 bg-white/58 p-5 pl-14 shadow-[0_16px_44px_rgba(21,43,71,0.1)] backdrop-blur-xl lg:ml-12 even:lg:ml-28"
+                  >
+                    <div className="absolute -left-7 top-1/2 flex h-14 w-14 -translate-y-1/2 items-center justify-center rounded-full border border-[rgba(212,175,55,0.28)] bg-white/82 text-[var(--color-gold-500)] shadow-[0_12px_36px_rgba(21,43,71,0.08)] backdrop-blur">
+                      <Icon size={23} strokeWidth={1.4} aria-hidden="true" />
+                    </div>
+                    <p className="font-display text-lg uppercase leading-tight text-[var(--color-slate-900)]">
+                      {stat.value}
+                    </p>
+                    <div className="mt-3 h-px w-10 bg-[var(--color-gold-500)]" />
+                    <p className="mt-3 text-sm font-semibold leading-6 text-[var(--color-slate-900)]">
+                      {stat.label}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </SectionReveal>
       </div>

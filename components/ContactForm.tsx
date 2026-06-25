@@ -160,7 +160,7 @@ export function ContactForm({
             onChange={handleChange}
             aria-invalid={Boolean(errors.name)}
             aria-describedby={errors.name ? `${nameId}-error` : undefined}
-            className="mt-3 w-full rounded-2xl border border-[var(--color-border)] bg-white px-4 py-3.5 text-sm text-[var(--color-slate-900)] outline-none transition focus:border-[var(--color-gold-500)] focus:ring-2 focus:ring-[rgba(216,179,106,0.22)]"
+            className="mt-3 w-full rounded-[1rem] border border-[rgba(212,175,55,0.22)] bg-white px-4 py-3.5 text-sm text-[var(--color-slate-900)] outline-none transition focus:border-[var(--color-gold-500)] focus:ring-2 focus:ring-[rgba(216,179,106,0.18)]"
             placeholder="Jordan Lee"
             autoComplete="off"
             data-lpignore="true"
@@ -193,7 +193,7 @@ export function ContactForm({
             onChange={handleChange}
             aria-invalid={Boolean(errors.email)}
             aria-describedby={errors.email ? `${emailId}-error` : undefined}
-            className="mt-3 w-full rounded-2xl border border-[var(--color-border)] bg-white px-4 py-3.5 text-sm text-[var(--color-slate-900)] outline-none transition focus:border-[var(--color-gold-500)] focus:ring-2 focus:ring-[rgba(216,179,106,0.22)]"
+            className="mt-3 w-full rounded-[1rem] border border-[rgba(212,175,55,0.22)] bg-white px-4 py-3.5 text-sm text-[var(--color-slate-900)] outline-none transition focus:border-[var(--color-gold-500)] focus:ring-2 focus:ring-[rgba(216,179,106,0.18)]"
             placeholder="jordan@email.com"
             autoComplete="off"
             data-lpignore="true"
@@ -227,7 +227,7 @@ export function ContactForm({
           onChange={handleChange}
           aria-invalid={Boolean(errors.message)}
           aria-describedby={errors.message ? `${messageId}-error` : undefined}
-          className="mt-3 w-full rounded-[1.6rem] border border-[var(--color-border)] bg-white px-4 py-3.5 text-sm text-[var(--color-slate-900)] outline-none transition focus:border-[var(--color-gold-500)] focus:ring-2 focus:ring-[rgba(216,179,106,0.22)]"
+          className="mt-3 w-full rounded-[1.1rem] border border-[rgba(212,175,55,0.22)] bg-white px-4 py-3.5 text-sm text-[var(--color-slate-900)] outline-none transition focus:border-[var(--color-gold-500)] focus:ring-2 focus:ring-[rgba(216,179,106,0.18)]"
           placeholder="Share your goal, budget, and timeline."
           autoComplete="off"
           data-lpignore="true"
@@ -248,7 +248,7 @@ export function ContactForm({
       <button
         type="submit"
         disabled={submitStatus === 'sending'}
-        className="inline-flex w-full items-center justify-center rounded-full bg-[var(--color-slate-700)] px-6 py-4 text-sm font-semibold text-white transition hover:bg-[var(--color-slate-900)] disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
+        className="inline-flex w-full items-center justify-center border border-[rgba(212,175,55,0.62)] px-6 py-3.5 text-sm font-semibold uppercase tracking-[0.08em] text-[var(--color-gold-500)] transition hover:bg-[var(--color-gold-500)] hover:text-[var(--color-slate-900)] disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
       >
         {submitStatus === 'sending' ? 'Sending...' : submitLabel}
       </button>

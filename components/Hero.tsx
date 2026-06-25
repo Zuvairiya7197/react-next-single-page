@@ -81,7 +81,7 @@ export function Hero() {
             <span className="h-px w-14 bg-[var(--color-gold-500)]" />
             <span className="h-2 w-2 rotate-45 bg-[var(--color-gold-500)]" />
           </div>
-          <h1 className="mt-6 font-display text-[clamp(3rem,6.2vw,6.25rem)] leading-[0.9] tracking-normal text-white sm:mt-7">
+          <h1 className="mt-6 font-display text-[clamp(3rem,6.2vw,6.25rem)] uppercase leading-[0.9] tracking-normal text-white sm:mt-7">
             Invest smart,
             <span className="block text-[var(--color-gold-400)]">
               live premium.

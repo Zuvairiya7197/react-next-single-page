@@ -69,12 +69,12 @@ export const services = [
   },
   {
     title: 'Off-Plan Sales',
-    description: 'Developer launches and growth-focused assets.',
+    description: 'Developer launches and growth-focused opportunities.',
     icon: 'sparkles',
   },
   {
-    title: 'Asset & Leasing',
-    description: 'Ownership and tenant support.',
+    title: 'Asset & Leasing Management',
+    description: 'Ongoing ownership and tenant support.',
     icon: 'building',
   },
   {
@@ -83,7 +83,7 @@ export const services = [
     icon: 'landmark',
   },
   {
-    title: 'Golden Visa',
+    title: 'Golden Visa Assistance',
     description: 'Property-linked residency guidance.',
     icon: 'key',
   },

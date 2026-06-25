@@ -25,7 +25,7 @@ export function SectionHeading({
         {eyebrow}
       </span>
       <h2
-        className={`mt-5 font-display text-4xl leading-tight sm:text-5xl ${
+        className={`mt-5 font-display text-4xl uppercase leading-tight sm:text-5xl ${
           isDark ? 'text-white' : 'text-[var(--color-slate-900)]'
         }`}
       >

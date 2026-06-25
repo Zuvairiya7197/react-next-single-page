@@ -3,7 +3,6 @@
 import Image from 'next/image';
 import { useState } from 'react';
 
-import { SectionHeading } from '@/components/SectionHeading';
 import { SectionReveal } from '@/components/SectionReveal';
 import { services } from '@/lib/data';
 
@@ -24,35 +23,50 @@ export function Services() {
   return (
     <section
       id="services"
-      className="overflow-hidden bg-[var(--color-surface-strong)] px-6 py-24 lg:px-8"
+      className="overflow-hidden bg-white px-6 py-20 lg:px-8"
     >
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-8 lg:grid-cols-[25rem_minmax(0,1fr)] lg:items-center xl:grid-cols-[28rem_minmax(0,1fr)]">
           <SectionReveal>
             <div className="max-w-xl">
-              <SectionHeading
-                eyebrow="Services"
-                title="Every stage covered."
-                description="Buy. Sell. Lease. Invest. Relocate."
-              />
+              <div className="flex items-center gap-4 text-xs font-semibold uppercase tracking-[0.22em] text-[var(--color-slate-900)]">
+                <span>Our Services</span>
+                <span className="h-px w-12 bg-[var(--color-gold-500)]" />
+              </div>
 
-              <div className="mt-8 max-w-sm overflow-hidden rounded-[1.35rem] border border-[rgba(212,175,55,0.26)] bg-white shadow-[0_22px_60px_rgba(21,43,71,0.08)]">
-                <div className="h-1.5 bg-[linear-gradient(90deg,var(--color-gold-500),rgba(212,175,55,0.18))]" />
+              <h2 className="mt-7 font-display text-4xl uppercase leading-[0.98] text-[var(--color-slate-900)] sm:text-5xl">
+                Our
+                <span className="block text-[var(--color-gold-500)]">
+                  Services
+                </span>
+              </h2>
+
+              <div className="mt-5 flex items-center gap-4">
+                <span className="h-2 w-2 rotate-45 bg-[var(--color-gold-500)]" />
+                <span className="h-px w-56 max-w-[70%] bg-[var(--color-gold-500)]" />
+              </div>
+
+              <p className="mt-6 max-w-md text-base leading-7 text-[var(--color-slate-900)]">
+                Comprehensive real estate support across every stage of the
+                journey. Solutions designed to maximize value and deliver
+                results.
+              </p>
+
+              <div className="mt-8 max-w-sm overflow-hidden rounded-[1.2rem] border border-[rgba(212,175,55,0.32)] bg-white shadow-[0_20px_58px_rgba(21,43,71,0.08)]">
                 <div className="p-5">
                   <p className="text-xs font-semibold uppercase tracking-[0.26em] text-[var(--color-gold-500)]">
                     Selected Service
                   </p>
-                  <h3 className="mt-3 font-display text-2xl leading-tight text-[var(--color-slate-900)]">
+                  <h3 className="mt-3 font-display text-2xl uppercase leading-tight text-[var(--color-slate-900)]">
                     {activeService.title}
                   </h3>
                   <p className="mt-3 max-w-xs text-sm leading-6 text-[var(--color-slate-500)]">
                     {activeService.description}
                   </p>
-
                 </div>
                 <a
                   href="#contact"
-                  className="flex items-center justify-between border-t border-[var(--color-border)] px-5 py-3.5 text-sm font-semibold text-[var(--color-slate-900)] transition hover:bg-[rgba(212,175,55,0.12)]"
+                  className="flex items-center justify-between border-t border-[rgba(212,175,55,0.24)] px-5 py-3.5 text-sm font-semibold uppercase tracking-[0.08em] text-[var(--color-gold-500)] transition hover:bg-[var(--color-gold-500)] hover:text-[var(--color-slate-900)]"
                 >
                   <span>Contact Us</span>
                   <span aria-hidden="true" className="text-lg leading-none">
@@ -74,7 +88,7 @@ export function Services() {
                   className={`group relative h-[24rem] shrink-0 overflow-hidden rounded-[1.5rem] border transition-all duration-700 ease-in-out ${
                     isActive
                       ? 'w-[18.5rem] border-[rgba(212,175,55,0.5)] sm:w-[24rem] lg:w-[15rem] xl:w-[17rem]'
-                      : 'w-[4.5rem] border-[var(--color-border)] sm:w-[5rem] lg:w-[3.6rem] xl:w-[3.9rem]'
+                      : 'w-[4.5rem] border-[rgba(212,175,55,0.28)] sm:w-[5rem] lg:w-[3.6rem] xl:w-[3.9rem]'
                   }`}
                   onMouseEnter={() => setActiveIndex(index)}
                   onFocus={() => setActiveIndex(index)}
@@ -87,7 +101,7 @@ export function Services() {
                     sizes="(min-width: 1024px) 28vw, 384px"
                     className="object-cover transition duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(21,43,71,0.08)_0%,rgba(21,43,71,0.5)_48%,rgba(8,18,32,0.88)_100%)]" />
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(21,43,71,0.06)_0%,rgba(21,43,71,0.42)_48%,rgba(8,18,32,0.88)_100%)]" />
                   <div
                     className={`absolute inset-0 transition duration-500 ${
                       isActive ? 'bg-[rgba(212,175,55,0.1)]' : 'bg-black/16'
@@ -101,10 +115,10 @@ export function Services() {
                         : 'pointer-events-none right-5 bottom-5 left-5 opacity-0'
                     }`}
                   >
-                    <div>
+                    <div className="border-l border-[var(--color-gold-500)] pl-4">
                       <div className="min-w-0">
                         <h3
-                          className={`font-semibold text-white ${
+                          className={`font-display uppercase text-white ${
                             isActive
                               ? 'max-w-full whitespace-normal text-xl leading-tight'
                               : 'text-xl leading-tight'

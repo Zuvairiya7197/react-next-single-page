@@ -1,7 +1,6 @@
 import { MoveRight } from 'lucide-react';
 
 import { PropertyCards } from '@/components/PropertyCards';
-import { SectionHeading } from '@/components/SectionHeading';
 import { SectionReveal } from '@/components/SectionReveal';
 import { getProperties } from '@/lib/data';
 
@@ -13,16 +12,31 @@ export async function Projects() {
       <div className="mx-auto max-w-7xl">
         <SectionReveal>
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-            <SectionHeading
-              eyebrow="Prime Opportunities"
-              title="Selected Dubai opportunities."
-              description="Curated for lifestyle demand, yield potential, and long-term value."
-            />
+            <div className="max-w-2xl">
+              <div className="flex items-center gap-4 text-xs font-semibold uppercase tracking-[0.22em] text-[var(--color-slate-900)]">
+                <span>Prime Opportunities</span>
+                <span className="h-px w-12 bg-[var(--color-gold-500)]" />
+              </div>
+              <h2 className="mt-7 font-display text-4xl uppercase leading-[0.98] text-[var(--color-slate-900)] sm:text-5xl">
+                Selected Dubai
+                <span className="block text-[var(--color-gold-500)]">
+                  Opportunities
+                </span>
+              </h2>
+              <div className="mt-5 flex items-center gap-4">
+                <span className="h-2 w-2 rotate-45 bg-[var(--color-gold-500)]" />
+                <span className="h-px w-56 max-w-[70%] bg-[var(--color-gold-500)]" />
+              </div>
+              <p className="mt-6 max-w-xl text-base leading-7 text-[var(--color-slate-900)]">
+                Curated for lifestyle demand, yield potential, and long-term
+                value.
+              </p>
+            </div>
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--color-slate-700)] transition hover:text-[var(--color-gold-500)]"
+              className="inline-flex items-center gap-3 border border-[rgba(212,175,55,0.62)] px-6 py-3 text-sm font-semibold uppercase tracking-[0.08em] text-[var(--color-gold-500)] transition hover:bg-[var(--color-gold-500)] hover:text-[var(--color-slate-900)]"
             >
-              Request more opportunities
+              Request More
               <MoveRight size={16} aria-hidden="true" />
             </a>
           </div>

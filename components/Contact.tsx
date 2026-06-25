@@ -5,7 +5,6 @@ import { useMemo } from 'react';
 import { Mail, MapPin, Phone } from 'lucide-react';
 
 import { ContactForm } from '@/components/ContactForm';
-import { SectionHeading } from '@/components/SectionHeading';
 import { SectionReveal } from '@/components/SectionReveal';
 import { contactDetails } from '@/lib/data';
 
@@ -22,15 +21,29 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="bg-[var(--color-surface-strong)] px-4 py-20 sm:px-6 sm:py-24 lg:px-8"
+      className="bg-white px-4 py-20 sm:px-6 sm:py-24 lg:px-8"
     >
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.95fr_1.05fr]">
         <SectionReveal className="min-w-0">
-          <SectionHeading
-            eyebrow="Contact"
-            title="Let’s start the conversation."
-            description="Private consultation, opportunity review, then clear next steps."
-          />
+          <div className="max-w-2xl">
+            <div className="flex items-center gap-4 text-xs font-semibold uppercase tracking-[0.22em] text-[var(--color-slate-900)]">
+              <span>Contact</span>
+              <span className="h-px w-12 bg-[var(--color-gold-500)]" />
+            </div>
+            <h2 className="mt-7 font-display text-4xl uppercase leading-[0.98] text-[var(--color-slate-900)] sm:text-5xl">
+              Let’s Start
+              <span className="block text-[var(--color-gold-500)]">
+                The Conversation
+              </span>
+            </h2>
+            <div className="mt-5 flex items-center gap-4">
+              <span className="h-2 w-2 rotate-45 bg-[var(--color-gold-500)]" />
+              <span className="h-px w-56 max-w-[70%] bg-[var(--color-gold-500)]" />
+            </div>
+            <p className="mt-6 max-w-xl text-base leading-7 text-[var(--color-slate-900)]">
+              Private consultation, opportunity review, then clear next steps.
+            </p>
+          </div>
 
           <div className="mt-8 space-y-4">
             {details.map((detail) => {
@@ -40,9 +53,9 @@ export function Contact() {
                 <a
                   key={detail.label}
                   href={detail.href}
-                  className="flex min-w-0 items-start gap-3 rounded-[1.25rem] border border-[var(--color-border)] bg-[var(--color-surface-strong)] p-4 transition hover:-translate-y-0.5 hover:shadow-[0_18px_50px_rgba(21,43,71,0.08)] sm:gap-4 sm:rounded-[1.5rem] sm:p-5"
+                  className="flex min-w-0 items-start gap-3 rounded-[1.1rem] border border-[rgba(212,175,55,0.22)] bg-white p-4 shadow-[0_16px_44px_rgba(21,43,71,0.06)] transition hover:-translate-y-0.5 hover:border-[rgba(212,175,55,0.42)] hover:shadow-[0_20px_58px_rgba(21,43,71,0.1)] sm:gap-4 sm:p-5"
                 >
-                  <div className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[var(--color-slate-700)] text-white sm:h-11 sm:w-11">
+                  <div className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[rgba(212,175,55,0.36)] text-[var(--color-gold-500)] sm:h-11 sm:w-11">
                     <Icon size={18} aria-hidden="true" />
                   </div>
                   <div className="min-w-0">
@@ -60,8 +73,11 @@ export function Contact() {
         </SectionReveal>
 
         <SectionReveal className="min-w-0" delay={0.1}>
-          <div className="rounded-[1.5rem] border border-[var(--color-border)] bg-[var(--color-surface)] p-4 shadow-[0_24px_70px_rgba(21,43,71,0.08)] sm:rounded-[2rem] sm:p-10">
+          <div className="overflow-hidden rounded-[1.5rem] border border-[rgba(212,175,55,0.28)] bg-white shadow-[0_28px_80px_rgba(21,43,71,0.1)] sm:rounded-[1.8rem]">
+            <div className="h-1.5 bg-[linear-gradient(90deg,var(--color-gold-500),rgba(212,175,55,0.18))]" />
+            <div className="p-4 sm:p-10">
             <ContactForm />
+            </div>
           </div>
         </SectionReveal>
       </div>

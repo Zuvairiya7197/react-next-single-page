@@ -31,43 +31,47 @@ export function PropertyCards({ properties }: PropertyCardsProps) {
 
   return (
     <>
-      <div className="mt-12 grid gap-6 lg:grid-cols-2">
+      <div className="mt-12 grid gap-7 lg:grid-cols-2">
         {properties.map((property, index) => (
           <SectionReveal key={property.id} delay={index * 0.08}>
-            <article className="flex h-full flex-col overflow-hidden rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-surface)] shadow-[0_24px_70px_rgba(21,43,71,0.08)]">
+            <article className="group flex h-full flex-col overflow-hidden rounded-[1.6rem] border border-[rgba(212,175,55,0.22)] bg-white shadow-[0_24px_70px_rgba(21,43,71,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_30px_80px_rgba(21,43,71,0.13)]">
               <div className="relative aspect-[16/9] shrink-0 overflow-hidden">
                 <Image
                   src={property.image}
                   alt={property.imageAlt}
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"
-                  className="h-full w-full object-cover transition duration-500 hover:scale-[1.03]"
+                  className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.04]"
                   style={{ objectPosition: property.imagePosition }}
                 />
-              </div>
-              <div className="flex flex-1 flex-col p-7">
-                <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(21,43,71,0)_34%,rgba(21,43,71,0.72)_100%)]" />
+                <div className="absolute top-5 left-5 rounded-full border border-[rgba(212,175,55,0.45)] bg-[rgba(9,24,42,0.64)] px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--color-gold-400)] backdrop-blur">
+                  {property.status}
+                </div>
+                <div className="absolute right-5 bottom-5 left-5 flex items-end justify-between gap-4 text-white">
                   <div>
-                    <h3 className="text-2xl font-semibold text-[var(--color-slate-900)]">
+                    <h3 className="font-display text-2xl uppercase leading-tight">
                       {property.title}
                     </h3>
-                    <p className="mt-2 flex items-center gap-2 text-sm text-[var(--color-slate-500)]">
+                    <p className="mt-2 flex items-center gap-2 text-sm text-white/78">
                       <MapPin size={16} aria-hidden="true" />
                       {property.location}
                     </p>
                   </div>
-                  <p className="text-2xl font-semibold text-[var(--color-slate-900)]">
+                  <p className="shrink-0 text-xl font-semibold">
                     {property.price}
                   </p>
                 </div>
+              </div>
+              <div className="flex flex-1 flex-col p-6">
                 <p className="mt-4 text-sm leading-7 text-[var(--color-slate-500)]">
                   {property.description}
                 </p>
-                <div className="mt-6 grid gap-3 border-t border-[var(--color-border)] pt-6 sm:grid-cols-3 lg:mt-auto">
-                  <div className="flex items-center gap-3 rounded-2xl bg-[var(--color-surface-strong)] px-4 py-3">
+                <div className="mt-6 grid gap-px overflow-hidden rounded-[1rem] border border-[var(--color-border)] bg-[var(--color-border)] sm:grid-cols-2 lg:mt-auto">
+                  <div className="flex items-center gap-3 bg-white px-4 py-3">
                     <BedDouble
                       size={18}
-                      className="text-[var(--color-slate-700)]"
+                      className="text-[var(--color-gold-500)]"
                     />
                     <div>
                       <p className="text-sm font-semibold text-[var(--color-slate-900)]">
@@ -78,10 +82,10 @@ export function PropertyCards({ properties }: PropertyCardsProps) {
                       </p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-3 rounded-2xl bg-[var(--color-surface-strong)] px-4 py-3">
+                  <div className="flex items-center gap-3 bg-white px-4 py-3">
                     <CalendarCheck
                       size={18}
-                      className="text-[var(--color-slate-700)]"
+                      className="text-[var(--color-gold-500)]"
                     />
                     <div>
                       <p className="text-sm font-semibold text-[var(--color-slate-900)]">
@@ -96,7 +100,7 @@ export function PropertyCards({ properties }: PropertyCardsProps) {
                 <button
                   type="button"
                   onClick={() => setSelectedProperty(property)}
-                  className="mt-6 inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-full bg-[var(--color-slate-700)] px-6 py-4 text-sm font-semibold text-white transition hover:bg-[var(--color-slate-900)] sm:w-auto"
+                  className="mt-6 inline-flex w-full cursor-pointer items-center justify-center gap-2 border border-[rgba(212,175,55,0.62)] px-6 py-3.5 text-sm font-semibold uppercase tracking-[0.08em] text-[var(--color-gold-500)] transition hover:bg-[var(--color-gold-500)] hover:text-[var(--color-slate-900)] sm:w-auto"
                   aria-haspopup="dialog"
                 >
                   <MessageCircle size={17} aria-hidden="true" />

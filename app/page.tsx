@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 
 import { About } from '@/components/About';
 import { Contact } from '@/components/Contact';
+import { CoreValues } from '@/components/CoreValues';
 import { DevelopersMarquee } from '@/components/DevelopersMarquee';
 import { Footer } from '@/components/Footer';
 import { Hero } from '@/components/Hero';
@@ -14,6 +15,8 @@ import {
 import { ScrollToTop } from '@/components/ScrollToTop';
 import { Services } from '@/components/Services';
 import { WhatsAppFab } from '@/components/WhatsAppFab';
+import { WhyChooseUs } from '@/components/WhyChooseUs';
+import { WhyDubaiStrip } from '@/components/WhyDubaiStrip';
 // import { Testimonials } from '@/components/Testimonials';
 
 export default function HomePage() {
@@ -23,8 +26,11 @@ export default function HomePage() {
       <main id="main-content">
         <Hero />
         <About />
+        <CoreValues />
+        <WhyChooseUs />
         <Services />
         <DevelopersMarquee />
+        <WhyDubaiStrip />
         <Suspense fallback={<ProjectsSkeleton />}>
           <Projects />
         </Suspense>
