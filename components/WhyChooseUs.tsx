@@ -97,9 +97,9 @@ export function WhyChooseUs() {
                 return (
                   <article
                     key={reason.title}
-                    className={`relative w-full rounded-[1rem] border border-[rgba(212,175,55,0.2)] bg-white/86 p-4 pl-14 shadow-[0_16px_44px_rgba(21,43,71,0.1)] backdrop-blur-xl sm:max-w-[18rem] sm:border-white/45 sm:bg-white/58 sm:p-5 sm:pl-14 ${reason.className}`}
+                    className={`group relative w-full rounded-[1rem] border border-[rgba(212,175,55,0.2)] bg-white/86 p-4 pl-14 shadow-[0_16px_44px_rgba(21,43,71,0.1)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-[rgba(212,175,55,0.52)] hover:shadow-[0_24px_60px_rgba(21,43,71,0.16)] sm:max-w-[18rem] sm:border-white/45 sm:bg-white/58 sm:p-5 sm:pl-14 ${reason.className}`}
                   >
-                    <div className="absolute left-4 top-5 flex h-9 w-9 items-center justify-center rounded-full border border-[rgba(212,175,55,0.28)] bg-white/82 text-[var(--color-gold-500)] shadow-[0_12px_36px_rgba(21,43,71,0.08)] backdrop-blur sm:-left-7 sm:top-1/2 sm:h-14 sm:w-14 sm:-translate-y-1/2">
+                    <div className="absolute left-4 top-5 flex h-9 w-9 items-center justify-center rounded-full border border-[rgba(212,175,55,0.28)] bg-white/82 text-[var(--color-gold-500)] shadow-[0_12px_36px_rgba(21,43,71,0.08)] backdrop-blur transition duration-300 group-hover:border-[rgba(212,175,55,0.7)] group-hover:bg-[rgba(212,175,55,0.1)] sm:-left-7 sm:top-1/2 sm:h-14 sm:w-14 sm:-translate-y-1/2">
                       <Icon size={23} strokeWidth={1.4} aria-hidden="true" />
                     </div>
                     <h3 className="font-display text-lg uppercase leading-tight text-[var(--color-slate-900)]">

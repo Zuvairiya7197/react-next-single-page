@@ -62,18 +62,18 @@ export function CoreValues() {
                 return (
                   <article
                     key={value.title}
-                    className="relative flex min-h-[15rem] flex-col items-center justify-center border-[rgba(212,175,55,0.28)] px-6 py-8 text-center text-white sm:min-h-[18rem] sm:px-8 sm:py-10 lg:border-l first:lg:border-l-0"
+                    className="group relative flex min-h-[15rem] flex-col items-center justify-center border-[rgba(212,175,55,0.28)] px-6 py-8 text-center text-white transition duration-300 hover:bg-[rgba(212,175,55,0.05)] sm:min-h-[18rem] sm:px-8 sm:py-10 lg:border-l first:lg:border-l-0"
                   >
                     {index > 0 ? (
                       <span className="absolute top-1/2 left-0 hidden h-4 w-4 -translate-x-1/2 -translate-y-1/2 rotate-45 bg-[var(--color-gold-500)] shadow-[0_0_28px_rgba(212,175,55,0.85)] lg:block" />
                     ) : null}
-                    <div className="flex h-20 w-20 items-center justify-center rounded-full border border-[rgba(212,175,55,0.7)] text-[var(--color-gold-400)] sm:h-24 sm:w-24">
+                    <div className="flex h-20 w-20 items-center justify-center rounded-full border border-[rgba(212,175,55,0.7)] text-[var(--color-gold-400)] transition duration-300 group-hover:border-[rgba(212,175,55,1)] group-hover:bg-[rgba(212,175,55,0.12)] group-hover:shadow-[0_0_32px_rgba(212,175,55,0.25)] sm:h-24 sm:w-24">
                       <Icon size={36} strokeWidth={1.4} aria-hidden="true" />
                     </div>
-                    <h3 className="mt-8 font-display text-2xl uppercase">
+                    <h3 className="mt-8 font-display text-2xl uppercase transition duration-300 group-hover:text-[var(--color-gold-400)]">
                       {value.title}
                     </h3>
-                    <p className="mt-5 max-w-[13rem] text-base leading-7 text-white/78">
+                    <p className="mt-5 max-w-[13rem] text-base leading-7 text-white/78 transition duration-300 group-hover:text-white/95">
                       {value.text}
                     </p>
                   </article>

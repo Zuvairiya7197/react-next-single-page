@@ -62,15 +62,15 @@ export function WhyDubaiStrip() {
                 return (
                   <article
                     key={reason.label}
-                    className="relative flex min-h-36 flex-col items-center justify-center bg-[rgba(2,18,34,0.82)] px-4 py-5 text-center sm:min-h-44 sm:py-6"
+                    className="group relative flex min-h-36 flex-col items-center justify-center bg-[rgba(2,18,34,0.82)] px-4 py-5 text-center transition duration-300 hover:bg-[rgba(212,175,55,0.06)] sm:min-h-44 sm:py-6"
                   >
                     {index > 0 ? (
                       <span className="absolute top-1/2 left-0 hidden h-3 w-3 -translate-x-1/2 -translate-y-1/2 rotate-45 bg-[var(--color-gold-500)] shadow-[0_0_22px_rgba(212,175,55,0.75)] lg:block" />
                     ) : null}
-                    <div className="flex h-14 w-14 items-center justify-center rounded-full border border-[rgba(212,175,55,0.72)] text-[var(--color-gold-400)] sm:h-18 sm:w-18">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-full border border-[rgba(212,175,55,0.72)] text-[var(--color-gold-400)] transition duration-300 group-hover:border-[rgba(212,175,55,1)] group-hover:bg-[rgba(212,175,55,0.12)] group-hover:shadow-[0_0_28px_rgba(212,175,55,0.22)] sm:h-18 sm:w-18">
                       <Icon size={28} strokeWidth={1.45} aria-hidden="true" />
                     </div>
-                    <p className="mt-6 text-sm font-semibold uppercase leading-6 tracking-[0.02em] text-white">
+                    <p className="mt-6 text-sm font-semibold uppercase leading-6 tracking-[0.02em] text-white transition duration-300 group-hover:text-[var(--color-gold-400)]">
                       {reason.label}
                     </p>
                   </article>
