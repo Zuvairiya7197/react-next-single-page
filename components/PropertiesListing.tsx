@@ -15,9 +15,21 @@ import {
   SlidersHorizontal,
   X,
 } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 import { ContactForm } from '@/components/ContactForm';
 import type { Property } from '@/lib/data';
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 28, scale: 0.97 },
+  visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } },
+  exit:   { opacity: 0, scale: 0.95, transition: { duration: 0.25 } },
+};
+
+const gridVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.08 } },
+};
 
 const SORT_OPTIONS = [
   { value: 'default', label: 'Default Order' },
@@ -47,7 +59,11 @@ function PropertyCard({
   ];
 
   return (
-    <article className="group relative h-[26rem] overflow-hidden rounded-[1rem] border border-[rgba(212,175,55,0.24)] shadow-[0_18px_52px_rgba(21,43,71,0.08)] transition duration-300 hover:border-[rgba(212,175,55,0.42)] hover:shadow-[0_34px_90px_rgba(21,43,71,0.18)] sm:h-[30rem] sm:rounded-[1.6rem]">
+    <motion.article
+      variants={cardVariants}
+      layout
+      whileHover={{ y: -4, transition: { duration: 0.22 } }}
+      className="group relative h-104 overflow-hidden rounded-2xl border border-[rgba(212,175,55,0.24)] shadow-[0_18px_52px_rgba(21,43,71,0.08)] transition-[border-color,box-shadow] duration-300 hover:border-[rgba(212,175,55,0.42)] hover:shadow-[0_34px_90px_rgba(21,43,71,0.18)] sm:h-120 sm:rounded-[1.6rem]">
       <Image
         src={property.image}
         alt={property.imageAlt}
@@ -119,7 +135,7 @@ function PropertyCard({
           </div>
         </div>
       </div>
-    </article>
+    </motion.article>
   );
 }
 
@@ -217,21 +233,26 @@ export function PropertiesListing({ properties }: { properties: Property[] }) {
   return (
     <>
       {/* Search & Sort bar */}
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
+      <motion.div
+        className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+      >
         <div className="relative flex-1">
-          <Search size={15} className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-[var(--color-slate-500)]" />
+          <Search size={15} className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-500" />
           <input
             type="text"
             placeholder="Search by name or location…"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full rounded-full border border-[var(--color-border)] bg-white py-3 pl-10 pr-4 text-sm text-[var(--color-slate-900)] placeholder:text-[var(--color-slate-500)] focus:border-[var(--color-gold-500)] focus:outline-none"
+            className="w-full rounded-full border border-(--color-border) bg-white py-3 pl-10 pr-4 text-sm text-slate-900 placeholder:text-slate-500 focus:border-(--color-gold-500) focus:outline-none"
           />
           {search && (
             <button
               type="button"
               onClick={() => setSearch('')}
-              className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full p-1 text-[var(--color-slate-500)] hover:text-[var(--color-slate-900)]"
+              className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full p-1 text-slate-500 hover:text-slate-900"
             >
               <X size={14} />
             </button>
@@ -239,46 +260,66 @@ export function PropertiesListing({ properties }: { properties: Property[] }) {
         </div>
 
         <div className="relative shrink-0">
-          <SlidersHorizontal size={14} className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-[var(--color-slate-500)]" />
+          <SlidersHorizontal size={14} className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-500" />
           <select
             value={sort}
             onChange={(e) => setSort(e.target.value)}
-            className="w-full appearance-none rounded-full border border-[var(--color-border)] bg-white py-3 pl-10 pr-9 text-sm text-[var(--color-slate-900)] focus:border-[var(--color-gold-500)] focus:outline-none sm:w-auto"
+            className="w-full appearance-none rounded-full border border-(--color-border) bg-white py-3 pl-10 pr-9 text-sm text-slate-900 focus:border-(--color-gold-500) focus:outline-none sm:w-auto"
           >
             {SORT_OPTIONS.map((opt) => (
               <option key={opt.value} value={opt.value}>{opt.label}</option>
             ))}
           </select>
-          <ChevronDown size={14} className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 text-[var(--color-slate-500)]" />
+          <ChevronDown size={14} className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-500" />
         </div>
-      </div>
+      </motion.div>
 
       {/* Count */}
-      <p className="mt-4 text-sm text-[var(--color-slate-500)]">
-        <span className="font-semibold text-[var(--color-slate-900)]">{filtered.length}</span>{' '}
+      <motion.p
+        className="mt-4 text-sm text-slate-500"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.4, delay: 0.2 }}
+      >
+        <span className="font-semibold text-slate-900">{filtered.length}</span>{' '}
         {filtered.length === 1 ? 'property' : 'properties'} found
-      </p>
+      </motion.p>
 
       {/* Grid */}
+      <AnimatePresence mode="wait">
       {filtered.length > 0 ? (
-        <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <motion.div
+          key="grid"
+          className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          variants={gridVariants}
+          initial="hidden"
+          animate="visible"
+        >
           {filtered.map((property) => (
             <PropertyCard key={property.id} property={property} onInquire={setSelected} />
           ))}
-        </div>
+        </motion.div>
       ) : (
-        <div className="mt-20 flex flex-col items-center gap-4 text-center">
-          <p className="text-lg font-semibold text-[var(--color-slate-900)]">No properties found</p>
-          <p className="text-sm text-[var(--color-slate-500)]">Try a different search term or clear the filter.</p>
+        <motion.div
+          key="empty"
+          className="mt-20 flex flex-col items-center gap-4 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.4 }}
+        >
+          <p className="text-lg font-semibold text-slate-900">No properties found</p>
+          <p className="text-sm text-slate-500">Try a different search term or clear the filter.</p>
           <button
             type="button"
             onClick={() => setSearch('')}
-            className="mt-2 rounded-full border border-[rgba(212,175,55,0.5)] px-6 py-2.5 text-sm font-semibold text-[var(--color-gold-500)] transition hover:bg-[var(--color-gold-500)] hover:text-[var(--color-slate-900)]"
+            className="mt-2 rounded-full border border-[rgba(212,175,55,0.5)] px-6 py-2.5 text-sm font-semibold text-(--color-gold-500) transition hover:bg-(--color-gold-500) hover:text-slate-900"
           >
             Clear Search
           </button>
-        </div>
+        </motion.div>
       )}
+      </AnimatePresence>
 
       {selected && <InquiryModal property={selected} onClose={() => setSelected(null)} />}
     </>

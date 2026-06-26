@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { ChevronLeft } from 'lucide-react';
 
 import { PropertiesListing } from '@/components/PropertiesListing';
+import { PropertiesPageHeader } from '@/components/PropertiesPageHeader';
 import { getProperties } from '@/lib/data';
 
 export const metadata = {
@@ -15,9 +16,9 @@ export default async function PropertiesPage() {
   const properties = await getProperties();
 
   return (
-    <main className="min-h-screen bg-[var(--color-background)]">
+    <main className="min-h-screen bg-(--color-background)">
       {/* Page header */}
-      <div className="relative bg-[var(--color-slate-900)] px-4 pb-12 pt-[calc(var(--navbar-height,6.5rem)+2rem)] sm:px-6 sm:pb-16 lg:px-8">
+      <div className="relative bg-slate-900 px-4 pb-12 pt-[calc(var(--navbar-height,6.5rem)+2rem)] sm:px-6 sm:pb-16 lg:px-8">
         <Image
           src="/images/2nd.jpeg"
           alt="Dubai property skyline"
@@ -35,21 +36,7 @@ export default async function PropertiesPage() {
             <ChevronLeft size={14} />
             Back to Home
           </Link>
-
-          <div className="flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--color-gold-400)]">
-            <span>Prime Opportunities</span>
-            <span className="h-px w-12 bg-[var(--color-gold-500)]" />
-            <span className="h-2 w-2 rotate-45 bg-[var(--color-gold-500)]" />
-          </div>
-
-          <h1 className="mt-5 font-display text-4xl uppercase leading-[0.95] text-white sm:text-5xl lg:text-6xl">
-            All
-            <span className="block text-[var(--color-gold-400)]">Properties</span>
-          </h1>
-
-          <p className="mt-5 max-w-xl text-sm leading-7 text-white/70 sm:text-base">
-            Curated for lifestyle demand, yield potential, and long-term value across Dubai and the UAE.
-          </p>
+          <PropertiesPageHeader />
         </div>
       </div>
 
