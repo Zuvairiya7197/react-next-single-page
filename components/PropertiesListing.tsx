@@ -51,6 +51,8 @@ function PropertyCard({
   property: Property;
   onInquire: (p: Property) => void;
 }) {
+  const [expanded, setExpanded] = useState(false);
+
   const details = [
     { icon: BedDouble, value: property.beds, label: 'Bedrooms' },
     { icon: ShowerHead, value: property.baths, label: 'Bathrooms' },
@@ -63,7 +65,8 @@ function PropertyCard({
       variants={cardVariants}
       layout
       whileHover={{ y: -4, transition: { duration: 0.22 } }}
-      className="group relative h-104 overflow-hidden rounded-2xl border border-[rgba(212,175,55,0.24)] shadow-[0_18px_52px_rgba(21,43,71,0.08)] transition-[border-color,box-shadow] duration-300 hover:border-[rgba(212,175,55,0.42)] hover:shadow-[0_34px_90px_rgba(21,43,71,0.18)] sm:h-120 sm:rounded-[1.6rem]">
+      onClick={() => setExpanded((v) => !v)}
+      className="group relative h-104 cursor-pointer overflow-hidden rounded-2xl border border-[rgba(212,175,55,0.24)] shadow-[0_18px_52px_rgba(21,43,71,0.08)] transition-[border-color,box-shadow] duration-300 hover:border-[rgba(212,175,55,0.42)] hover:shadow-[0_34px_90px_rgba(21,43,71,0.18)] sm:h-120 sm:rounded-[1.6rem]">
       <Image
         src={property.image}
         alt={property.imageAlt}
@@ -98,7 +101,7 @@ function PropertyCard({
           </div>
         </div>
 
-        <div className="max-h-0 overflow-hidden transition-all duration-500 ease-out group-hover:max-h-[24rem] group-focus-within:max-h-[24rem]">
+        <div className={`overflow-hidden transition-all duration-500 ease-out ${expanded ? 'max-h-96' : 'max-h-0 group-hover:max-h-96'}`}>
           <div className="border-t border-white/10 bg-[rgba(2,18,34,0.88)] px-4 pb-5 pt-4 backdrop-blur-xl sm:px-6 sm:pb-6">
             <p className="line-clamp-2 text-xs leading-5 text-white/70 sm:text-sm sm:leading-6">
               {property.description}
@@ -126,8 +129,8 @@ function PropertyCard({
             </div>
             <button
               type="button"
-              onClick={() => onInquire(property)}
-              className="mt-3 inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-full border border-[rgba(212,175,55,0.5)] bg-[rgba(212,175,55,0.12)] px-4 py-2.5 text-xs font-semibold uppercase tracking-[0.08em] text-white transition hover:bg-[var(--color-gold-500)] hover:text-[var(--color-slate-900)] sm:mt-4 sm:py-3 sm:text-sm"
+              onClick={(e) => { e.stopPropagation(); onInquire(property); }}
+              className="mt-3 inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-full border border-[rgba(212,175,55,0.5)] bg-[rgba(212,175,55,0.12)] px-4 py-2.5 text-xs font-semibold uppercase tracking-[0.08em] text-white transition hover:bg-(--color-gold-500) hover:text-slate-900 sm:mt-4 sm:py-3 sm:text-sm"
             >
               <MessageCircle size={15} aria-hidden="true" />
               Contact us
