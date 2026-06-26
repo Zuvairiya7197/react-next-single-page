@@ -79,9 +79,6 @@ function PropertyCard({
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,23,38,0.04)_0%,rgba(10,23,38,0.18)_40%,rgba(10,23,38,0.92)_100%)] transition-opacity duration-500 group-hover:opacity-0" />
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,23,38,0.08)_0%,rgba(10,23,38,0.5)_40%,rgba(10,23,38,0.98)_100%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-      <div className="absolute top-3 left-3 z-10 max-w-[calc(100%-1.5rem)] rounded-full border border-white/30 bg-white/15 px-2.5 py-1 text-[0.58rem] font-semibold uppercase tracking-[0.1em] text-white backdrop-blur sm:top-5 sm:left-5 sm:px-4 sm:py-2 sm:text-xs">
-        <span className="line-clamp-1">{property.status}</span>
-      </div>
 
       <div className="absolute inset-x-0 bottom-0 z-10">
         <div className="px-4 pb-4 pt-3 text-white sm:px-6 sm:pb-5 sm:pt-4">

@@ -71,9 +71,6 @@ function HomePropertyCard({
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,23,38,0.04)_0%,rgba(10,23,38,0.18)_40%,rgba(10,23,38,0.92)_100%)] transition-opacity duration-500 group-hover:opacity-0" />
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,23,38,0.08)_0%,rgba(10,23,38,0.5)_40%,rgba(10,23,38,0.98)_100%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-      <div className="absolute top-3 left-3 z-10 max-w-[calc(100%-1.5rem)] rounded-full border border-white/30 bg-white/15 px-2.5 py-1 text-[0.58rem] font-semibold uppercase tracking-widest text-white shadow-[0_10px_30px_rgba(0,0,0,0.22)] backdrop-blur sm:top-5 sm:left-5 sm:px-4 sm:py-2 sm:text-xs sm:tracking-[0.16em]">
-        <span className="line-clamp-1">{property.status}</span>
-      </div>
 
       <div className="absolute inset-x-0 bottom-0 z-10">
         <div className="px-4 pb-4 pt-3 text-white sm:px-6 sm:pb-5 sm:pt-4">
@@ -197,7 +194,7 @@ function PropertyInquiryModal({
   }, [onClose]);
 
   return (
-    <div className="fixed inset-0 z-[90] flex min-h-[100dvh] items-center justify-center p-3 sm:p-6">
+    <div className="fixed inset-0 z-90 flex min-h-dvh items-center justify-center p-3 sm:p-6">
       <button
         type="button"
         className="absolute inset-0 cursor-default bg-[rgba(21,43,71,0.6)] backdrop-blur-sm"
@@ -208,20 +205,20 @@ function PropertyInquiryModal({
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
-        className="relative z-10 h-[calc(100dvh-1.5rem)] w-full max-w-3xl overflow-y-auto rounded-[1.5rem] border border-[var(--color-border)] bg-[var(--color-surface)] p-4 shadow-[0_28px_90px_rgba(21,43,71,0.28)] sm:h-auto sm:max-h-[calc(100dvh-3rem)] sm:rounded-[2rem] sm:p-8"
+        className="relative z-10 h-[calc(100dvh-1.5rem)] w-full max-w-3xl overflow-y-auto rounded-3xl border border-(--color-border) bg-(--color-surface) p-4 shadow-[0_28px_90px_rgba(21,43,71,0.28)] sm:h-auto sm:max-h-[calc(100dvh-3rem)] sm:rounded-4xl sm:p-8"
       >
         <div className="flex items-start justify-between gap-4">
           <div className="min-w-0">
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-gold-500)] sm:tracking-[0.24em]">
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-(--color-gold-500) sm:tracking-[0.24em]">
               Property Inquiry
             </p>
             <h2
               id={titleId}
-              className="mt-3 text-xl font-semibold text-[var(--color-slate-900)] sm:text-3xl"
+              className="mt-3 text-xl font-semibold text-slate-900 sm:text-3xl"
             >
               Contact us about {property.title}
             </h2>
-            <p className="mt-3 text-sm leading-6 text-[var(--color-slate-500)]">
+            <p className="mt-3 text-sm leading-6 text-slate-500">
               {property.location} | {property.price}
             </p>
           </div>
@@ -229,7 +226,7 @@ function PropertyInquiryModal({
             ref={closeButtonRef}
             type="button"
             onClick={onClose}
-            className="flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-surface-strong)] text-[var(--color-slate-700)] transition hover:bg-white"
+            className="flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center rounded-full border border-(--color-border) bg-(--color-surface-strong) text-slate-700 transition hover:bg-white"
             aria-label="Close contact form"
           >
             <X size={18} aria-hidden="true" />
