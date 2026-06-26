@@ -5,8 +5,6 @@ import { useEffect, useState } from 'react';
 
 import { MapPin, MoveRight } from 'lucide-react';
 
-import { SectionReveal } from '@/components/SectionReveal';
-
 const heroProperties = [
   {
     location: 'Dubailand',
@@ -59,7 +57,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-[100svh] overflow-hidden px-6 pt-24 text-white sm:pt-26 lg:px-8 lg:pt-28"
+      className="relative min-h-[100svh] overflow-hidden px-4 pt-24 text-white sm:px-6 sm:pt-26 lg:px-8 lg:pt-28"
     >
       <div className="absolute inset-0">
         <Image
@@ -74,21 +72,21 @@ export function Hero() {
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,18,34,0.46)_0%,rgba(2,18,34,0.02)_42%,rgba(2,18,34,0.42)_100%)]" />
       </div>
 
-      <div className="relative z-10 mx-auto flex min-h-[calc(100svh-6rem)] max-w-7xl flex-col justify-end gap-6 pb-5 sm:min-h-[calc(100svh-6.5rem)] sm:pb-6 lg:min-h-[calc(100svh-7rem)] lg:gap-7">
-        <SectionReveal className="max-w-3xl">
-          <div className="flex items-center gap-4 text-xs font-semibold uppercase tracking-[0.34em] text-[var(--color-gold-400)] sm:text-sm">
+      <div className="relative z-10 mx-auto flex min-h-[calc(100svh-6rem)] max-w-7xl flex-col justify-center gap-5 pb-5 sm:min-h-[calc(100svh-6.5rem)] sm:justify-end sm:gap-6 sm:pb-6 lg:min-h-[calc(100svh-7rem)] lg:gap-7">
+        <div className="max-w-3xl">
+          <div className="flex flex-wrap items-center gap-3 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-gold-400)] sm:gap-4 sm:text-sm sm:tracking-[0.34em]">
             <span>Dubai Property Advisory</span>
             <span className="h-px w-14 bg-[var(--color-gold-500)]" />
             <span className="h-2 w-2 rotate-45 bg-[var(--color-gold-500)]" />
           </div>
-          <h1 className="mt-6 font-display text-[clamp(3rem,6.2vw,6.25rem)] uppercase leading-[0.9] tracking-normal text-white sm:mt-7">
+          <h1 className="mt-5 font-display text-[clamp(2.55rem,13vw,6.25rem)] uppercase leading-[0.92] tracking-normal text-white sm:mt-7">
             Invest smart,
             <span className="block text-[var(--color-gold-400)]">
               live premium.
             </span>
           </h1>
           <div className="mt-6 h-px max-w-sm bg-[linear-gradient(90deg,var(--color-gold-500),rgba(212,175,55,0))]" />
-          <p className="mt-5 max-w-2xl text-base leading-7 text-white/84 sm:text-lg lg:leading-8">
+          <p className="mt-5 max-w-2xl text-sm leading-7 text-white/84 sm:text-lg lg:leading-8">
             Emlak Real Estate LLC helps clients buy, sell, lease, invest, and
             relocate with clear guidance from search to signature.
           </p>
@@ -96,26 +94,26 @@ export function Hero() {
           <div className="mt-6 flex flex-col gap-3 sm:flex-row lg:mt-7">
             <a
               href="#projects"
-              className="inline-flex items-center justify-center gap-3 rounded-sm bg-[var(--color-gold-500)] px-7 py-3 text-sm font-semibold uppercase tracking-[0.02em] text-[var(--color-slate-900)] shadow-[0_22px_55px_rgba(212,175,55,0.22)] transition hover:-translate-y-0.5 hover:bg-[var(--color-gold-400)]"
+              className="inline-flex w-full items-center justify-center gap-3 rounded-sm bg-[var(--color-gold-500)] px-5 py-3 text-center text-sm font-semibold uppercase tracking-[0.02em] text-[var(--color-slate-900)] shadow-[0_22px_55px_rgba(212,175,55,0.22)] transition hover:-translate-y-0.5 hover:bg-[var(--color-gold-400)] sm:w-auto sm:px-7"
             >
               Explore Properties
               <MoveRight size={18} aria-hidden="true" />
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center justify-center gap-3 rounded-sm border border-[rgba(212,175,55,0.62)] bg-transparent px-7 py-3 text-sm font-semibold uppercase tracking-[0.02em] text-white transition hover:-translate-y-0.5 hover:bg-[rgba(212,175,55,0.12)]"
+              className="inline-flex w-full items-center justify-center gap-3 rounded-sm border border-[rgba(212,175,55,0.62)] bg-transparent px-5 py-3 text-center text-sm font-semibold uppercase tracking-[0.02em] text-white transition hover:-translate-y-0.5 hover:bg-[rgba(212,175,55,0.12)] sm:w-auto sm:px-7"
             >
               Book Consultation
               <MoveRight size={18} aria-hidden="true" />
             </a>
           </div>
-        </SectionReveal>
+        </div>
 
-        <SectionReveal delay={0.1}>
+        <div className="hidden sm:block">
           <div className="flex flex-col gap-5 lg:items-end">
             <div className="w-full max-w-2xl overflow-hidden rounded-[1rem] border border-white/18 bg-[rgba(9,24,42,0.68)] shadow-[0_28px_90px_rgba(0,0,0,0.32)] backdrop-blur-md">
               <div className="grid gap-0 sm:grid-cols-[8rem_1fr_auto_1fr] sm:items-center">
-                <div className="relative h-28 sm:h-full sm:min-h-28">
+                <div className="relative h-24 sm:h-full sm:min-h-28">
                   {heroProperties.map((property, index) => (
                     <Image
                       key={property.title}
@@ -130,12 +128,12 @@ export function Hero() {
                   ))}
                   <div className="absolute inset-0 bg-[rgba(2,18,34,0.16)]" />
                 </div>
-                <div className="flex items-center gap-4 p-4">
+                <div className="flex items-center gap-3 p-4 sm:gap-4">
                   <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[rgba(212,175,55,0.18)] text-[var(--color-gold-400)]">
                     <MapPin size={23} aria-hidden="true" />
                   </span>
                   <div>
-                    <p className="text-xl font-semibold text-white">
+                    <p className="text-lg font-semibold text-white sm:text-xl">
                       {activeProperty.location}
                     </p>
                     <p className="mt-1 text-sm text-white/72">
@@ -144,8 +142,8 @@ export function Hero() {
                   </div>
                 </div>
                 <div className="hidden h-16 w-px bg-white/18 sm:block" />
-                <div className="p-4">
-                  <p className="text-xl font-semibold text-white">
+                <div className="p-4 pt-0 sm:pt-4">
+                  <p className="text-lg font-semibold text-white sm:text-xl">
                     {activeProperty.price}
                   </p>
                   <p className="mt-1 text-sm text-white/72">
@@ -173,7 +171,7 @@ export function Hero() {
               ))}
             </div>
           </div>
-        </SectionReveal>
+        </div>
       </div>
     </section>
   );

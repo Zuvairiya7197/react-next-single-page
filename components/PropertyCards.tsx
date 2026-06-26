@@ -31,10 +31,10 @@ export function PropertyCards({ properties }: PropertyCardsProps) {
 
   return (
     <>
-      <div className="mt-12 grid gap-7 lg:grid-cols-2">
+      <div className="mt-10 grid gap-6 sm:mt-12 lg:grid-cols-2 lg:gap-7">
         {properties.map((property, index) => (
           <SectionReveal key={property.id} delay={index * 0.08}>
-            <article className="group flex h-full flex-col overflow-hidden rounded-[1.6rem] border border-[rgba(212,175,55,0.22)] bg-white shadow-[0_24px_70px_rgba(21,43,71,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_30px_80px_rgba(21,43,71,0.13)]">
+            <article className="group flex h-full flex-col overflow-hidden rounded-[1.25rem] border border-[rgba(212,175,55,0.22)] bg-white shadow-[0_24px_70px_rgba(21,43,71,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_30px_80px_rgba(21,43,71,0.13)] sm:rounded-[1.6rem]">
               <div className="relative aspect-[16/9] shrink-0 overflow-hidden">
                 <Image
                   src={property.image}
@@ -45,12 +45,12 @@ export function PropertyCards({ properties }: PropertyCardsProps) {
                   style={{ objectPosition: property.imagePosition }}
                 />
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(21,43,71,0)_34%,rgba(21,43,71,0.72)_100%)]" />
-                <div className="absolute top-5 left-5 rounded-full border border-[rgba(212,175,55,0.45)] bg-[rgba(9,24,42,0.64)] px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--color-gold-400)] backdrop-blur">
+                <div className="absolute top-4 left-4 rounded-full border border-[rgba(212,175,55,0.45)] bg-[rgba(9,24,42,0.64)] px-3 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-[var(--color-gold-400)] backdrop-blur sm:top-5 sm:left-5 sm:px-4 sm:py-2 sm:text-xs sm:tracking-[0.18em]">
                   {property.status}
                 </div>
-                <div className="absolute right-5 bottom-5 left-5 flex items-end justify-between gap-4 text-white">
-                  <div>
-                    <h3 className="font-display text-2xl uppercase leading-tight">
+                <div className="absolute right-4 bottom-4 left-4 flex flex-col gap-2 text-white sm:right-5 sm:bottom-5 sm:left-5 sm:flex-row sm:items-end sm:justify-between sm:gap-4">
+                  <div className="min-w-0">
+                    <h3 className="font-display text-xl uppercase leading-tight sm:text-2xl">
                       {property.title}
                     </h3>
                     <p className="mt-2 flex items-center gap-2 text-sm text-white/78">
@@ -58,13 +58,13 @@ export function PropertyCards({ properties }: PropertyCardsProps) {
                       {property.location}
                     </p>
                   </div>
-                  <p className="shrink-0 text-xl font-semibold">
+                  <p className="shrink-0 text-lg font-semibold sm:text-xl">
                     {property.price}
                   </p>
                 </div>
               </div>
-              <div className="flex flex-1 flex-col p-6">
-                <p className="mt-4 text-sm leading-7 text-[var(--color-slate-500)]">
+              <div className="flex flex-1 flex-col p-5 sm:p-6">
+                <p className="mt-2 text-sm leading-7 text-[var(--color-slate-500)] sm:mt-4">
                   {property.description}
                 </p>
                 <div className="mt-6 grid gap-px overflow-hidden rounded-[1rem] border border-[var(--color-border)] bg-[var(--color-border)] sm:grid-cols-2 lg:mt-auto">

@@ -27,11 +27,11 @@ const values = [
 
 export function CoreValues() {
   return (
-    <section className="bg-white px-6 pb-20 lg:px-8">
+    <section className="bg-white px-4 pb-16 sm:px-6 sm:pb-20 lg:px-8">
       <div className="mx-auto max-w-7xl">
         <SectionReveal>
           <div className="text-center">
-            <div className="mx-auto flex max-w-md items-center justify-center gap-4 text-xs font-semibold uppercase tracking-[0.32em] text-[var(--color-gold-500)]">
+            <div className="mx-auto flex max-w-md flex-wrap items-center justify-center gap-3 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-gold-500)] sm:gap-4 sm:tracking-[0.32em]">
               <span className="h-px flex-1 bg-[var(--color-gold-500)]" />
               <span className="h-2 w-2 rotate-45 bg-[var(--color-gold-500)]" />
               <span>Our Core Values</span>
@@ -39,14 +39,14 @@ export function CoreValues() {
               <span className="h-px flex-1 bg-[var(--color-gold-500)]" />
             </div>
 
-            <h2 className="mt-7 font-display text-4xl uppercase leading-tight text-[var(--color-slate-900)] sm:text-6xl">
+            <h2 className="mt-6 font-display text-3xl uppercase leading-tight text-[var(--color-slate-900)] sm:mt-7 sm:text-6xl">
               Our Values.
               <span className="text-[var(--color-gold-500)]">
                 {' '}
                 Our Promise.
               </span>
             </h2>
-            <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-[var(--color-slate-500)] sm:text-lg">
+            <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-[var(--color-slate-500)] sm:text-lg">
               The principles that guide our decisions, shape our culture, and
               define every client relationship.
             </p>
@@ -54,7 +54,7 @@ export function CoreValues() {
         </SectionReveal>
 
         <SectionReveal delay={0.1}>
-          <div className="mt-14 overflow-hidden border-y border-[rgba(212,175,55,0.55)] bg-[var(--color-slate-900)] shadow-[0_26px_70px_rgba(21,43,71,0.16)]">
+          <div className="mt-10 overflow-hidden border-y border-[rgba(212,175,55,0.55)] bg-[rgb(2,18,34)] shadow-[0_26px_70px_rgba(2,18,34,0.2)] sm:mt-14">
             <div className="grid md:grid-cols-2 lg:grid-cols-4">
               {values.map((value, index) => {
                 const Icon = value.icon;
@@ -62,13 +62,13 @@ export function CoreValues() {
                 return (
                   <article
                     key={value.title}
-                    className="relative flex min-h-[18rem] flex-col items-center justify-center border-[rgba(212,175,55,0.28)] px-8 py-10 text-center text-white lg:border-l first:lg:border-l-0"
+                    className="relative flex min-h-[15rem] flex-col items-center justify-center border-[rgba(212,175,55,0.28)] px-6 py-8 text-center text-white sm:min-h-[18rem] sm:px-8 sm:py-10 lg:border-l first:lg:border-l-0"
                   >
                     {index > 0 ? (
                       <span className="absolute top-1/2 left-0 hidden h-4 w-4 -translate-x-1/2 -translate-y-1/2 rotate-45 bg-[var(--color-gold-500)] shadow-[0_0_28px_rgba(212,175,55,0.85)] lg:block" />
                     ) : null}
-                    <div className="flex h-24 w-24 items-center justify-center rounded-full border border-[rgba(212,175,55,0.7)] text-[var(--color-gold-400)]">
-                      <Icon size={42} strokeWidth={1.4} aria-hidden="true" />
+                    <div className="flex h-20 w-20 items-center justify-center rounded-full border border-[rgba(212,175,55,0.7)] text-[var(--color-gold-400)] sm:h-24 sm:w-24">
+                      <Icon size={36} strokeWidth={1.4} aria-hidden="true" />
                     </div>
                     <h3 className="mt-8 font-display text-2xl uppercase">
                       {value.title}

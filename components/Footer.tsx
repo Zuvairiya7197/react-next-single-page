@@ -119,10 +119,10 @@ export function Footer() {
   const wazeLink = `https://www.waze.com/ul?q=${googleMapsQuery}`;
 
   return (
-    <footer className="border-t border-[rgba(255,255,255,0.08)] bg-[var(--color-slate-900)] px-4 py-12 text-white/78 sm:px-6 sm:py-14 lg:px-8">
-      <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(21rem,0.95fr)_auto_auto] lg:items-start">
+    <footer className="border-t border-[rgba(255,255,255,0.08)] bg-[rgb(2,18,34)] px-4 py-10 text-white/78 sm:px-6 sm:py-14 lg:px-8">
+      <div className="mx-auto grid max-w-7xl gap-9 sm:grid-cols-2 lg:grid-cols-[minmax(0,1.05fr)_minmax(21rem,0.95fr)_auto_auto] lg:items-start">
         <div className="min-w-0 max-w-lg">
-          <div className="relative h-[4.5rem] w-48 rounded-2xl bg-white p-3 shadow-[0_20px_50px_rgba(10,20,35,0.28)]">
+          <div className="relative h-16 w-40 rounded-2xl bg-white p-3 shadow-[0_20px_50px_rgba(10,20,35,0.28)] sm:h-[4.5rem] sm:w-48">
             <Image
               src="/images/emlak-logo.png"
               alt="Emlak logo"
@@ -135,7 +135,7 @@ export function Footer() {
             Dubai property advisory for buying, selling, leasing, investing,
             and relocating.
           </p>
-          <div className="mt-6 flex flex-wrap gap-4 text-sm">
+          <div className="mt-6 flex flex-col gap-3 text-sm sm:flex-row sm:flex-wrap sm:gap-4">
             <a
               href={contactDetails.email.href}
               className="inline-flex min-w-0 items-center gap-2 break-all sm:break-normal"
@@ -153,7 +153,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="min-w-0 rounded-[1.4rem] border border-white/10 bg-white/6 p-3 backdrop-blur sm:rounded-[1.6rem] sm:p-3.5">
+        <div className="min-w-0 rounded-[1.4rem] border border-white/10 bg-white/6 p-3 backdrop-blur sm:rounded-[1.6rem] sm:p-3.5 lg:col-auto">
           <div className="flex items-start gap-3 text-white">
             <div className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-white/10">
               <MapPin size={18} aria-hidden="true" />
@@ -211,7 +211,7 @@ export function Footer() {
           <p className="text-sm font-semibold uppercase tracking-[0.26em] text-white">
             Sections
           </p>
-          <div className="mt-5 flex flex-col gap-3 text-sm">
+          <div className="mt-4 grid grid-cols-2 gap-3 text-sm sm:mt-5 sm:flex sm:flex-col">
             {navItems.map((item) => (
               <a
                 key={item.href}
@@ -249,7 +249,7 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="mx-auto mt-10 flex max-w-7xl flex-col gap-3 border-t border-white/10 pt-6 text-sm text-white/56 sm:flex-row sm:items-center sm:justify-between">
+      <div className="mx-auto mt-9 flex max-w-7xl flex-col gap-3 border-t border-white/10 pt-6 text-sm text-white/56 sm:mt-10 sm:flex-row sm:items-center sm:justify-between">
         <p>© 2026 Emlak Real Estate LLC. All rights reserved.</p>
         <p className="break-words">
           Designed and developed by{' '}

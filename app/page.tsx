@@ -30,13 +30,13 @@ export default function HomePage() {
         <WhyChooseUs />
         <Services />
         <DevelopersMarquee />
-        <WhyDubaiStrip />
         <Suspense fallback={<ProjectsSkeleton />}>
           <Projects />
         </Suspense>
         {/* <Suspense fallback={<TestimonialsSkeleton />}>
           <Testimonials />
         </Suspense> */}
+        <WhyDubaiStrip />
         <Contact />
       </main>
       <Footer />

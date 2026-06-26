@@ -38,12 +38,12 @@ const dubaiReasons = [
 
 export function WhyDubaiStrip() {
   return (
-    <section className="bg-white px-6 py-10 lg:px-8">
+    <section className="bg-white px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
       <SectionReveal>
-        <div className="mx-auto max-w-7xl overflow-hidden border-y border-[var(--color-gold-500)] bg-[var(--color-slate-900)] shadow-[0_24px_70px_rgba(21,43,71,0.16)]">
-          <div className="grid gap-8 px-6 py-10 lg:grid-cols-[18rem_1fr] lg:items-center lg:px-8">
+        <div className="mx-auto max-w-7xl overflow-hidden border-y border-[var(--color-gold-500)] bg-[rgb(2,18,34)] shadow-[0_24px_70px_rgba(2,18,34,0.2)]">
+          <div className="grid gap-8 px-4 py-8 sm:px-6 sm:py-10 lg:grid-cols-[18rem_1fr] lg:items-center lg:px-8">
             <div>
-              <h2 className="font-display text-4xl uppercase leading-tight text-white">
+              <h2 className="font-display text-3xl uppercase leading-tight text-white sm:text-4xl">
                 <span className="text-[var(--color-gold-400)]">
                   Why Dubai,
                 </span>
@@ -55,20 +55,20 @@ export function WhyDubaiStrip() {
               </div>
             </div>
 
-            <div className="grid gap-px overflow-hidden rounded-[1.2rem] border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-6">
+            <div className="grid gap-px overflow-hidden rounded-[1rem] border border-white/10 bg-[rgba(255,255,255,0.08)] sm:grid-cols-2 sm:rounded-[1.2rem] lg:grid-cols-6">
               {dubaiReasons.map((reason, index) => {
                 const Icon = reason.icon;
 
                 return (
                   <article
                     key={reason.label}
-                    className="relative flex min-h-44 flex-col items-center justify-center bg-[rgba(255,255,255,0.03)] px-4 py-6 text-center"
+                    className="relative flex min-h-36 flex-col items-center justify-center bg-[rgba(2,18,34,0.82)] px-4 py-5 text-center sm:min-h-44 sm:py-6"
                   >
                     {index > 0 ? (
                       <span className="absolute top-1/2 left-0 hidden h-3 w-3 -translate-x-1/2 -translate-y-1/2 rotate-45 bg-[var(--color-gold-500)] shadow-[0_0_22px_rgba(212,175,55,0.75)] lg:block" />
                     ) : null}
-                    <div className="flex h-18 w-18 items-center justify-center rounded-full border border-[rgba(212,175,55,0.72)] text-[var(--color-gold-400)]">
-                      <Icon size={32} strokeWidth={1.45} aria-hidden="true" />
+                    <div className="flex h-14 w-14 items-center justify-center rounded-full border border-[rgba(212,175,55,0.72)] text-[var(--color-gold-400)] sm:h-18 sm:w-18">
+                      <Icon size={28} strokeWidth={1.45} aria-hidden="true" />
                     </div>
                     <p className="mt-6 text-sm font-semibold uppercase leading-6 tracking-[0.02em] text-white">
                       {reason.label}

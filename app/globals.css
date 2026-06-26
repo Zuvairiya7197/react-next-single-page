@@ -81,6 +81,15 @@ section[id] {
   scroll-margin-top: calc(var(--navbar-height, 6.5rem) + 1rem);
 }
 
+.navbar-link {
+  color: #ffffff !important;
+}
+
+.navbar-link:hover,
+.navbar-link-active {
+  color: var(--color-gold-500) !important;
+}
+
 @keyframes whatsapp-glow-pulse {
   0%,
   100% {

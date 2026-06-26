@@ -23,18 +23,18 @@ export function Services() {
   return (
     <section
       id="services"
-      className="overflow-hidden bg-white px-6 py-20 lg:px-8"
+      className="overflow-hidden bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-8"
     >
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-8 lg:grid-cols-[25rem_minmax(0,1fr)] lg:items-center xl:grid-cols-[28rem_minmax(0,1fr)]">
           <SectionReveal>
             <div className="max-w-xl">
-              <div className="flex items-center gap-4 text-xs font-semibold uppercase tracking-[0.22em] text-[var(--color-slate-900)]">
+              <div className="flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-slate-900)] sm:gap-4 sm:tracking-[0.22em]">
                 <span>Our Services</span>
                 <span className="h-px w-12 bg-[var(--color-gold-500)]" />
               </div>
 
-              <h2 className="mt-7 font-display text-4xl uppercase leading-[0.98] text-[var(--color-slate-900)] sm:text-5xl">
+              <h2 className="mt-6 font-display text-3xl uppercase leading-[1.02] text-[var(--color-slate-900)] sm:mt-7 sm:text-5xl">
                 Our
                 <span className="block text-[var(--color-gold-500)]">
                   Services
@@ -46,7 +46,7 @@ export function Services() {
                 <span className="h-px w-56 max-w-[70%] bg-[var(--color-gold-500)]" />
               </div>
 
-              <p className="mt-6 max-w-md text-base leading-7 text-[var(--color-slate-900)]">
+              <p className="mt-6 max-w-md text-sm leading-7 text-[var(--color-slate-900)] sm:text-base">
                 Comprehensive real estate support across every stage of the
                 journey. Solutions designed to maximize value and deliver
                 results.
@@ -78,17 +78,17 @@ export function Services() {
           </SectionReveal>
 
           <SectionReveal delay={0.1} className="min-w-0 overflow-hidden">
-            <div className="flex max-w-full gap-2.5 overflow-x-auto pb-4 sm:gap-3 lg:justify-start lg:overflow-visible">
+            <div className="-mx-4 flex max-w-[calc(100%+2rem)] snap-x gap-2.5 overflow-x-auto px-4 pb-4 sm:mx-0 sm:max-w-full sm:gap-3 sm:px-0 lg:justify-start lg:overflow-visible">
               {services.map((service, index) => {
                 const isActive = index === activeIndex;
 
                 return (
                 <article
                   key={service.title}
-                  className={`group relative h-[24rem] shrink-0 overflow-hidden rounded-[1.5rem] border transition-all duration-700 ease-in-out ${
+                  className={`group relative h-[21rem] shrink-0 snap-start overflow-hidden rounded-[1.25rem] border transition-all duration-700 ease-in-out sm:h-[24rem] sm:rounded-[1.5rem] ${
                     isActive
-                      ? 'w-[18.5rem] border-[rgba(212,175,55,0.5)] sm:w-[24rem] lg:w-[15rem] xl:w-[17rem]'
-                      : 'w-[4.5rem] border-[rgba(212,175,55,0.28)] sm:w-[5rem] lg:w-[3.6rem] xl:w-[3.9rem]'
+                      ? 'w-[min(82vw,18.5rem)] border-[rgba(212,175,55,0.5)] sm:w-[24rem] lg:w-[15rem] xl:w-[17rem]'
+                      : 'w-14 border-[rgba(212,175,55,0.28)] sm:w-[5rem] lg:w-[3.6rem] xl:w-[3.9rem]'
                   }`}
                   onMouseEnter={() => setActiveIndex(index)}
                   onFocus={() => setActiveIndex(index)}

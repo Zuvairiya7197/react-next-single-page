@@ -11,7 +11,7 @@ export const navItems = [
 
 export const marketStats = [
   {
-    value: 'AED 75M+',
+    value: '75+',
     label: 'career transaction value advised',
   },
   {
@@ -128,7 +128,8 @@ const properties: Property[] = [
     title: 'Lagoon Views 2 BR Apartment',
     location: 'Dubailand, Dubai',
     price: 'From AED 1.82M',
-    description: 'Golden Visa-eligible living in DAMAC Lagoon Views.',
+    description:
+      'Spacious lagoon-facing residences with resort-style amenities and Golden Visa eligibility.',
     beds: '2',
     baths: '2',
     area: 'Up to 1,797 sq ft',
@@ -144,7 +145,8 @@ const properties: Property[] = [
     title: 'The Edit at d3',
     location: 'Dubai Design District',
     price: 'From AED 2.00M',
-    description: 'A Meraas address in Dubai Design District.',
+    description:
+      'Design-led city living by Meraas, set in Dubai Design District with curated residences and penthouses.',
     beds: '1-4',
     baths: '2',
     area: 'Penthouses',
@@ -161,7 +163,8 @@ const properties: Property[] = [
     title: 'The Brooks',
     location: 'Dubai Land, Dubai',
     price: 'From AED 4.16M',
-    description: 'Sobha 4 and 5-bedroom villas in Dubai Land.',
+    description:
+      'Elegant Sobha villas with generous layouts, refined finishes, and a calm family-focused setting.',
     beds: '4 & 5',
     baths: '5',
     area: '2,520.9-4,106.8 sq ft',
@@ -178,7 +181,8 @@ const properties: Property[] = [
     title: 'Greenz by Danube',
     location: 'Academic City, Dubai',
     price: 'From AED 3.5M',
-    description: 'Danube townhouses with a 1% monthly payment plan.',
+    description:
+      'Modern Danube homes in a green community, paired with an easy 1% monthly payment plan.',
     beds: '3, 4 & 5',
     baths: '3',
     area: '700',
