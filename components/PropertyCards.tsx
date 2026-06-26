@@ -12,10 +12,21 @@ import {
   ShowerHead,
   X,
 } from 'lucide-react';
+import { motion, useInView } from 'framer-motion';
 
 import { ContactForm } from '@/components/ContactForm';
-import { SectionReveal } from '@/components/SectionReveal';
 import type { Property } from '@/lib/data';
+
+
+const gridVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.13, delayChildren: 0.1 } },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 32, scale: 0.97 },
+  visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
+};
 
 type PropertyCardsProps = {
   properties: Property[];
@@ -54,12 +65,24 @@ export function PropertyCards({ properties }: PropertyCardsProps) {
     },
   ];
 
+  const gridRef = useRef<HTMLDivElement>(null);
+  const gridInView = useInView(gridRef, { once: true, margin: '-60px' });
+
   return (
     <>
-      <div className="mt-10 grid gap-6 sm:mt-12 lg:grid-cols-2 lg:gap-7">
-        {properties.map((property, index) => (
-          <SectionReveal key={property.id} delay={index * 0.08}>
-            <article className="group relative h-[26rem] overflow-hidden rounded-[1rem] border border-[rgba(212,175,55,0.24)] shadow-[0_18px_52px_rgba(21,43,71,0.08)] transition duration-300 hover:border-[rgba(212,175,55,0.42)] hover:shadow-[0_34px_90px_rgba(21,43,71,0.18)] sm:h-[30rem] sm:rounded-[1.6rem]">
+      <motion.div
+        ref={gridRef}
+        className="mt-10 grid gap-6 sm:mt-12 lg:grid-cols-2 lg:gap-7"
+        variants={gridVariants}
+        initial="hidden"
+        animate={gridInView ? 'visible' : 'hidden'}
+      >
+        {properties.map((property) => (
+          <motion.article
+            key={property.id}
+            variants={cardVariants}
+            whileHover={{ y: -4, transition: { duration: 0.25 } }}
+            className="group relative h-104 overflow-hidden rounded-2xl border border-[rgba(212,175,55,0.24)] shadow-[0_18px_52px_rgba(21,43,71,0.08)] transition-[border-color,box-shadow] duration-300 hover:border-[rgba(212,175,55,0.42)] hover:shadow-[0_34px_90px_rgba(21,43,71,0.18)] sm:h-120 sm:rounded-[1.6rem]">
               {/* Full-bleed image */}
               <Image
                 src={property.image}
@@ -140,10 +163,9 @@ export function PropertyCards({ properties }: PropertyCardsProps) {
                   </div>
                 </div>
               </div>
-            </article>
-          </SectionReveal>
+          </motion.article>
         ))}
-      </div>
+      </motion.div>
 
       {selectedProperty ? (
         <PropertyInquiryModal

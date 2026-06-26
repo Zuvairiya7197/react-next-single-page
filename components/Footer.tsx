@@ -1,5 +1,9 @@
+'use client';
+
 import Image from 'next/image';
+import { useRef } from 'react';
 import { Facebook, Instagram, Linkedin, MapPin, Twitter } from 'lucide-react';
+import { motion, useInView } from 'framer-motion';
 
 import { contactDetails, navItems, socialLinks } from '@/lib/data';
 
@@ -47,7 +51,35 @@ function AppleMapsIcon() {
   );
 }
 
+const containerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.1, delayChildren: 0.1 } },
+};
+
+const colVariants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, x: -8 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.4, ease: 'easeOut' } },
+};
+
+const navContainerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.07, delayChildren: 0.1 } },
+};
+
+const socialContainerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.08, delayChildren: 0.1 } },
+};
+
 export function Footer() {
+  const footerRef = useRef<HTMLElement>(null);
+  const inView = useInView(footerRef, { once: true, margin: '-60px' });
+
   const googleMapsQuery = encodeURIComponent(contactDetails.address.value);
   const googleMapsEmbed = `https://www.google.com/maps?q=${googleMapsQuery}&output=embed`;
   const googleMapsLink = contactDetails.address.href;
@@ -55,15 +87,23 @@ export function Footer() {
   const wazeLink = `https://www.waze.com/ul?q=${googleMapsQuery}`;
 
   return (
-    <footer className="border-t border-white/8 bg-[rgb(2,18,34)] px-4 py-14 text-white/55 sm:px-6 sm:py-16 lg:px-8">
+    <footer ref={footerRef} className="border-t border-white/8 bg-[rgb(2,18,34)] px-4 py-14 text-white/55 sm:px-6 sm:py-16 lg:px-8">
       <div className="mx-auto max-w-7xl">
 
         {/* Main grid */}
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1fr_1.1fr_auto_auto] lg:items-start lg:gap-12">
+        <motion.div
+          className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1fr_1.1fr_auto_auto] lg:items-start lg:gap-12"
+          variants={containerVariants}
+          initial="hidden"
+          animate={inView ? 'visible' : 'hidden'}
+        >
 
           {/* ── Col 1: Brand ── */}
-          <div>
-            <div className="relative h-14 w-36 rounded-xl bg-white p-2.5">
+          <motion.div variants={colVariants}>
+            <motion.div
+              className="relative h-14 w-36 rounded-xl bg-white p-2.5"
+              whileHover={{ scale: 1.04, transition: { duration: 0.2 } }}
+            >
               <Image
                 src="/images/emlak-logo.png"
                 alt="Emlak Real Estate LLC"
@@ -71,22 +111,33 @@ export function Footer() {
                 sizes="144px"
                 className="object-contain"
               />
-            </div>
+            </motion.div>
             <p className="mt-4 text-sm leading-6 text-white/45">
               Dubai property advisory — buying, selling, leasing &amp; investment.
             </p>
             <div className="mt-5 space-y-1.5 text-sm">
-              <a href={contactDetails.email.href} className="block break-all transition hover:text-white">
+              <motion.a
+                href={contactDetails.email.href}
+                className="block break-all transition hover:text-white"
+                whileHover={{ x: 3, transition: { duration: 0.2 } }}
+              >
                 {contactDetails.email.value}
-              </a>
-              <a href={contactDetails.phone.href} className="block transition hover:text-white">
+              </motion.a>
+              <motion.a
+                href={contactDetails.phone.href}
+                className="block transition hover:text-white"
+                whileHover={{ x: 3, transition: { duration: 0.2 } }}
+              >
                 {contactDetails.phone.value}
-              </a>
+              </motion.a>
             </div>
-          </div>
+          </motion.div>
 
           {/* ── Col 2: Map ── */}
-          <div className="rounded-[1.2rem] border border-white/10 bg-white/5 p-3">
+          <motion.div
+            variants={colVariants}
+            className="rounded-[1.2rem] border border-white/10 bg-white/5 p-3"
+          >
             <div className="flex items-start gap-3">
               <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/10 text-white/70">
                 <MapPin size={15} aria-hidden="true" />
@@ -115,77 +166,101 @@ export function Footer() {
                 { href: googleMapsLink, icon: <GoogleMapsIcon />, label: 'Google' },
                 { href: appleMapsLink, icon: <AppleMapsIcon />, label: 'Apple' },
               ].map(({ href, icon, label }) => (
-                <a
+                <motion.a
                   key={label}
                   href={href}
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center justify-center gap-1.5 rounded-full border border-white/10 bg-white/6 px-2 py-1.5 text-white/60 transition hover:border-[rgba(212,175,55,0.35)] hover:text-white"
+                  whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+                  whileTap={{ scale: 0.97 }}
                 >
                   {icon}
                   {label}
-                </a>
+                </motion.a>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* ── Col 3: Nav ── */}
-          <div>
+          <motion.div variants={colVariants}>
             <p className="text-[0.58rem] font-semibold uppercase tracking-[0.28em] text-white/30">
               Navigate
             </p>
-            <ul className="mt-4 space-y-3 text-sm">
+            <motion.ul
+              className="mt-4 space-y-3 text-sm"
+              variants={navContainerVariants}
+              initial="hidden"
+              animate={inView ? 'visible' : 'hidden'}
+            >
               {navItems.map((item) => (
-                <li key={item.href}>
-                  <a href={item.href} className="transition hover:text-white">
+                <motion.li key={item.href} variants={itemVariants}>
+                  <motion.a
+                    href={item.href}
+                    className="transition hover:text-white"
+                    whileHover={{ x: 4, color: '#ffffff', transition: { duration: 0.2 } }}
+                  >
                     {item.label}
-                  </a>
-                </li>
+                  </motion.a>
+                </motion.li>
               ))}
-            </ul>
-          </div>
+            </motion.ul>
+          </motion.div>
 
           {/* ── Col 4: Social ── */}
-          <div>
+          <motion.div variants={colVariants}>
             <p className="text-[0.58rem] font-semibold uppercase tracking-[0.28em] text-white/30">
               Follow
             </p>
-            <div className="mt-4 flex flex-col gap-3">
+            <motion.div
+              className="mt-4 flex flex-col gap-3"
+              variants={socialContainerVariants}
+              initial="hidden"
+              animate={inView ? 'visible' : 'hidden'}
+            >
               {socialLinks.map((social) => {
                 const Icon = socialIconMap[social.icon];
                 return (
-                  <a
+                  <motion.a
                     key={social.label}
                     href={social.href}
                     target="_blank"
                     rel="noreferrer"
                     aria-label={social.label}
                     className="inline-flex items-center gap-2.5 text-sm transition hover:text-white"
+                    variants={itemVariants}
+                    whileHover={{ x: 4, color: '#ffffff', transition: { duration: 0.2 } }}
                   >
                     <Icon size={14} aria-hidden="true" />
                     {social.label}
-                  </a>
+                  </motion.a>
                 );
               })}
-            </div>
-          </div>
-        </div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
 
         {/* Bottom bar */}
-        <div className="mt-12 flex flex-col gap-2 border-t border-white/8 pt-6 text-xs text-white/30 sm:flex-row sm:items-center sm:justify-between">
+        <motion.div
+          className="mt-12 flex flex-col gap-2 border-t border-white/8 pt-6 text-xs text-white/30 sm:flex-row sm:items-center sm:justify-between"
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ duration: 0.7, delay: 0.55 }}
+        >
           <p>© 2026 Emlak Real Estate LLC. All rights reserved.</p>
           <p>
             Built by{' '}
-            <a
+            <motion.a
               href="https://webuildyourbrands.com"
               target="_blank"
               rel="noreferrer"
               className="transition hover:text-white/60"
+              whileHover={{ color: 'rgba(255,255,255,0.6)', transition: { duration: 0.2 } }}
             >
               WBYB
-            </a>
+            </motion.a>
           </p>
-        </div>
+        </motion.div>
 
       </div>
     </footer>

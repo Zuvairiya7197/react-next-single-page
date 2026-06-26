@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 
 import { ArrowRight, BadgeCheck, MapPin, ShieldCheck, Zap } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const highlights = [
   { icon: ShieldCheck, text: 'RERA Licensed & Regulated' },
@@ -127,30 +128,60 @@ export function Hero() {
         {/* ── Left: Copy ── */}
         <div className="flex flex-col justify-center">
           {/* Eyebrow */}
-          <div className="flex items-center gap-3">
-            <span className="h-px w-10 bg-[#d4af37]" />
+          <motion.div
+            className="flex items-center gap-3"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <motion.span
+              className="h-px bg-[#d4af37]"
+              initial={{ width: 0 }}
+              animate={{ width: 40 }}
+              transition={{ duration: 0.7, delay: 0.5, ease: 'easeOut' }}
+            />
             <span className="text-[0.62rem] font-semibold uppercase tracking-[0.32em] text-[#d4af37]">
               Dubai Property Advisory
             </span>
-          </div>
+          </motion.div>
 
           {/* Heading */}
-          <h1 className="mt-6 font-display text-[clamp(2.8rem,10vw,6rem)] uppercase leading-[0.90] tracking-tight text-white">
+          <motion.h1
+            className="mt-6 font-display text-[clamp(2.8rem,10vw,6rem)] uppercase leading-[0.90] tracking-tight text-white"
+            initial={{ opacity: 0, y: 32 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          >
             Invest Smart,
             <span className="block text-[#e3c96c]">Live Premium.</span>
-          </h1>
+          </motion.h1>
 
           {/* Gold rule */}
-          <div className="mt-7 h-px w-24 bg-gradient-to-r from-[#d4af37] to-transparent" />
+          <motion.div
+            className="mt-7 h-px bg-linear-to-r from-[#d4af37] to-transparent"
+            initial={{ width: 0 }}
+            animate={{ width: 96 }}
+            transition={{ duration: 0.8, delay: 0.55, ease: 'easeOut' }}
+          />
 
           {/* Subheading */}
-          <p className="mt-6 max-w-lg text-sm leading-7 text-white/70 sm:text-base sm:leading-8">
+          <motion.p
+            className="mt-6 max-w-lg text-sm leading-7 text-white/70 sm:text-base sm:leading-8"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+          >
             Emlak Real Estate LLC helps clients buy, sell, lease, invest, and
             relocate — with clear guidance from search to signature.
-          </p>
+          </motion.p>
 
           {/* CTAs */}
-          <div className="mt-8 flex flex-wrap gap-3">
+          <motion.div
+            className="mt-8 flex flex-wrap gap-3"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.55, ease: [0.22, 1, 0.36, 1] }}
+          >
             <a
               href="#projects"
               className="group inline-flex items-center gap-3 rounded-full bg-[#d4af37] px-6 py-3 text-sm font-semibold uppercase tracking-[0.08em] text-[#060f1c] shadow-[0_0_40px_rgba(212,175,55,0.28)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#e3c96c] hover:shadow-[0_0_56px_rgba(212,175,55,0.42)]"
@@ -165,12 +196,17 @@ export function Hero() {
               Book Consultation
               <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
             </a>
-          </div>
+          </motion.div>
 
         </div>
 
         {/* ── Right: Property card ── */}
-        <div className="mt-8 lg:mt-0">
+        <motion.div
+          className="mt-8 lg:mt-0"
+          initial={{ opacity: 0, x: 40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.85, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
+        >
           <div className="overflow-hidden rounded-[1.5rem] border border-white/14 bg-[rgba(2,18,34,0.62)] shadow-[0_32px_80px_rgba(0,0,0,0.4)] backdrop-blur-xl sm:rounded-[2rem]">
 
             {/* Image */}
@@ -294,7 +330,7 @@ export function Hero() {
             View all properties
             <ArrowRight size={13} className="transition-transform group-hover:translate-x-1" aria-hidden="true" />
           </a>
-        </div>
+        </motion.div>
 
       </div>
 
