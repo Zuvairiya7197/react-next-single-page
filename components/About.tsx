@@ -3,14 +3,20 @@
 import Image from 'next/image';
 
 import { BadgeCheck, Coins, ThumbsUp, UsersRound } from 'lucide-react';
-import { motion, useInView, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import {
+  motion,
+  useInView,
+  useMotionValue,
+  useSpring,
+  useTransform,
+} from 'framer-motion';
 import { useEffect, useRef } from 'react';
 
 const aboutStats = [
   {
     icon: Coins,
     value: 'AED 75M+',
-    label: 'Transaction Value Advised',
+    label: 'Career Transaction Value Advised',
   },
   {
     icon: UsersRound,
@@ -29,7 +35,13 @@ const aboutStats = [
   },
 ] as const;
 
-function AnimatedNumber({ value, suffix = '' }: { value: number; suffix?: string }) {
+function AnimatedNumber({
+  value,
+  suffix = '',
+}: {
+  value: number;
+  suffix?: string;
+}) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: '-60px' });
   const motionVal = useMotionValue(0);
@@ -50,17 +62,30 @@ const containerVariants = {
 
 const cardVariants = {
   hidden: { opacity: 0, y: 28, scale: 0.97 },
-  visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
+  },
 };
 
 const leftVariants = {
   hidden: { opacity: 0, x: -32 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+  },
 };
 
 const imageVariants = {
   hidden: { opacity: 0, scale: 1.04 },
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] } },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] },
+  },
 };
 
 export function About() {
@@ -194,7 +219,10 @@ export function About() {
                 >
                   <motion.div
                     className="absolute left-4 top-5 flex h-9 w-9 items-center justify-center rounded-full border border-[rgba(212,175,55,0.28)] bg-white/82 text-(--color-gold-500) shadow-[0_12px_36px_rgba(21,43,71,0.08)] backdrop-blur transition duration-300 group-hover:border-[rgba(212,175,55,0.7)] group-hover:bg-[rgba(212,175,55,0.1)] sm:-left-7 sm:top-1/2 sm:h-14 sm:w-14 sm:-translate-y-1/2"
-                    whileHover={{ rotate: [0, -8, 8, 0], transition: { duration: 0.4 } }}
+                    whileHover={{
+                      rotate: [0, -8, 8, 0],
+                      transition: { duration: 0.4 },
+                    }}
                   >
                     <Icon size={23} strokeWidth={1.4} aria-hidden="true" />
                   </motion.div>
