@@ -27,7 +27,7 @@ const values = [
 
 export function CoreValues() {
   return (
-    <section className="bg-white px-4 pb-16 sm:px-6 sm:pb-20 lg:px-8">
+    <section className="bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-7xl">
         <SectionReveal>
           <div className="text-center">

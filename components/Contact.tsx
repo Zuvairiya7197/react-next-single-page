@@ -21,7 +21,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="bg-white px-4 py-16 sm:px-6 sm:py-24 lg:px-8"
+      className="bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24"
     >
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.95fr_1.05fr]">
         <SectionReveal className="min-w-0">

@@ -31,7 +31,7 @@ export function About() {
   return (
     <section
       id="about"
-      className="overflow-hidden bg-white px-4 py-14 sm:px-6 sm:py-16 lg:px-8"
+      className="overflow-hidden bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24"
     >
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
         <SectionReveal>

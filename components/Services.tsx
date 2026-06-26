@@ -23,7 +23,7 @@ export function Services() {
   return (
     <section
       id="services"
-      className="overflow-hidden bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-8"
+      className="overflow-hidden bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24"
     >
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-8 lg:grid-cols-[25rem_minmax(0,1fr)] lg:items-center xl:grid-cols-[28rem_minmax(0,1fr)]">

@@ -21,7 +21,7 @@ const stats = [
 
 export function DubaiInvestment() {
   return (
-    <section className="relative overflow-hidden px-4 py-20 sm:px-6 sm:py-24 lg:px-8"
+    <section className="relative overflow-hidden px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24"
       style={{
         background: 'linear-gradient(135deg, #0a1628 0%, #0d1f38 40%, #091422 100%)',
       }}
