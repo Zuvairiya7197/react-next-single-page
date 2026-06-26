@@ -80,7 +80,7 @@ export function WhyChooseUs() {
           <div className="relative min-h-0 sm:min-h-[34rem]">
             <div className="relative h-64 overflow-hidden rounded-[1.5rem] border border-[rgba(212,175,55,0.26)] sm:absolute sm:inset-y-0 sm:right-0 sm:h-auto sm:w-[82%] sm:rounded-[2rem] sm:rounded-tl-[8rem]">
               <Image
-                src="/images/hero-emlak-main.png"
+                src="/images/5th.jpeg"
                 alt="Luxury Dubai property advisory backdrop"
                 fill
                 sizes="(min-width: 1024px) 55vw, 100vw"

@@ -36,7 +36,7 @@ export async function Projects() {
               href="#contact"
               className="inline-flex w-full items-center justify-center gap-3 border border-[rgba(212,175,55,0.62)] px-6 py-3 text-center text-sm font-semibold uppercase tracking-[0.08em] text-[var(--color-gold-500)] transition hover:bg-[var(--color-gold-500)] hover:text-[var(--color-slate-900)] sm:w-auto"
             >
-              Request More
+              Show More Properties
               <MoveRight size={16} aria-hidden="true" />
             </a>
           </div>

@@ -7,13 +7,13 @@ import { SectionReveal } from '@/components/SectionReveal';
 import { services } from '@/lib/data';
 
 const serviceImages = [
-  '/images/projects/lagoon-views-2br.jpg',
-  '/images/projects/aeon-creek-harbour.jpg',
-  '/images/projects/the-edit-at-d3.jpg',
-  '/images/projects/greenz-exterior.webp',
-  '/images/projects/mercedes-benz-places.jpg',
-  '/images/projects/river-cove-residences.webp',
-  '/images/projects/artistry-two.jpg',
+  '/images/services/Buy, Sell & Rent.png',
+  '/images/services/Investment Advisory.png',
+  '/images/services/Off-Plan Sales.png',
+  '/images/services/Asset & Leasing Management.png',
+  '/images/services/Mortgage & Finance.png',
+  '/images/services/Golden Visa Assistance.png',
+  '/images/services/Legal & Documentation.png',
 ] as const;
 
 export function Services() {
