@@ -88,7 +88,7 @@ export function Services() {
                   className={`group relative h-[21rem] shrink-0 snap-start overflow-hidden rounded-[1.25rem] border transition-all duration-700 ease-in-out sm:h-[24rem] sm:rounded-[1.5rem] ${
                     isActive
                       ? 'w-[min(82vw,18.5rem)] border-[rgba(212,175,55,0.5)] sm:w-[24rem] lg:w-[15rem] xl:w-[17rem]'
-                      : 'w-14 border-[rgba(212,175,55,0.28)] sm:w-[5rem] lg:w-[3.6rem] xl:w-[3.9rem]'
+                      : 'w-[min(82vw,18.5rem)] border-[rgba(212,175,55,0.5)] sm:w-[5rem] sm:border-[rgba(212,175,55,0.28)] lg:w-[3.6rem] xl:w-[3.9rem]'
                   }`}
                   onMouseEnter={() => setActiveIndex(index)}
                   onFocus={() => setActiveIndex(index)}
@@ -104,7 +104,9 @@ export function Services() {
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(21,43,71,0.06)_0%,rgba(21,43,71,0.42)_48%,rgba(8,18,32,0.88)_100%)]" />
                   <div
                     className={`absolute inset-0 transition duration-500 ${
-                      isActive ? 'bg-[rgba(212,175,55,0.1)]' : 'bg-black/16'
+                      isActive
+                        ? 'bg-[rgba(212,175,55,0.1)]'
+                        : 'bg-[rgba(212,175,55,0.1)] sm:bg-black/16'
                     }`}
                   />
 
@@ -112,7 +114,7 @@ export function Services() {
                     className={`absolute transition-all duration-500 ${
                       isActive
                         ? 'right-5 bottom-5 left-5'
-                        : 'pointer-events-none right-5 bottom-5 left-5 opacity-0'
+                        : 'right-5 bottom-5 left-5 sm:pointer-events-none sm:opacity-0'
                     }`}
                   >
                     <div className="border-l border-[var(--color-gold-500)] pl-4">
@@ -130,7 +132,7 @@ export function Services() {
                           className={`mt-2 max-w-[15rem] text-sm leading-6 text-white/78 transition duration-300 ${
                             isActive
                               ? 'translate-y-0 opacity-100'
-                              : 'pointer-events-none translate-y-2 opacity-0'
+                              : 'translate-y-0 opacity-100 sm:pointer-events-none sm:translate-y-2 sm:opacity-0'
                           }`}
                         >
                           {service.description}
