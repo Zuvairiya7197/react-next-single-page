@@ -72,8 +72,8 @@ export function Hero() {
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,18,34,0.46)_0%,rgba(2,18,34,0.02)_42%,rgba(2,18,34,0.42)_100%)]" />
       </div>
 
-      <div className="relative z-10 mx-auto flex min-h-[calc(100svh-6rem)] max-w-7xl flex-col justify-center gap-5 pb-5 sm:min-h-[calc(100svh-6.5rem)] sm:justify-end sm:gap-6 sm:pb-6 lg:min-h-[calc(100svh-7rem)] lg:gap-7">
-        <div className="max-w-3xl">
+      <div className="relative z-10 mx-auto flex min-h-[calc(100svh-6rem)] max-w-7xl flex-col justify-center gap-5 pb-5 sm:min-h-[calc(100svh-6.5rem)] sm:justify-end sm:gap-6 sm:pb-6 lg:min-h-[calc(100svh-7rem)] lg:gap-4">
+        <div className="max-w-3xl lg:pt-3">
           <div className="flex flex-wrap items-center gap-3 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-gold-400)] sm:gap-4 sm:text-sm sm:tracking-[0.34em]">
             <span>Dubai Property Advisory</span>
             <span className="h-px w-14 bg-[var(--color-gold-500)]" />

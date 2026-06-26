@@ -11,7 +11,7 @@ export const navItems = [
 
 export const marketStats = [
   {
-    value: '75+',
+    value: 'AED 75M+',
     label: 'career transaction value advised',
   },
   {

@@ -7,18 +7,18 @@ import { SectionReveal } from '@/components/SectionReveal';
 const aboutStats = [
   {
     icon: Coins,
-    value: '75+',
-    label: 'Career Transaction Value Advised',
+    value: 'AED 75M+',
+    label: 'Transaction Value Advised',
   },
   {
     icon: UsersRound,
     value: '10+',
-    label: 'Years of Expert Real Estate Guidance',
+    label: 'Years of Real Estate Guidance',
   },
   {
     icon: BadgeCheck,
     value: '100%',
-    label: 'Transparency from Sourcing to Signature',
+    label: 'Transparency, Sourcing to Signature',
   },
   {
     icon: ThumbsUp,
@@ -29,7 +29,10 @@ const aboutStats = [
 
 export function About() {
   return (
-    <section id="about" className="overflow-hidden bg-white px-4 py-14 sm:px-6 sm:py-16 lg:px-8">
+    <section
+      id="about"
+      className="overflow-hidden bg-white px-4 py-14 sm:px-6 sm:py-16 lg:px-8"
+    >
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
         <SectionReveal>
           <div className="max-w-2xl">
@@ -97,13 +100,25 @@ export function About() {
                 return (
                   <div
                     key={stat.value}
-                    className="relative w-full rounded-[1rem] border border-[rgba(212,175,55,0.2)] bg-white/86 p-4 pl-14 shadow-[0_16px_44px_rgba(21,43,71,0.1)] backdrop-blur-xl sm:max-w-[18rem] sm:border-white/45 sm:bg-white/58 sm:p-5 sm:pl-14 lg:ml-12 even:lg:ml-28"
+                    className="relative w-full rounded-[1rem] border border-[rgba(212,175,55,0.2)] bg-white/86 p-4 pl-14 shadow-[0_16px_44px_rgba(21,43,71,0.1)] backdrop-blur-xl sm:max-w-[19.5rem] sm:border-white/45 sm:bg-white/58 sm:p-5 sm:pl-14 lg:-ml-0 even:lg:ml-22"
                   >
                     <div className="absolute left-4 top-5 flex h-9 w-9 items-center justify-center rounded-full border border-[rgba(212,175,55,0.28)] bg-white/82 text-[var(--color-gold-500)] shadow-[0_12px_36px_rgba(21,43,71,0.08)] backdrop-blur sm:-left-7 sm:top-1/2 sm:h-14 sm:w-14 sm:-translate-y-1/2">
                       <Icon size={23} strokeWidth={1.4} aria-hidden="true" />
                     </div>
-                    <p className="font-display text-3xl uppercase leading-none text-[var(--color-slate-900)] sm:text-4xl">
-                      {stat.value}
+                    <p className="font-display uppercase leading-none text-[var(--color-slate-900)]">
+                      {stat.value === 'AED 75M+' ? (
+                        <>
+                          <span className="text-xl sm:text-2xl">AED </span>
+                          <span className="text-3xl sm:text-4xl">75</span>
+                          <span className="text-xl sm:text-2xl">M+</span>
+                        </>
+                      ) : stat.value === 'Bespoke Advisory' ? (
+                        <span className="text-lg sm:text-xl">{stat.value}</span>
+                      ) : (
+                        <span className="text-3xl sm:text-4xl">
+                          {stat.value}
+                        </span>
+                      )}
                     </p>
                     <div className="mt-3 h-px w-10 bg-[var(--color-gold-500)]" />
                     <p className="mt-3 text-sm font-semibold leading-6 text-[var(--color-slate-900)]">
