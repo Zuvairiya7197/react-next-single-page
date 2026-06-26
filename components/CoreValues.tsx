@@ -54,7 +54,7 @@ export function CoreValues() {
         </SectionReveal>
 
         <SectionReveal delay={0.1}>
-          <div className="mt-10 overflow-hidden border-y border-[rgba(212,175,55,0.55)] bg-[rgb(2,18,34)] shadow-[0_26px_70px_rgba(2,18,34,0.2)] sm:mt-14">
+          <div className="mt-10 overflow-hidden rounded-[1.5rem] border border-[rgba(212,175,55,0.55)] bg-[rgb(2,18,34)] shadow-[0_26px_70px_rgba(2,18,34,0.2)] sm:mt-14 sm:rounded-[2rem]">
             <div className="grid md:grid-cols-2 lg:grid-cols-4">
               {values.map((value, index) => {
                 const Icon = value.icon;

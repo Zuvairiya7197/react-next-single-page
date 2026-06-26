@@ -75,7 +75,7 @@ export function PropertyCards({ properties }: PropertyCardsProps) {
               <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,23,38,0.08)_0%,rgba(10,23,38,0.5)_40%,rgba(10,23,38,0.98)_100%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
               {/* Status badge */}
-              <div className="absolute top-3 left-3 z-10 max-w-[calc(100%-1.5rem)] rounded-full border border-[rgba(212,175,55,0.48)] bg-[rgba(9,24,42,0.78)] px-2.5 py-1 text-[0.58rem] font-semibold uppercase tracking-[0.1em] text-[var(--color-gold-400)] shadow-[0_10px_30px_rgba(0,0,0,0.22)] backdrop-blur sm:top-5 sm:left-5 sm:px-4 sm:py-2 sm:text-xs sm:tracking-[0.16em]">
+              <div className="absolute top-3 left-3 z-10 max-w-[calc(100%-1.5rem)] rounded-full border border-white/30 bg-white/15 px-2.5 py-1 text-[0.58rem] font-semibold uppercase tracking-[0.1em] text-white shadow-[0_10px_30px_rgba(0,0,0,0.22)] backdrop-blur sm:top-5 sm:left-5 sm:px-4 sm:py-2 sm:text-xs sm:tracking-[0.16em]">
                 <span className="line-clamp-1">{property.status}</span>
               </div>
 

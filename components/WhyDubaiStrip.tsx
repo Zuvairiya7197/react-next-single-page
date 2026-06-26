@@ -40,7 +40,7 @@ export function WhyDubaiStrip() {
   return (
     <section className="bg-white px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
       <SectionReveal>
-        <div className="mx-auto max-w-7xl overflow-hidden border-y border-[var(--color-gold-500)] bg-[rgb(2,18,34)] shadow-[0_24px_70px_rgba(2,18,34,0.2)]">
+        <div className="mx-auto max-w-7xl overflow-hidden rounded-[1.5rem] border border-[var(--color-gold-500)] bg-[rgb(2,18,34)] shadow-[0_24px_70px_rgba(2,18,34,0.2)] sm:rounded-[2rem]">
           <div className="grid gap-8 px-4 py-8 sm:px-6 sm:py-10 lg:grid-cols-[18rem_1fr] lg:items-center lg:px-8">
             <div>
               <h2 className="font-display text-3xl uppercase leading-tight text-white sm:text-4xl">

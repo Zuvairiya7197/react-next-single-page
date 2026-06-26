@@ -4,6 +4,7 @@ import { About } from '@/components/About';
 import { Contact } from '@/components/Contact';
 import { CoreValues } from '@/components/CoreValues';
 import { DevelopersMarquee } from '@/components/DevelopersMarquee';
+import { DubaiInvestment } from '@/components/DubaiInvestment';
 import { Footer } from '@/components/Footer';
 import { Hero } from '@/components/Hero';
 import { Navbar } from '@/components/Navbar';
@@ -36,6 +37,7 @@ export default function HomePage() {
         {/* <Suspense fallback={<TestimonialsSkeleton />}>
           <Testimonials />
         </Suspense> */}
+        <DubaiInvestment />
         <WhyDubaiStrip />
         <Contact />
       </main>

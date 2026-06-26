@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import { MoveRight } from 'lucide-react';
 
 import { PropertyCards } from '@/components/PropertyCards';
@@ -32,13 +34,13 @@ export async function Projects() {
                 value.
               </p>
             </div>
-            <a
-              href="#contact"
+            <Link
+              href="/properties"
               className="inline-flex w-full items-center justify-center gap-3 border border-[rgba(212,175,55,0.62)] px-6 py-3 text-center text-sm font-semibold uppercase tracking-[0.08em] text-[var(--color-gold-500)] transition hover:bg-[var(--color-gold-500)] hover:text-[var(--color-slate-900)] sm:w-auto"
             >
               Show More Properties
               <MoveRight size={16} aria-hidden="true" />
-            </a>
+            </Link>
           </div>
         </SectionReveal>
 

@@ -72,11 +72,11 @@ export function Contact() {
           </div>
         </SectionReveal>
 
-        <SectionReveal className="min-w-0" delay={0.1}>
+        <SectionReveal className="min-w-0 lg:pt-36" delay={0.1}>
           <div className="overflow-hidden rounded-[1.5rem] border border-[rgba(212,175,55,0.28)] bg-white shadow-[0_28px_80px_rgba(21,43,71,0.1)] sm:rounded-[1.8rem]">
             <div className="h-1.5 bg-[linear-gradient(90deg,var(--color-gold-500),rgba(212,175,55,0.18))]" />
-            <div className="p-4 sm:p-10">
-            <ContactForm />
+            <div className="p-4 sm:p-8">
+            <ContactForm rows={3} className="space-y-4" />
             </div>
           </div>
         </SectionReveal>
