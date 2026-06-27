@@ -16,10 +16,27 @@ const socialIconMap = {
 
 function WazeIcon() {
   return (
-    <svg aria-hidden="true" viewBox="0 0 64 64" className="h-4 w-4" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M51 31.5c0-10.6-8.8-19.2-19.6-18.8-10.1.4-18.3 8.6-18.8 18.7-.2 4.9 1.4 9.4 4.3 13-.8 1.1-2.1 1.8-3.6 1.8-2.4 0-4.3 1.9-4.3 4.3 0 2.4 1.9 4.3 4.3 4.3 2.9 0 5.6-1.3 7.4-3.5 2.1 1.1 4.5 1.8 7 2.1 1 3 3.8 5.1 7.1 5.1 3.4 0 6.2-2.3 7.1-5.4 2.3-.6 4.4-1.6 6.2-3.1 1.6 1.5 3.8 2.5 6.2 2.5 4.9 0 8.8-4 8.8-8.8 0-4.3-3-7.8-7.1-8.6.6-1.7 1-3.5 1-5.4Z" fill="#33CCFF" />
-      <path d="M25.5 32.2c0 1.6-1.3 2.8-2.8 2.8-1.6 0-2.8-1.3-2.8-2.8 0-1.6 1.3-2.8 2.8-2.8 1.6 0 2.8 1.3 2.8 2.8Zm18.6 0c0 1.6-1.3 2.8-2.8 2.8-1.6 0-2.8-1.3-2.8-2.8 0-1.6 1.3-2.8 2.8-2.8 1.6 0 2.8 1.3 2.8 2.8Z" fill="#fff" />
-      <path d="M23.5 40.7c2.2 2.7 5.3 4.2 8.7 4.2 3.4 0 6.5-1.5 8.7-4.2" stroke="#fff" strokeWidth="3.5" strokeLinecap="round" />
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 64 64"
+      className="h-4 w-4"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M51 31.5c0-10.6-8.8-19.2-19.6-18.8-10.1.4-18.3 8.6-18.8 18.7-.2 4.9 1.4 9.4 4.3 13-.8 1.1-2.1 1.8-3.6 1.8-2.4 0-4.3 1.9-4.3 4.3 0 2.4 1.9 4.3 4.3 4.3 2.9 0 5.6-1.3 7.4-3.5 2.1 1.1 4.5 1.8 7 2.1 1 3 3.8 5.1 7.1 5.1 3.4 0 6.2-2.3 7.1-5.4 2.3-.6 4.4-1.6 6.2-3.1 1.6 1.5 3.8 2.5 6.2 2.5 4.9 0 8.8-4 8.8-8.8 0-4.3-3-7.8-7.1-8.6.6-1.7 1-3.5 1-5.4Z"
+        fill="#33CCFF"
+      />
+      <path
+        d="M25.5 32.2c0 1.6-1.3 2.8-2.8 2.8-1.6 0-2.8-1.3-2.8-2.8 0-1.6 1.3-2.8 2.8-2.8 1.6 0 2.8 1.3 2.8 2.8Zm18.6 0c0 1.6-1.3 2.8-2.8 2.8-1.6 0-2.8-1.3-2.8-2.8 0-1.6 1.3-2.8 2.8-2.8 1.6 0 2.8 1.3 2.8 2.8Z"
+        fill="#fff"
+      />
+      <path
+        d="M23.5 40.7c2.2 2.7 5.3 4.2 8.7 4.2 3.4 0 6.5-1.5 8.7-4.2"
+        stroke="#fff"
+        strokeWidth="3.5"
+        strokeLinecap="round"
+      />
       <circle cx="22.5" cy="54" r="4.5" fill="#33CCFF" />
       <circle cx="42" cy="54" r="4.5" fill="#33CCFF" />
     </svg>
@@ -28,10 +45,25 @@ function WazeIcon() {
 
 function GoogleMapsIcon() {
   return (
-    <svg aria-hidden="true" viewBox="0 0 64 64" className="h-4 w-4" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M32 58c9.4-13.2 14.1-22.7 14.1-28.4C46.1 19 39.8 12 32 12s-14.1 7-14.1 17.6C17.9 35.3 22.6 44.8 32 58Z" fill="#EA4335" />
-      <path d="M32 12c-7.8 0-14.1 7-14.1 17.6 0 1.8.3 3.6.9 5.5L32 22.4V12Z" fill="#FBBC04" />
-      <path d="M45.1 22.7C42.7 16.3 37.8 12 32 12v10.4l13.1.3Z" fill="#4285F4" />
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 64 64"
+      className="h-4 w-4"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M32 58c9.4-13.2 14.1-22.7 14.1-28.4C46.1 19 39.8 12 32 12s-14.1 7-14.1 17.6C17.9 35.3 22.6 44.8 32 58Z"
+        fill="#EA4335"
+      />
+      <path
+        d="M32 12c-7.8 0-14.1 7-14.1 17.6 0 1.8.3 3.6.9 5.5L32 22.4V12Z"
+        fill="#FBBC04"
+      />
+      <path
+        d="M45.1 22.7C42.7 16.3 37.8 12 32 12v10.4l13.1.3Z"
+        fill="#4285F4"
+      />
       <circle cx="32" cy="30" r="6.3" fill="#fff" />
       <circle cx="32" cy="30" r="3.2" fill="#4285F4" />
     </svg>
@@ -40,12 +72,36 @@ function GoogleMapsIcon() {
 
 function AppleMapsIcon() {
   return (
-    <svg aria-hidden="true" viewBox="0 0 64 64" className="h-4 w-4" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 64 64"
+      className="h-4 w-4"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <rect x="8" y="8" width="48" height="48" rx="14" fill="#F3F4F6" />
-      <path d="M20 42h24" stroke="#60A5FA" strokeWidth="4" strokeLinecap="round" />
-      <path d="M24 46 40 18" stroke="#34D399" strokeWidth="4" strokeLinecap="round" />
-      <path d="M23 20h18" stroke="#F59E0B" strokeWidth="4" strokeLinecap="round" />
-      <path d="M32 20c-4.6 0-8.3 3.6-8.3 8.1 0 5.1 6.4 12.5 7.6 13.8a1 1 0 0 0 1.4 0c1.2-1.3 7.6-8.7 7.6-13.8 0-4.5-3.7-8.1-8.3-8.1Z" fill="#EF4444" />
+      <path
+        d="M20 42h24"
+        stroke="#60A5FA"
+        strokeWidth="4"
+        strokeLinecap="round"
+      />
+      <path
+        d="M24 46 40 18"
+        stroke="#34D399"
+        strokeWidth="4"
+        strokeLinecap="round"
+      />
+      <path
+        d="M23 20h18"
+        stroke="#F59E0B"
+        strokeWidth="4"
+        strokeLinecap="round"
+      />
+      <path
+        d="M32 20c-4.6 0-8.3 3.6-8.3 8.1 0 5.1 6.4 12.5 7.6 13.8a1 1 0 0 0 1.4 0c1.2-1.3 7.6-8.7 7.6-13.8 0-4.5-3.7-8.1-8.3-8.1Z"
+        fill="#EF4444"
+      />
       <circle cx="32" cy="28.2" r="3.2" fill="#fff" />
     </svg>
   );
@@ -58,7 +114,11 @@ const containerVariants = {
 
 const colVariants = {
   hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+  },
 };
 
 const itemVariants = {
@@ -87,9 +147,11 @@ export function Footer() {
   const wazeLink = `https://www.waze.com/ul?q=${googleMapsQuery}`;
 
   return (
-    <footer ref={footerRef} className="border-t border-white/8 bg-[rgb(2,18,34)] px-4 py-14 text-white/55 sm:px-6 sm:py-16 lg:px-8">
+    <footer
+      ref={footerRef}
+      className="border-t border-white/8 bg-[rgb(2,18,34)] px-4 py-14 text-white/55 sm:px-6 sm:py-16 lg:px-8"
+    >
       <div className="mx-auto max-w-7xl">
-
         {/* Main grid */}
         <motion.div
           className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1fr_1.1fr_auto_auto] lg:items-start lg:gap-12"
@@ -97,7 +159,6 @@ export function Footer() {
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
         >
-
           {/* ── Col 1: Brand ── */}
           <motion.div variants={colVariants}>
             <motion.div
@@ -113,7 +174,8 @@ export function Footer() {
               />
             </motion.div>
             <p className="mt-4 text-sm leading-6 text-white/45">
-              Dubai property advisory — buying, selling, leasing &amp; investment.
+              Dubai property advisory — buying, selling, leasing &amp;
+              investment.
             </p>
             <div className="mt-5 space-y-1.5 text-sm">
               <motion.a
@@ -163,8 +225,16 @@ export function Footer() {
             <div className="mt-2.5 grid grid-cols-3 gap-2 text-xs">
               {[
                 { href: wazeLink, icon: <WazeIcon />, label: 'Waze' },
-                { href: googleMapsLink, icon: <GoogleMapsIcon />, label: 'Google' },
-                { href: appleMapsLink, icon: <AppleMapsIcon />, label: 'Apple' },
+                {
+                  href: googleMapsLink,
+                  icon: <GoogleMapsIcon />,
+                  label: 'Google',
+                },
+                {
+                  href: appleMapsLink,
+                  icon: <AppleMapsIcon />,
+                  label: 'Apple',
+                },
               ].map(({ href, icon, label }) => (
                 <motion.a
                   key={label}
@@ -198,7 +268,11 @@ export function Footer() {
                   <motion.a
                     href={item.href}
                     className="transition hover:text-white"
-                    whileHover={{ x: 4, color: '#ffffff', transition: { duration: 0.2 } }}
+                    whileHover={{
+                      x: 4,
+                      color: '#ffffff',
+                      transition: { duration: 0.2 },
+                    }}
                   >
                     {item.label}
                   </motion.a>
@@ -208,7 +282,7 @@ export function Footer() {
           </motion.div>
 
           {/* ── Col 4: Social ── */}
-          <motion.div variants={colVariants}>
+          {/* <motion.div variants={colVariants}>
             <p className="text-[0.58rem] font-semibold uppercase tracking-[0.28em] text-white/30">
               Follow
             </p>
@@ -237,7 +311,7 @@ export function Footer() {
                 );
               })}
             </motion.div>
-          </motion.div>
+          </motion.div> */}
         </motion.div>
 
         {/* Bottom bar */}
@@ -255,13 +329,15 @@ export function Footer() {
               target="_blank"
               rel="noreferrer"
               className="transition hover:text-white/60"
-              whileHover={{ color: 'rgba(255,255,255,0.6)', transition: { duration: 0.2 } }}
+              whileHover={{
+                color: 'rgba(255,255,255,0.6)',
+                transition: { duration: 0.2 },
+              }}
             >
               WBYB
             </motion.a>
           </p>
         </motion.div>
-
       </div>
     </footer>
   );
