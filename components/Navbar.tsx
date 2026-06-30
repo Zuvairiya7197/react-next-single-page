@@ -242,7 +242,7 @@ export function Navbar() {
                     className={`flex items-center justify-between rounded-xl px-4 py-3.5 text-sm font-medium transition-all duration-200 ${
                       isActive
                         ? 'bg-white/[0.07] text-[#d4af37]'
-                        : 'text-white/55 hover:bg-white/[0.04] hover:text-white/85'
+                        : 'text-white/90 hover:bg-white/[0.04] hover:text-white'
                     }`}
                   >
                     {item.label}
@@ -259,7 +259,7 @@ export function Navbar() {
                   target="_blank"
                   rel="noreferrer"
                   onClick={() => setIsOpen(false)}
-                  className="flex items-center justify-center gap-2 border border-[#d4af37]/30 py-3 text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-[#d4af37]/75 transition-all duration-200 hover:border-[#d4af37]/60 hover:text-[#d4af37]"
+                  className="flex items-center justify-center gap-2 border border-[#d4af37]/50 py-3 text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-[#d4af37] transition-all duration-200 hover:border-[#d4af37]/80 hover:bg-[#d4af37]/[0.07]"
                 >
                   Explore Emlak Designs
                   <svg
